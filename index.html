@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema Escolar Integrado (SEI) - Um ÍCONE em administração escolar. Software de gestão completo para escolas, faculdades e cursos desde 1997.">
+    <meta name="keywords" content="sistema escolar, gestão escolar, software para escolas, administração escolar, SEI, Sistema 2 Software">
+    <meta name="author" content="Sistema 2 Software">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sistema Escolar Integrado (SEI) - Gestão Completa para Instituições de Ensino">
+    <meta property="og:description" content="Automatize processos e melhore toda a gestão da sua instituição com nossa tecnologia. Desde 1997 no mercado.">
+    <meta property="og:image" content="https://exemplo.com/sei-og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sistema Escolar Integrado (SEI) - Gestão Completa para Instituições de Ensino">
+    <meta name="twitter:description" content="Automatize processos e melhore toda a gestão da sua instituição com nossa tecnologia. Desde 1997 no mercado.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <title>Sistema Escolar Integrado (SEI) | Gestão Completa para Instituições de Ensino</title>
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --success-color: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary-color) !important;
+        }
+        
+        .navbar-brand span {
+            color: var(--secondary-color);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .hero-section h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero-section .lead {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 5px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .benefit-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .benefit-item:last-child {
+            border-bottom: none;
+        }
+        
+        .benefit-icon {
+            color: var(--success-color);
+            margin-right: 10px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 15px 0;
+        }
+        
+        .client-logo {
+            max-height: 60px;
+            width: auto;
+            margin: 10px 20px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        
+        .client-logo:hover {
+            opacity: 1;
+        }
+        
+        .contact-section {
+            background-color: var(--light-color);
+            padding: 80px 0;
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-right: 10px;
+        }
+        
+        .form-control {
+            padding: 12px 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+        }
+        
+        .custom-recaptcha {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .captcha-box {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .captcha-text {
+            font-family: 'Courier New', monospace;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            flex-grow: 1;
+            text-align: center;
+            color: #333;
+        }
+        
+        .captcha-refresh {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        
+        .captcha-refresh:hover {
+            background-color: #2980b9;
+        }
+        
+        .captcha-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-links h5 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+        
+        /* Animações */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-section .lead {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Botão do WhatsApp -->
+    <a href="https://wa.me/5571991589879?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20SEI" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span>Sistema 2</span> Software
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#funcionalidades">Funcionalidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#beneficios">Benefícios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+					                    <li class="nav-item">
+                        <a href="https://sistema1.net/arearestrita/index.html" class="btn btn-primary btn-lg">Área do cliente</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto fade-in">
+                    <h1>Sistema Escolar Integrado (SEI)</h1>
+                    <p class="lead">Um ÍCONE em administração escolar. Software de gestão completo para escolas, faculdades e cursos.</p>
+                    <p class="mb-4">Desde 1997, automatizamos processos e melhoramos toda a gestão da sua instituição de ensino com tecnologia de ponta.</p>
+                    <a href="#contato" class="btn btn-primary btn-lg">Solicitar Demonstração</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre a Empresa -->
+    <section id="sobre" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title">Sobre a Sistema 2 Software</h2>
+                    <p class="mb-4">A <strong>Sistema 2 Software</strong>, com grande conhecimento na área de educação e desenvolvimento de software, deu início em 1997 ao <strong>SEI - Sistema Escolar Integrado</strong>. Este software agrega aos gestores novas ferramentas para automatizar os processos em suas instituições.</p>
+                    <p class="mb-4">Implemente nossa tecnologia e melhore toda sua Gestão. Saiba tudo sobre o Sistema Escolar Integrado. Um <strong>ÍCONE em administração escolar</strong>!</p>
+                    <p>Nossa tecnologia melhora toda Gestão de sua instituição, oferecendo soluções completas para secretaria, tesouraria, financeiro, biblioteca e muito mais.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Equipe da Sistema 2 Software" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funcionalidades -->
+    <section id="funcionalidades" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Funcionalidades do SEI</h2>
+            <p class="text-center mb-5">Descubra as principais ferramentas que tornam o SEI a solução completa para sua instituição</p>
+            
+            <div class="row">
+                <!-- Secretaria -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Secretaria</h4>
+                        <p>Cadastros, cobrança de documentos pendentes, ocorrências pedagógicas, ficha médica completa, matrículas online e muito mais.</p>
+                    </div>
+                </div>
+                
+                <!-- Tesouraria -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h4>Tesouraria</h4>
+                        <p>Cobrança automatizada, SMS, conciliação bancária, simulador de débito, gestão de inadimplência e relatórios financeiros.</p>
+                    </div>
+                </div>
+                
+                <!-- Biblioteca -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h4>Biblioteca</h4>
+                        <p>Organize seus acervos com controle de empréstimos, devoluções, atrasos. Totalmente integrado ao financeiro e funcionários.</p>
+                    </div>
+                </div>
+                
+                <!-- Aplicativo Mobile -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Aplicativo Mobile</h4>
+                        <p>SEI Aluno: aplicativo de comunicação escolar integrado e personalizado para sua instituição de ensino.</p>
+                    </div>
+                </div>
+                
+                <!-- Correção Eletrônica -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h4>Correção Eletrônica</h4>
+                        <p>Distribuição de candidatos, formulários personalizados, relatórios de classificação, desempate e aprovação.</p>
+                    </div>
+                </div>
+                
+                <!-- Reconhecimento Biométrico -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-fingerprint"></i>
+                        </div>
+                        <h4>Reconhecimento Biométrico</h4>
+                        <p>Mais segurança para alunos. O sistema reconhece, faz a liberação e envia notificação para o responsável.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section id="beneficios" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Benefícios para sua Instituição</h2>
+            <p class="text-center mb-5">Utilize nossa tecnologia em sua gestão e poupe tempo com recursos tecnológicos avançados</p>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="contact-info h-100">
+                        <h4 class="mb-4">Gestão Acadêmica</h4>
+                        <ul class="list-unstyled">
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                Acompanhamento completo do desempenho dos alunos
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                Cobrança automática de documentos pendentes
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                Mais serviços para pais e alunos
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                Matrícula online integrada
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                Aumento na captação de novos alunos
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                Redução nas taxas de inadimplência escolar
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="contact-info h-100">
+                        <h4 class="mb-4">Gestão Financeira</h4>
+                        <ul class="list-unstyled">
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                Conciliação bancária automatizada
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                Fluxo de caixa com relatórios objetivos e gráficos
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                Elaboração do orçamento geral
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                Balancete por centro de custos
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                Transferência entre contas com relatórios detalhados
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                Simulador de débitos para negociação automatizada
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato Conosco</h2>
+            <p class="text-center mb-5">Solicite uma demonstração ou tire suas dúvidas sobre o Sistema Escolar Integrado</p>
+            
+            <div class="row">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <div class="contact-info">
+                        <form id="contactForm" action="https://example.com/send-email" method="POST">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Seu nome *</label>
+                                        <input type="text" class="form-control" id="name" name="name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="institution" class="form-label">Instituição</label>
+                                        <input type="text" class="form-control" id="institution" name="institution">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Seu Email *</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="phone" class="form-label">Seu Telefone *</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Sua Mensagem *</label>
+                                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Informações adicionais</label>
+                                <textarea class="form-control" id="additional" name="additional" rows="2"></textarea>
+                            </div>
+                            
+                            <!-- reCAPTCHA Manual -->
+                            <div class="custom-recaptcha">
+                                <p class="mb-2">Por favor, confirme que você não é um robô:</p>
+                                <div class="captcha-box">
+                                    <div id="captchaCode" class="captcha-text">ABCD123</div>
+                                    <button type="button" id="refreshCaptcha" class="captcha-refresh">
+                                        <i class="fas fa-redo-alt"></i>
+                                    </button>
+                                </div>
+                                <input type="text" id="userCaptcha" class="captcha-input" placeholder="Digite o código acima" required>
+                                <small class="text-muted">Caso não consiga visualizar o código, clique no botão de atualizar.</small>
+                            </div>
+                            
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="consent" name="consent" required>
+                                <label class="form-check-label" for="consent">Concordo em receber comunicações da Sistema 2 Software sobre produtos e serviços.</label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg w-100">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="contact-info h-100">
+                        <h4 class="mb-4">Informações de Contato</h4>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="fas fa-clock contact-icon mt-1"></i>
+                            <div>
+                                <h5>Horário Comercial</h5>
+                                <p>Segunda a Sexta: 07:30 às 17:00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="fas fa-phone contact-icon mt-1"></i>
+                            <div>
+                                <h5>Telefones</h5>
+                                <p>Fixo: (71) 3011-8650</p>
+                                <p>Celular/WhatsApp: (71) 99158-9879</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="fas fa-envelope contact-icon mt-1"></i>
+                            <div>
+                                <h5>Email</h5>
+                                <p>suporte@digite.com.br</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start">
+                            <i class="fas fa-map-marker-alt contact-icon mt-1"></i>
+                            <div>
+                                <h5>Sobre a Empresa</h5>
+                                <p>A Sistema 2 Software, com grande conhecimento na área de educação e desenvolvimento de software, atua desde 1997 oferecendo soluções completas para gestão escolar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h3 class="mb-3"><span>Sistema 2</span> Software</h3>
+                    <p>Desde 1997, somos referência em desenvolvimento de software para gestão escolar, oferecendo soluções completas e inovadoras para instituições de ensino.</p>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <div class="footer-links">
+                        <h5>Módulos</h5>
+                        <a href="#funcionalidades">Secretaria</a>
+                        <a href="#funcionalidades">Tesouraria</a>
+                        <a href="#funcionalidades">Contas a Pagar</a>
+                        <a href="#funcionalidades">Biblioteca</a>
+                        <a href="#funcionalidades">Almoxarifado</a>
+                        <a href="#funcionalidades">Correção Eletrônica</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <div class="footer-links">
+                        <h5>Soluções</h5>
+                        <a href="#funcionalidades">Aplicativo Mobile</a>
+                        <a href="#funcionalidades">Portal do Aluno</a>
+                        <a href="#funcionalidades">Matrícula Online</a>
+                        <a href="#funcionalidades">Portal do Professor</a>
+                        <a href="#funcionalidades">Portaria Digital</a>
+                        <a href="#funcionalidades">Email & SMS</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="footer-links">
+                        <h5>Contato Rápido</h5>
+                        <p><i class="fas fa-phone me-2"></i> (71) 3011-8650</p>
+                        <p><i class="fas fa-mobile-alt me-2"></i> (71) 99158-9879</p>
+                        <p><i class="fas fa-envelope me-2"></i> suporte@digite.com.br</p>
+                        <div class="mt-3">
+                            <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                            <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                            <a href="#" class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+                            <a href="https://wa.me/5571991589879" class="text-white" target="_blank"><i class="fab fa-whatsapp fa-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Sistema 2 Software. Todos os direitos reservados.</p>
+                <p class="mb-0">Sistema Escolar Integrado (SEI) - Um ÍCONE em administração escolar</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Gerador de CAPTCHA manual
+        function generateCaptcha() {
+            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            let captcha = "";
+            for (let i = 0; i < 6; i++) {
+                captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return captcha;
+        }
+        
+        // Inicializar CAPTCHA
+        let currentCaptcha = generateCaptcha();
+        document.getElementById('captchaCode').textContent = currentCaptcha;
+        
+        // Atualizar CAPTCHA
+        document.getElementById('refreshCaptcha').addEventListener('click', function() {
+            currentCaptcha = generateCaptcha();
+            document.getElementById('captchaCode').textContent = currentCaptcha;
+            document.getElementById('userCaptcha').value = '';
+        });
+        
+        // Validação do formulário
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const userInput = document.getElementById('userCaptcha').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Validar CAPTCHA
+            if (userInput !== currentCaptcha) {
+                alert('Código de verificação incorreto. Por favor, tente novamente.');
+                currentCaptcha = generateCaptcha();
+                document.getElementById('captchaCode').textContent = currentCaptcha;
+                document.getElementById('userCaptcha').value = '';
+                return;
+            }
+            
+            // Validar email
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Por favor, insira um endereço de email válido.');
+                return;
+            }
+            
+            // Validar telefone (formato simples)
+            const phonePattern = /^[0-9\s\-\(\)]+$/;
+            if (!phonePattern.test(phone) || phone.length < 10) {
+                alert('Por favor, insira um número de telefone válido.');
+                return;
+            }
+            
+            // Se todas as validações passarem
+            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            
+            // Aqui você normalmente enviaria os dados para o servidor
+            // Por exemplo, usando AWS SES via API
+            console.log({
+                name: name,
+                institution: document.getElementById('institution').value,
+                email: email,
+                phone: phone,
+                message: message,
+                additional: document.getElementById('additional').value,
+                consent: document.getElementById('consent').checked
+            });
+            
+            // Resetar formulário
+            this.reset();
+            currentCaptcha = generateCaptcha();
+            document.getElementById('captchaCode').textContent = currentCaptcha;
+        });
+        
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Adicionar classe de ativo ao item de navegação ativo
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+    </script>
+</body>
+</html>
