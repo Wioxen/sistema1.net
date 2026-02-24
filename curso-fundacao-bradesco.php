@@ -1,278 +1,336 @@
 
-
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16696952717"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  Cursos gratuito com certificado | Curso online e presencial | Curso SENAC e SENAI</title>
+    <meta name="description" content="Descubra cursos gratuitos online com certificado reconhecido. Melhore suas habilidades e aumente suas chances no mercado de trabalho.">
+    <link rel="icon" href="icon.png" type="image/x-icon" />
+    <!-- Pré-conexão para recursos externos -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
-  gtag('config', 'AW-16696952717');
-</script>
+    <!-- Pré-carregar CSS crítico -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"></noscript>
 
-<!-- Event snippet for clique de saida conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-16696952717/welKCJCdt9EZEI2P3Zk-',
-      'value': 1.0,
-      'currency': 'BRL',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
+    <!-- CSS crítico inline -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #007bff; /* opcional: cor do check */
+            cursor: pointer;
+        }
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YYFBFG681J"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+        .assistant-img {
+            background-size: 200% 200%;
+            animation: shimmer 1.5s infinite;
+        }
 
-        gtag('config', 'G-YYFBFG681J');
-    </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZY9F8CW49W"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-ZY9F8CW49W');
-    </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q6JWRP9TD4"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-Q6JWRP9TD4');
-    </script>
-
-
-    <script type="text/javascript">
-        /** This section is only needed once per page if manually copying **/
-        if (typeof MauticSDKLoaded == 'undefined') {
-            var MauticSDKLoaded = true;
-            var head = document.getElementsByTagName('head')[0];
-            var script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.src = 'https://mauticaws.gogleads.com.br/media/js/mautic-form.js?vdb1b43fb';
-            script.onload = function () {
-                MauticSDK.onLoad();
-            };
-            head.appendChild(script);
-            var MauticDomain = 'https://mauticaws.gogleads.com.br';
-            var MauticLang = {
-                'submittingMessage': "Please wait..."
+        @keyframes shimmer {
+            0% {
+                background-position: 200% 0;
             }
-        } else if (typeof MauticSDK != 'undefined') {
-            MauticSDK.onLoad();
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .quiz-header {
+            background: white;
+            color: #2C3E50;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .quiz-body {
+            padding: 20px;
+        }
+
+        .question {
+            display: none;
+        }
+
+            .question.active {
+                display: block;
+                animation: fadeIn 0.3s ease-out;
+            }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Estilos mínimos necessários para o conteúdo acima da dobra */
+        .btn-option, .btn-next, .form-control {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .btn-next {
+            background: #2c3e50;
+            color: white;
+            border: none;
+            font-weight: bold;
+        }
+
+        .progress {
+            height: 8px;
+            margin-bottom: 15px;
+        }
+        /* Ocultar accordion inicialmente */
+        .accordion {
+            display: none;
+        }
+    </style>
+
+    <!-- Scripts não críticos carregados de forma assíncrona -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16696952717"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-16696952717');
+
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-16696952717/welKCJCdt9EZEI2P3Zk-',
+                'event_callback': callback
+            });
+            return false;
         }
     </script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-WB2DTHFL');</script>
-    <!-- End Google Tag Manager -->
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="title" content="Cursos Fundação Bradesco - Curso gratuito com certificado">
-    <meta name="description" content="Cursos Fundação Bradesco - Curso gratuito com certificado">
-    <meta name="keywords" content="Cursos Fundação Bradesco - Curso gratuito com certificado">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="Portuguese">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <title>Cursos Fundação Bradesco - Curso gratuito com certificado</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WB2DTHFL"
-                height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <nav class="navbar navbar-light bg-white d-flex justify-content-center">
-        <div class="d-flex justify-content-center">
-            <!--<a class="navbar-brand" href="#"><img src="cursogratuitosenac1.webp" width="99" height="42" alt="curso senac gratuito" /></a>-->
-        </div>
-        <div class="container-fluid">
-            <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>-->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <!--<ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>-->
+    <div class="container">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <picture>
+                    <source srcset="lais.webp" media="(max-width: 600px)">
+                    <source srcset="lais.webp" media="(min-width: 601px)">
+                    <img src="lais.webp"
+                         alt="Assistente Virtual"
+                         class="assistant-img"
+                         width="120"
+                         height="120"
+                         loading="eager"
+                         decoding="async">
+                </picture>
+                <h1 style="font-size:15px;margin:0" style="color:#2C3E50">👋 Olá! Sou sua Assistente de Cursos Gratuitos</h1>
             </div>
-        </div>
-    </nav>
+            <div class="quiz-body">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+                </div>
 
-    <div id="pgb" class="progress mb-5">
-        <div id="p1" class="progress-bar" role="progressbar" style="width: 33%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
+                <!-- Saudação -->
+                <div class="question active" id="question0">
+                    <p>Você pode ter acesso a cursos 100% gratuitos com certificado reconhecido pelo MEC.</p>
+                    <p>Vamos descobrir as melhores opções para você?</p>
+                    <button class="btn-next" onclick="nextQuestion()">CURSO GRATUITO COM CERTIFICADO</button>
+                </div>
 
-    <div id="h1" class="container x d-flex justify-content-center mb-5">
-        <h1 class="text-center">Fundação Bradesco têm as melhores opções de<strong class="text-primary"> curso gratuito com certificado </strong>para você!</h1>
-    </div>
+                <!-- Pergunta 1 -->
+                <div class="question" id="question1">
+                    <h4>
+                        📍 Qual tipo de curso gratuito com certificado você deseja?<h4>
+                            <button class="btn-option" onclick="selectOption(this, 'CursoLivre')">Curso Livre</button>
+                            <button class="btn-option" onclick="selectOption(this, 'CursoTecnico')">Curso Técnico</button>
+                            <button class="btn-option" onclick="selectOption(this, 'Graduacao')">Graduação</button>
+                            <button class="btn-option" onclick="selectOption(this, 'PosGraduacao')">Pós-graduação</button>
+                </div>
 
-    <div class="card text-center" id="card2">
-        <div class="card-header bg-white" style="background-color:white">
-            <h2 style="margin-top: 0.4em">Qual tipo de<strong class="text-primary"> curso gratuito com certificado</strong> você deseja?</h2>
-        </div>
+                <!-- Pergunta 2 -->
+                <div class="question" id="question2">
+                    <h4>⏳ Qual área você tem interesse em estudar?</h4>
+                    <button class="btn-option" onclick="selectOption(this, 'Tecnologia')">Tecnologia e Informática</button>
+                    <button class="btn-option" onclick="selectOption(this, 'Administração')">Administração e Negócios</button>
+                    <button class="btn-option" onclick="selectOption(this, 'Saude')">Saúde e Bem-estar</button>
+                    <button class="btn-option" onclick="selectOption(this, 'Idiomas')">Idiomas e Comunicação</button>
+                    <button class="btn-option" onclick="selectOption(this, 'Industria')">Indústria e Produção</button>
+                    <button class="btn-option" onclick="selectOption(this, 'Outras')">Outras opções</button>
+                </div>
 
-        <div class="card-body">
-            <a href="#" class="btn btnConfirm w-100  btn-primary" style="border: 1px solid #005A86; width: 100%; font-size: 22px; color: white;font-weight:bold">
-                A DISTÂNCIA GRATUITO
-            </a><br /><br />
-            <a href="#" class="btn btnConfirm w-100  btn-primary" style="border: 1px solid #005A86; width: 100%; font-size: 22px; color: white; font-weight: bold">PRESENCIAL GRATUITO</a><br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <div class="bg-white">
-            </div>
-        </div>
-        <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
-                <h1 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        Quais os cursos que o Senac oferece gratuitamente? Veja alguns cursos livres gratuitos oferecidos pelo Senac.
-                    </button>
-                </h1>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <ul>
-                            <li>Aproveitamento Integral de Alimentos</li>
-                            <li>Business Intelligence com Power Bi</li>
-                            <li>Congelamento de Alimentos&nbsp;</li>
-                            <li>Cozinha Brasileira&nbsp;</li>
-                            <li>Cozinha Vegetariana</li>
-                            <li>Cozinha Árabe&nbsp;</li>
-                            <li>Design Thinking</li>
-                            <li>Elaboração de Roteiros Turísticos Receptivos</li>
-                            <li>Garde Manger - Preparo de Receitas Frias</li>
-                            <li>Gestão de Salões de Beleza&nbsp;</li>
-                            <li>Informática Básica com Internet e Mídias Sociais</li>
-                            <li>Introdução ao Ms Project&nbsp;</li>
-                            <li>Líder Coach</li>
-                            <li>Maquiagem Artística&nbsp;</li>
-                            <li>Maquiagem e Penteados para Noivas&nbsp;</li>
-                            <li>Maquiagem para Pele Negra&nbsp;</li>
-                            <li>Marketing Social&nbsp;</li>
-                            <li>Penteados&nbsp;</li>
-                            <li>Preparo de Drinques e Coquetéis&nbsp;</li>
-                            <li>Sustentabilidade Aplicada à Cozinha&nbsp;</li>
-                            <li>Técnicas de Tranças&nbsp;</li>
-                            <li>Unhas Decoradas</li>
-                            <li>Vendas</li>
-                        </ul>
+                <!-- Pergunta 3 -->
+                <div class="question" id="question3">
+                    <h4>🎯 Qual seu principal objetivo com o curso?</h4>
+                    <button class="btn-option" onclick="selectOption(this, 'Emprego')">Conseguir um emprego</button>
+                    <button class="btn-option" onclick="selectOption(this, 'Promoção')">Melhorar no trabalho atual</button>
+                    <button class="btn-option" onclick="selectOption(this, 'Conhecimento')">Apenas adquirir conhecimento</button>
+                </div>
+
+                <!-- Captura de dados -->
+                <div class="question" id="question4">
+                    <h4>✅ Ótimo! Encontramos várias opções que combinam com seu perfil.</h4>
+                    <p>Para enviar a lista completa de cursos gratuitos com certificado válido, precisamos dos seus dados:</p>
+
+                    <div>
+                        <label for="name">📛 Qual seu nome completo?</label>
+                        <input type="text" class="form-control" id="name" required>
                     </div>
+                    <div>
+                        <label for="email">📧 Seu melhor e-mail:</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div>
+                        <label for="phone">📱 WhatsApp para contato:</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="(99) 99999-9999" required>
+                    </div>
+                    <div style="margin:15px 0">
+                        <input type="checkbox" id="privacyPolicy" required>
+                        <label for="privacyPolicy" style="font-size:8px">
+                            Eu confirmo que desejo receber comunicações e concordo com a <a href="https://sistema1.net/politica-de-privacidade/">Política de Privacidade</a> e <a href="https://sistema1.net/termo-de-privacidade/">termo de uso</a>.
+                        </label>
+                    </div>
+                    <div id="loading" style="display:none;text-align:center">
+                        <div style="width:20px;height:20px;border:2px solid #f3f3f3;border-top:2px solid #3498db;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto"></div>
+                        <p style="margin-top:8px">Preparando sua lista de cursos...</p>
+                    </div>
+
+                    <div id="error-message" style="display:none;color:#dc3545;margin:10px 0"></div>
+
+                    <button class="btn-next" id="submit-btn" onclick="submitForm()">Receber lista de cursos</button>
+                </div>
+                <br><div style="text-align:center;font-size:10px"><a href="https://sistema1.net/politica-de-privacidade/" style="font-size:10px">Política de Privacidade</a> e <a href="https://sistema1.net/termo-de-privacidade/" style="font-size:10px">Termo de uso</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accordion - Carregado posteriormente -->
+    <div class="accordion accordion-flush" id="accordionFlushExample" style="margin-top:5em">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Quais os cursos que o Senac oferece gratuitamente? Veja alguns cursos livres gratuitos oferecidos pelo Senac.
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <ul>
+                        <li>Aproveitamento Integral de Alimentos</li>
+                        <li>Business Intelligence com Power Bi</li>
+                        <li>Congelamento de Alimentos&nbsp;</li>
+                        <li>Cozinha Brasileira&nbsp;</li>
+                        <li>Cozinha Vegetariana</li>
+                        <li>Cozinha Árabe&nbsp;</li>
+                        <li>Design Thinking</li>
+                        <li>Elaboração de Roteiros Turísticos Receptivos</li>
+                        <li>Garde Manger - Preparo de Receitas Frias</li>
+                        <li>Gestão de Salões de Beleza&nbsp;</li>
+                        <li>Informática Básica com Internet e Mídias Sociais</li>
+                        <li>Introdução ao Ms Project&nbsp;</li>
+                        <li>Líder Coach</li>
+                        <li>Maquiagem Artística&nbsp;</li>
+                        <li>Maquiagem e Penteados para Noivas&nbsp;</li>
+                        <li>Maquiagem para Pele Negra&nbsp;</li>
+                        <li>Marketing Social&nbsp;</li>
+                        <li>Penteados&nbsp;</li>
+                        <li>Preparo de Drinques e Coquetéis&nbsp;</li>
+                        <li>Sustentabilidade Aplicada à Cozinha&nbsp;</li>
+                        <li>Técnicas de Tranças&nbsp;</li>
+                        <li>Unhas Decoradas</li>
+                        <li>Vendas</li>
+                    </ul>
                 </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                        Curso gratuito com certificado
-                    </button>
-                </h2>
-                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-					Está em busca de cursos gratuitos para aprimorar seu currículo e conquistar novas oportunidades? Diversas instituições renomadas, como o Senac, Senai e Sebrae, oferecem formações em diferentes áreas do conhecimento. Você pode optar por um curso técnico Senac, um curso gratuito online ou até mesmo participar de um curso gratuito Senac presencial.
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Curso gratuito com certificado
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    Está em busca de cursos gratuitos para aprimorar seu currículo e conquistar novas oportunidades? Diversas instituições renomadas, como o Senac, Senai e Sebrae, oferecem formações em diferentes áreas do conhecimento. Você pode optar por um curso técnico Senac, um <b>curso gratuito com certificado</b> online ou até mesmo participar de um <b>curso gratuito com certificado</b> Senac presencial.
 
-O Senai cursos gratuitos é ideal para quem deseja ingressar na indústria com qualificação profissional, enquanto o Senac cursos gratuitos online oferece flexibilidade para estudar no seu ritmo, garantindo um curso online gratuito com certificado. Além disso, programas do governo disponibilizam cursos gratuitos do governo para quem deseja se profissionalizar sem custos.
+                    O Senai cursos gratuitos é ideal para quem deseja ingressar na indústria com qualificação profissional, enquanto o Senac cursos gratuitos online oferece flexibilidade para estudar no seu ritmo, garantindo um curso online gratuito com certificado. Além disso, programas do governo disponibilizam cursos gratuitos do governo para quem deseja se profissionalizar sem custos.
 
-Se você procura especializações na área da beleza, pode se inscrever no curso de design de sobrancelha Senac gratuito online ou no curso de maquiagem profissional Senac. Já para os apaixonados por culinária, o Senac curso de gastronomia gratuito é uma excelente opção.
+                    Se você procura especializações na área da beleza, pode se inscrever no curso de design de sobrancelha Senac gratuito online ou no curso de maquiagem profissional Senac. Já para os apaixonados por culinária, o Senac curso de gastronomia gratuito é uma excelente opção.
 
-Quer saber como fazer um curso no Senac? Acesse o portal oficial (www Senac cursos gratuitos) e confira as vagas disponíveis para cursos gratuitos no Senac em todo o Brasil, incluindo Senac cursos gratuitos presenciais, curso gratuito Senac Maceió e cursos gratuitos Senac GO.
+                    Quer saber como fazer um curso no Senac? Acesse o portal oficial (www Senac cursos gratuitos) e confira as vagas disponíveis para cursos gratuitos no Senac em todo o Brasil, incluindo Senac cursos gratuitos presenciais, <b>curso gratuito com certificado</b> Senac Maceió e cursos gratuitos Senac GO.
 
-Além do Senac e do Senai, há também outras oportunidades, como os cursos gratuitos Avasus, os cursos online gratuitos Sesi e os cursos online gratuitos Senac, todos com certificado reconhecido.
+                    Além do Senac e do Senai, há também outras oportunidades, como os cursos gratuitos Avasus, os cursos online gratuitos Sesi e os cursos online gratuitos Senac, todos com certificado reconhecido.
 
-Seja um curso técnico gratuito, um curso no Senai de graça ou um curso do Senac gratuito, essa é sua chance de se qualificar e se destacar no mercado de trabalho. Não perca essa oportunidade e comece a estudar hoje mesmo!
-					</div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                        Como conseguir um curso técnico de graça?
-                    </button>
-                </h2>
-                <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body"><ol class="X5LH0c"><li class="TrT0Xe">IFRS. O Instituto Federal do Rio Grande do Sul é uma das alternativas de instituição de ensino público que oferece <b>cursos técnicos</b> de forma gratuita e a distância. ... </li><li class="TrT0Xe">SENAC. ... </li><li class="TrT0Xe">SENAI. ... </li><li class="TrT0Xe">FIRJAN. ... </li><li class="TrT0Xe">SEBRAE. ... </li><li class="TrT0Xe">FAETEC. ... </li><li class="TrT0Xe">PRONATEC.</li></ol></div>
+                    Seja um curso técnico gratuito, um curso no Senai de graça ou um curso do Senac gratuito, essa é sua chance de se qualificar e se destacar no mercado de trabalho. Não perca essa oportunidade e comece a estudar hoje mesmo!
                 </div>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    Como conseguir um curso técnico de graça?
+                </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body"><ol class="X5LH0c"><li class="TrT0Xe">IFRS. O Instituto Federal do Rio Grande do Sul é uma das alternativas de instituição de ensino público que oferece <b>cursos técnicos</b> de forma gratuita e a distância. ... </li><li class="TrT0Xe">SENAC. ... </li><li class="TrT0Xe">SENAI. ... </li><li class="TrT0Xe">FIRJAN. ... </li><li class="TrT0Xe">SEBRAE. ... </li><li class="TrT0Xe">FAETEC. ... </li><li class="TrT0Xe">PRONATEC.</li></ol></div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
                     Curso Gratuito com Certificado
                 </button>
             </h2>
-            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
-                    Aproveite a oportunidade de fazer um curso gratuito e receber um certificado válido. Aprimore seu currículo e aumente suas chances no mercado de trabalho!
+                    Aproveite a oportunidade de fazer um <b>curso gratuito com certificado</b> e receber um certificado válido. Aprimore seu currículo e aumente suas chances no mercado de trabalho!
                 </div>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
                     Procurando cursos gratuitos?
                 </button>
             </h2>
-            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
                     Encontre diversas opções de cursos online e presenciais sem custo algum. Qualificação profissional acessível para você!
-
                 </div>
             </div>
         </div>
 
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
                     Curso Livre, Técnico e EAD
                 </button>
             </h2>
-            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
                     Escolha entre cursos livres, técnicos ou na modalidade EAD e estude de onde estiver, no seu ritmo e sem mensalidade!
                 </div>
@@ -281,11 +339,11 @@ Seja um curso técnico gratuito, um curso no Senai de graça ou um curso do Sena
 
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
                     [Aprovado] Curso 100% online
                 </button>
             </h2>
-            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
                     Cursos totalmente online, com acesso imediato ao conteúdo e certificado ao final. Estude sem sair de casa!
                 </div>
@@ -294,249 +352,330 @@ Seja um curso técnico gratuito, um curso no Senai de graça ou um curso do Sena
 
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
                     Milhões de alunos já formados
                 </button>
             </h2>
-            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
                     Junte-se a uma comunidade de milhões de estudantes que já se formaram e conquistaram novas oportunidades!
                 </div>
             </div>
         </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
+                    Cursos Online Gratuitos com Certificado Grátis
+                </button>
+            </h2>
+            <div id="flush-collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    Cursos online gratuitos com certificado grátis são uma excelente oportunidade para quem busca aprender e se qualificar sem custos. Ganhe um diploma que pode agregar valor ao seu perfil profissional, tudo no conforto de sua casa.
 
-    </div>
-    
-
-
-    <div class="card text-center" id="card1" style="display:none">
-        <div class="card-header bg-white">
-            <h1>
-                Qual sua disponibilidade de horário?
-            </h1>
-        </div>
-        <div class="card-body">
-            <a href="#" class="btn btnConfirm1 w-100 btn-primary" style="border: 1px solid #005A86; width: 100%; font-size: 22px; color: white">MANHÃ</a><br /><br />
-            <a href="#" class="btn btnConfirm1 w-100 btn-primary" style="border: 1px solid #005A86; width: 100%; font-size: 22px; color: white">TARDE</a><br /><br />
-            <a href="#" class="btn btnConfirm1 w-100 btn-primary" style="border: 1px solid #005A86; width: 100%; font-size: 22px; color: white">NOITE</a><br /><br />
-            <div class="bg-white">
-            </div>
-        </div>
-    </div>
-
-    <div class="card text-center border-0" id="card3" style="display:none">
-        <div class="card-header bg-white">
-            <h3>
-                Encontramos uma recomendação para você
-            </h3>
-        </div>
-        <div class="card-body">
-
-            <style type="text/css" scoped>
-                .mauticform_wrapper {
-                    max-width: 600px;
-                    margin: 10px auto;
-                }
-
-                .mauticform-innerform {
-                }
-
-                .mauticform-post-success {
-                }
-
-                .mauticform-name {
-                    font-weight: bold;
-                    font-size: 1.5em;
-                    margin-bottom: 3px;
-                }
-
-                .mauticform-description {
-                    margin-top: 2px;
-                    margin-bottom: 10px;
-                }
-
-                .mauticform-error {
-                    margin-bottom: 10px;
-                    color: red;
-                }
-
-                .mauticform-message {
-                    margin-bottom: 10px;
-                    color: green;
-                }
-
-                .mauticform-row {
-                    display: block;
-                    margin-bottom: 20px;
-                }
-
-                .mauticform-label {
-                    font-size: 1.1em;
-                    display: block;
-                    font-weight: bold;
-                    margin-bottom: 5px;
-                }
-
-                .mauticform-row.mauticform-required .mauticform-label:after {
-                    color: #e32;
-                    content: " *";
-                    display: inline;
-                }
-
-                .mauticform-helpmessage {
-                    display: block;
-                    font-size: 0.9em;
-                    margin-bottom: 3px;
-                }
-
-                .mauticform-errormsg {
-                    display: block;
-                    color: red;
-                    margin-top: 2px;
-                }
-
-                .mauticform-selectbox, .mauticform-input, .mauticform-textarea {
-                    width: 100%;
-                    padding: 0.5em 0.5em;
-                    border: 1px solid #CCC;
-                    background: #fff;
-                    box-shadow: 0px 0px 0px #fff inset;
-                    border-radius: 4px;
-                    box-sizing: border-box;
-                }
-
-                .mauticform-checkboxgrp-row {
-                }
-
-                .mauticform-checkboxgrp-label {
-                    font-weight: normal;
-                }
-
-                .mauticform-checkboxgrp-checkbox {
-                }
-
-                .mauticform-radiogrp-row {
-                }
-
-                .mauticform-radiogrp-label {
-                    font-weight: normal;
-                }
-
-                .mauticform-radiogrp-radio {
-                }
-
-                .mauticform-button-wrapper .mauticform-button.btn-default, .mauticform-pagebreak-wrapper .mauticform-pagebreak.btn-default {
-                    color: #5d6c7c;
-                    background-color: #ffffff;
-                    border-color: #dddddd;
-                }
-
-                .mauticform-button-wrapper .mauticform-button, .mauticform-pagebreak-wrapper .mauticform-pagebreak {
-                    display: inline-block;
-                    margin-bottom: 0;
-                    font-weight: 600;
-                    text-align: center;
-                    vertical-align: middle;
-                    cursor: pointer;
-                    background-image: none;
-                    border: 1px solid transparent;
-                    white-space: nowrap;
-                    padding: 6px 12px;
-                    font-size: 13px;
-                    line-height: 1.3856;
-                    border-radius: 3px;
-                    -webkit-user-select: none;
-                    -moz-user-select: none;
-                    -ms-user-select: none;
-                    user-select: none;
-                }
-
-                    .mauticform-button-wrapper .mauticform-button.btn-default[disabled], .mauticform-pagebreak-wrapper .mauticform-pagebreak.btn-default[disabled] {
-                        background-color: #ffffff;
-                        border-color: #dddddd;
-                        opacity: 0.75;
-                        cursor: not-allowed;
-                    }
-
-                .mauticform-pagebreak-wrapper .mauticform-button-wrapper {
-                    display: inline;
-                }
-            </style>
-            <style type="text/css" scoped>
-                .mauticform-field-hidden {
-                    display: none
-                }
-            </style>
-            <form id="frmCadastro" action="https://vafast.xyz/cursos-gratuitos-com-certificado-pelo-governo/?utm_source=GoogleAdsS1&utm_medium=PesquisaS1&utm_campaign=Auto_01_s1_Pouso_FB" method="POST">
-                <input name="parametro" value=null class="d-none" type="text" />
-                <input id="enviardados" class="d-none" type="submit" value="Enivar dados" />
-            </form>
-
-            <div id="mauticform_wrapper_curso" class="mauticform_wrapper">
-                <div>
-                    <div class="mauticform-error" id="mauticform_curso_error"></div>
-                    <div class="mauticform-message" id="mauticform_curso_message"></div>
-                    <div class="mauticform-innerform">
-
-                        <div class="mauticform-page-wrapper mauticform-page-1" data-mautic-form-page="1">
-
-                            <div id="mauticform_curso_nome" data-validate="nome" data-validation-type="text" class="mauticform-row mauticform-text mauticform-field-1 mauticform-required pb-1">
-                                <input id="nome" class="form-control form-control-lg" type="text" placeholder="Nome">
-                            </div>
-
-                            <div class="mauticform-row mauticform-text mauticform-field-1 mauticform-required pb-1">
-                                <input id="email" type="email" class="form-control form-control-lg pb-1" placeholder="E-mail">
-                            </div>
-                            <div class="mauticform-row mauticform-text mauticform-field-1 mauticform-required pb-1">
-                                <select id="tipo" name="tipo" class="form-control form-control-lg">
-                                    <option value="">Selecione o curso</option>
-                                    <option value="cl">Curso Livre</option>
-                                    <option value="ct">Curso Técnico</option>
-                                    <option value="gr">Graduação</option>
-                                </select>
-                            </div>
-
-                            <div class="mauticform-row mauticform-text mauticform-field-1 mauticform-required pb-1 d-none">
-                                <input class="form-control pb-1" id="telefone" name="telefone" value="" type="tel" placeholder="Whatsapp">
-                            </div>
-                            <div class="form-check mb-5">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
-                                <label class="form-check-label" for="flexCheckDefault" style="font-size:9px">
-                                    Eu confirmo que desejo receber comunicações e e-mails deste site e estou de acordo com a Política de Privacidade e os Termos de Uso. Concordo em fornecer um e-mail válido e autorizo o envio de informações, estando ciente de que posso cancelar a inscrição a qualquer momento.
-                                </label>
-                            </div>
-                            <h3 id="aguarde">Após o cadastro verifique a caixa de SPAM e Promoções</h3>
-                            <p class="d-none" id="aguarde2"><img id="imgSubmit" style="font-size:20px;text-align:center" src="/images/load.gif" width="40" /><br><b>Uma recomendação</b> foi enviada <b>por e-mail</b>.<br>Consulte sua <b>caixa de entrada</b>. Senão <b>SPAM ou Promoções</b></p>
-                            <p id="error" style="color:red;"></p>
-                            <label id="btnSubmit" style="visibility:hidden;font-size:20px;color:green">Preparando o melhor para você.</label>
-                        </div>
-                    </div>
+                    Esses textos podem ser ajustados conforme necessário para se adequarem ao tom e formato do seu conteúdo, proporcionando informações relevantes e de fácil acesso para os leitores.
                 </div>
             </div>
-
         </div>
-        <div class="footer py-3 border border-1 w-100">
-            <button type="button" id="botao" class="btn btn-lg btn-success" style="font-size:22px;background-color:green;color:white;width:300px;">INSCREVA-SE</button>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
+                    Senac Cursos Gratuitos
+                </button>
+            </h2>
+            <div id="flush-collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    O SENAC proporciona cursos gratuitos em diferentes áreas, permitindo que você se capacite e melhore sua empregabilidade. Não perca as oportunidades de qualificação que podem transformar sua carreira!
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEleven" aria-expanded="false" aria-controls="flush-collapseEleven">
+                    Cursos Online Gratuitos Governo
+                </button>
+            </h2>
+            <div id="flush-collapseEleven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    O governo oferece cursos online gratuitos que possibilitam o acesso a conhecimentos essenciais para diversas áreas profissionais. Aproveite essa oportunidade de aprimorar seu perfil profissional sem custo algum.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+                    Curso Gratuito Presencial
+                </button>
+            </h2>
+            <div id="flush-collapseTwelve" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    Se você busca um <b>curso gratuito com certificado</b> presencial, diversas instituições oferecem oportunidades em diferentes áreas. O Senac, Senai e Fundação Bradesco são algumas das opções que disponibilizam cursos presenciais para quem deseja se qualificar profissionalmente sem custos.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThirteen" aria-expanded="false" aria-controls="flush-collapseThirteen">
+                    Cursos Gratuitos Online
+                </button>
+            </h2>
+            <div id="flush-collapseThirteen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    Os cursos gratuitos online são uma ótima alternativa para quem deseja aprender no seu próprio ritmo. Plataformas como AVASUS, Sebrae e Trilhas do Futuro oferecem formações com materiais completos e certificados gratuitos.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFourteen" aria-expanded="false" aria-controls="flush-collapseFourteen">
+                    Curso Online com Certificado Grátis
+                </button>
+            </h2>
+            <div id="flush-collapseFourteen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    Quer um curso online com certificado grátis? O Senac, Senai e Fundação Bradesco disponibilizam opções em diversas áreas, garantindo qualificação com reconhecimento no mercado de trabalho.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFifteen" aria-expanded="false" aria-controls="flush-collapseFifteen">
+                    Curso Online Gratuito Senai
+                </button>
+            </h2>
+            <div id="flush-collapseFifteen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    O Senai oferece diversas formações, e o curso online gratuito Senai é uma excelente opção para quem busca capacitação de qualidade com certificado grátis.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSixteen" aria-expanded="false" aria-controls="flush-collapseSixteen">
+                    O que são os cursos gratuitos do SENAC?
+                </button>
+            </h2>
+            <div id="flush-collapseSixteen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    O SENAC oferece cursos gratuitos por meio do Programa Senac de Gratuidade (PSG). Ele é destinado a pessoas de baixa renda que desejam se qualificar profissionalmente. Os cursos abrangem diversas áreas como administração, tecnologia, saúde, gastronomia e mais.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeventeen" aria-expanded="false" aria-controls="flush-collapseSeventeen">
+                    Quem pode se inscrever nos cursos gratuitos do SENAC?
+                </button>
+            </h2>
+            <div id="flush-collapseSeventeen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    Os cursos gratuitos são voltados para pessoas com renda familiar de até dois salários mínimos. Além disso, é necessário atender aos pré-requisitos de cada curso, como idade mínima e escolaridade.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEighteen" aria-expanded="false" aria-controls="flush-collapseEighteen">
+                    Como se inscrever nos cursos gratuitos do SENAC?
+                </button>
+            </h2>
+            <div id="flush-collapseEighteen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    As inscrições podem ser feitas online pelo site do SENAC ou presencialmente em uma unidade próxima. É necessário preencher um cadastro e enviar documentos como RG, CPF e comprovante de residência.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNineteen" aria-expanded="false" aria-controls="flush-collapseNineteen">
+                    Cursos Gratuitos do SENAC – Inscreva-se Agora e Mude Seu Futuro!
+                </button>
+            </h2>
+            <div id="flush-collapseNineteen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    O SENAC oferece cursos gratuitos para quem deseja se qualificar profissionalmente e conquistar melhores oportunidades no mercado de trabalho. Com certificado reconhecido, você pode aprender novas habilidades sem custo algum.
+
+                    Por que fazer um <b>curso gratuito com certificado</b> no SENAC?
+                    Certificado válido em todo o Brasil
+                    Formação 100% gratuita pelo Programa Senac de Gratuidade (PSG)
+                    Modalidades presencial e online (EAD)
+                    Qualificação para ingressar rapidamente no mercado de trabalho
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwenty" aria-expanded="false" aria-controls="flush-collapseTwenty">
+                    Quais Cursos Gratuitos do SENAC Estão Disponíveis?
+                </button>
+            </h2>
+            <div id="flush-collapseTwenty" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    O SENAC oferece diversos cursos gratuitos em diferentes áreas. Confira alguns dos mais procurados:
+
+                    Administração e Negócios
+                    Assistente Administrativo
+                    Gestão de Pequenos Negócios
+                    Marketing Digital
+
+                    Tecnologia da Informação
+                    Pacote Office Completo
+                    Introdução à Programação
+                    Design Gráfico
+
+                    Gastronomia e Turismo
+                    Confeitaria Básica
+                    Cozinha Profissional
+                    Garçom e Atendimento
+
+                    Saúde e Bem-Estar
+                    Cuidador de Idosos
+                    Primeiros Socorros
+                    Massoterapia
+
+                    Beleza e Estética
+                    Manicure e Pedicure
+                    Maquiagem Profissional
+                    Cabeleireiro
+                </div>
+            </div>
         </div>
     </div>
-    </div>
 
-    <footer class="footer border border-1 py-3 bg-light w-100">
-        <a class="nav-link" href='politica.html' target="_blank" style="font-size:9px">Política de Privacidade</a>
-    </footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js"></script>
+    <!-- Scripts não críticos carregados no final do body -->
+    <script>
+	var phone = document.getElementById('phone');
+        if (phone) {
+            VMasker(phone).maskPattern('(99) 99999-9999');
+        }
+        function getUTMTerm() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('utm_term');
+        }
+        const utmTerm = getUTMTerm();
+        // Funções essenciais carregadas primeiro
+        let currentQuestion = 0;
+        const totalQuestions = 4;
+        const answers = {};
+        const redirectUrl = "https://vafast.xyz/cursos-gratuitos-com-certificado-pelo-governo/?utm_source=GoogleAdsS1&utm_medium=PesquisaS1&utm_campaign=Auto_01_s1_Pouso&utm_term=" + utmTerm + "";
 
-    <!-- Optional JavaScript; choose one of the two! -->
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-    <script src="fb.js"></script>
+        function updateProgress() {
+            const progress = (currentQuestion / totalQuestions) * 100;
+            document.querySelector('.progress-bar').style.width = progress + '%';
+        }
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
+        function nextQuestion() {
+            document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
+            currentQuestion++;
+            document.getElementById('question' + currentQuestion).classList.add('active');
+            updateProgress();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function selectOption(button, value) {
+            button.parentNode.querySelectorAll('.btn-option').forEach(btn => {
+                btn.style.backgroundColor = '';
+                btn.style.borderColor = '#e9ecef';
+            });
+
+            button.style.backgroundColor = '#e3f2fd';
+            button.style.borderColor = '#3498db';
+            answers['question' + currentQuestion] = value;
+
+            setTimeout(nextQuestion, 300);
+        }
+
+        // Carregar recursos não críticos após o carregamento da página
+        window.addEventListener('load', function () {
+            // Carregar accordion
+            //fetchAccordionContent();
+
+            // Carregar jQuery e Bootstrap apenas se necessário
+            if (typeof jQuery == 'undefined') {
+                var script = document.createElement('script');
+                script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
+                script.onload = function () {
+                    loadBootstrap();
+                };
+                document.body.appendChild(script);
+            } else {
+                loadBootstrap();
+            }
+        });
+
+        /*função do accordion aqui anotacoes.txt*/
+
+        function loadBootstrap() {
+            var script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js';
+            document.body.appendChild(script);
+        }
+
+        function submitForm() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const privacyChecked = document.getElementById('privacyPolicy').checked;
+            const errorElement = document.getElementById('error-message');
+
+            errorElement.style.display = 'none';
+
+            if (!name || !email || !phone) {
+                errorElement.textContent = 'Por favor, preencha todos os campos.';
+                errorElement.style.display = 'block';
+                return;
+            }
+
+            if (!privacyChecked) {
+                errorElement.textContent = 'Você deve aceitar a política de privacidade para continuar.';
+                errorElement.style.display = 'block';
+                return;
+            }
+
+            if (!email.includes('@') || !email.includes('.')) {
+                errorElement.textContent = 'Por favor, insira um e-mail válido.';
+                errorElement.style.display = 'block';
+                return;
+            }
+
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('submit-btn').style.display = 'none';
+
+            answers.name = name;
+            answers.email = email;
+            answers.phone = phone;
+
+            const postData = {
+                id: 1,
+                nome: name,
+                email: email,
+                campanha: "S1_" + utmTerm + "_" + (answers.question1 || '').replace(/\s+/g, '_') + "_" + (answers.question2 || '').replace(/\s+/g, '_'),
+                phone: phone,
+                respostas: answers
+            };
+
+            fetch("https://n8n-1.digite.com.br/webhook/f5e44c10-12a6-4247-a6e8-2699d0d80a54", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(postData)
+            })
+                .then(response => {
+                    if (!response.ok) throw new Error('Erro na rede');
+                    return response.json();
+                })
+                .then(data => {
+                    gtag_report_conversion(redirectUrl);
+                })
+                .catch(error => {
+                    console.error("Erro:", error);
+                    document.getElementById('submit-btn').style.display = 'block';
+                    document.getElementById('loading').style.display = 'none';
+                    errorElement.innerHTML = '<b>Ocorreu um erro. Verifique seus dados e tente novamente.</b>';
+                    errorElement.style.display = 'block';
+                });
+        }
+    </script>
 </body>
 </html>
