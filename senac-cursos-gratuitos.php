@@ -557,7 +557,7 @@
         let currentQuestion = 0;
         const totalQuestions = 4;
         const answers = {};
-        const redirectUrl = "https://xegold.xyz/top-plataformas-ead/?utm_source=GoogleAdsS1&utm_medium=PesquisaS1&utm_campaign=Auto_01_s1_Pouso&utm_term=" + utmTerm + "";
+        const redirectUrl = "https://vafast.xyz/lp/?utm_source=GoogleAdsS1&utm_medium=PesquisaS1&utm_campaign=Auto_01_s1_Pouso&utm_term=" + utmTerm + "";
 
         function updateProgress() {
             const progress = (currentQuestion / totalQuestions) * 100;
