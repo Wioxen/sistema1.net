@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -49,7 +50,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programa Pé-de-Meia 2025 | Conteúdo sobre Consulta e Inscrição</title>
+    <title>Programa Pé-de-Meia 2026 | Conteúdo sobre Consulta e Inscrição</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -727,7 +728,7 @@
                     <span class="money-badge">
                         <i class="fas fa-coins me-2"></i>Duzentos reais disponível!
                     </span>
-                    <h1 class="hero-title">Programa Pé-de-Meia 2025</h1>
+                    <h1 class="hero-title">Programa Pé-de-Meia 2026</h1>
                     <p class="hero-subtitle">Incentivo financeiro para estudantes do ensino médio público. Ganhe até R$9.200 durante os três anos de estudo para investir no seu futuro!</p>
 
                     <div class="d-flex align-items-center mb-4">
@@ -767,7 +768,7 @@
 
                 <!-- Saudação -->
                 <div class="question active" id="question0">
-                    <h4>Você Está na Lista do Pé-de-Meia 2025?</h4>
+                    <h4>Você Está na Lista do Pé-de-Meia 2026?</h4>
                     <p>Responda 3 perguntas rápidas para descobrir se você pode receber o benefício</p>
                     <button id="btn1" class="btn-next" onclick="nextQuestion()">INICIAR CONSULTA AGORA</button>
                 </div>
@@ -855,7 +856,7 @@
                                 <li>Não receber outros benefícios educacionais federais</li>
                             </ul>
                             <div class="mt-4 p-3 bg-light rounded-3">
-                                <p class="mb-0"><i class="fas fa-info-circle me-2 text-primary"></i>As inscrições para 2025 estão abertas! Não perca esta oportunidade.</p>
+                                <p class="mb-0"><i class="fas fa-info-circle me-2 text-primary"></i>As inscrições para 2026 estão abertas! Não perca esta oportunidade.</p>
                             </div>
                         </div>
                     </div>
@@ -1015,7 +1016,7 @@
             </div>
 
             <div class="copyright">
-                <p>&copy; 2025 Programa Pé-de-Meia - Governo Federal. Todos os direitos reservados.</p>
+                <p>&copy; 2026 Programa Pé-de-Meia - Governo Federal. Todos os direitos reservados.</p>
                 <p class="mb-0" style="font-size:9px">
                     O conteúdo desta página tem caráter exclusivamente informativo. O site auxiliobeneficios.colegiomarcodes.com.br não possui qualquer vínculo com órgãos governamentais, prefeituras, instituições públicas ou os responsáveis oficiais pelos programas sociais aqui mencionados.
 
@@ -1046,7 +1047,7 @@
         let currentQuestion = 0;
         const totalQuestions = 4;
         const answers = {};
-        //const redirectUrl = "https://vafast.xyz/descubra-como-o-programa-pe-de-meia-e-o-auxilio-estudante-2025-podem-transformar-sua-educacao/?utm_source=GoogleAds&utm_medium=Auto_PeDeMeia_S1&utm_campaign=Auto_PeDeMeia_S1_NEW";
+        //const redirectUrl = "https://vafast.xyz/descubra-como-o-programa-pe-de-meia-e-o-auxilio-estudante-2026-podem-transformar-sua-educacao/?utm_source=GoogleAds&utm_medium=Auto_PeDeMeia_S1&utm_campaign=Auto_PeDeMeia_S1_NEW";
 		const redirectUrl = "https://xegold.xyz/consulta-pe-de-meia/?utm_source=GoogleAds&utm_medium=Auto_PeDeMeia_S1&utm_campaign=Auto_PeDeMeia_S1_NEW";
 
         //const idCampanha = "S1_PeDeMeia"; // Definindo o ID da campanha
