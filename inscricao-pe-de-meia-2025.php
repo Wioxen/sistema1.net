@@ -1048,8 +1048,9 @@
         const totalQuestions = 4;
         const answers = {};
         //const redirectUrl = "https://vafast.xyz/descubra-como-o-programa-pe-de-meia-e-o-auxilio-estudante-2026-podem-transformar-sua-educacao/?utm_source=GoogleAds&utm_medium=Auto_PeDeMeia_S1&utm_campaign=Auto_PeDeMeia_S1_NEW";
-		const redirectUrl = "https://xegold.xyz/consulta-pe-de-meia/?utm_source=GoogleAds&utm_medium=Auto_PeDeMeia_S1&utm_campaign=Auto_PeDeMeia_S1_NEW";
-
+		//const redirectUrl = "https://xegold.xyz/consulta-pe-de-meia/?utm_source=GoogleAds&utm_medium=Auto_PeDeMeia_S1&utm_campaign=Auto_PeDeMeia_S1_NEW";
+		const redirectUrl = "https://vafast.xyz/pe-de-meia-lp/?utm_source=GoogleAds&utm_medium=Auto_PeDeMeia_S1&utm_campaign=Auto_PeDeMeia_S1_NEW";
+		
         //const idCampanha = "S1_PeDeMeia"; // Definindo o ID da campanha
         //const utmTerm = "default_term"; // Definindo o termo UTM padrão
 
