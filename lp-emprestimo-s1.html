@@ -9,17 +9,8 @@
   gtag('js', new Date());
   gtag('config', 'AW-16696952717');
 </script>
-<!-- Event snippet for clique de saida conversion page -->
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-16696952717/welKCJCdt9EZEI2P3Zk-',
-      'value': 1.0,
-      'currency': 'BRL'
-  });
-</script>
-
-<!-- Event snippet for clique de saida conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<!-- Event snippet for conversion — disparado SOMENTE no success do webhook,
+via gtag_report_conversion() chamado no .then() do fetch. NÃO disparar no load. -->
 <script>
 function gtag_report_conversion(url) {
   var callback = function () {
@@ -39,8 +30,8 @@ function gtag_report_conversion(url) {
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Empréstimo pessoal, consignado e para negativados. Aprovação rápida mesmo para negativados. Empréstimo com garantia de veículo e crédito consignado CLT.">
-    <title>Empréstimo Pessoal Online | Crédito Consignado e Para Negativados</title>
+    <meta name="description" content="Empréstimo pessoal online, 100% digital e pelo celular, inclusive para negativados. Intermediamos seu contato com instituições financeiras parceiras. Sujeito a análise de crédito.">
+    <title>Empréstimo Pessoal Online | Crédito Rápido e Para Negativados</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
@@ -194,26 +185,26 @@ function gtag_report_conversion(url) {
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-3 hero-title">Empréstimo Pessoal Online e Crédito Consignado</h1>
-                    <p class="lead mb-4 hero-subtitle">Solicite seu empréstimo pessoal com as melhores taxas. Empréstimo para negativado liberado na hora. Crédito para negativado e empréstimo consignado CLT.</p>
+                    <h1 class="display-4 fw-bold mb-3 hero-title">Empréstimo Pessoal Online</h1>
+                    <p class="lead mb-4 hero-subtitle">Solicite seu empréstimo pessoal de forma 100% online e descomplicada. Atendemos também quem está com restrição no nome. Todas as propostas estão sujeitas a análise de crédito da instituição parceira.</p>
                     <ul class="list-unstyled">
                         <li class="benefit-item">
                             <div class="benefit-icon">
                                 <i class="bi bi-check-circle-fill"></i>
                             </div>
-                            <span class="benefit-text">Empréstimo pessoal online com taxas a partir de 0,99% ao mês</span>
+                            <span class="benefit-text">Empréstimo pessoal online com taxas e condições conforme o seu perfil de crédito</span>
                         </li>
                         <li class="benefit-item">
                             <div class="benefit-icon">
                                 <i class="bi bi-check-circle-fill"></i>
                             </div>
-                            <span class="benefit-text">Dinheiro na conta em até 24h - empréstimo para negativado liberado na hora</span>
+                            <span class="benefit-text">Se aprovado, liberação ágil — em muitos casos em até 24h, conforme a instituição parceira</span>
                         </li>
                         <li class="benefit-item">
                             <div class="benefit-icon">
                                 <i class="bi bi-check-circle-fill"></i>
                             </div>
-                            <span class="benefit-text">Empréstimo consignado, empréstimo com garantia de veículo e crédito para MEI</span>
+                            <span class="benefit-text">Processo 100% digital, pelo celular, sem necessidade de garantia</span>
                         </li>
                     </ul>
                 </div>
@@ -246,22 +237,9 @@ function gtag_report_conversion(url) {
                                     <option value="Outros">Outros</option>
                                 </select>
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label" style="color:black">Veículo de garantia?</label>
-                                <div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="veiculoGarantia" id="veiculoSim" value="Sim">
-                                        <label class="form-check-label" for="veiculoSim" style="color:black">Sim</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="veiculoGarantia" id="veiculoNao" value="Não" checked>
-                                        <label class="form-check-label" for="veiculoNao" style="color:black">Não</label>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="privacyPolicy">
-                                <label class="form-check-label" for="privacyPolicy" style="color:black">Li e aceito a <a href="https://colegiofavo.com.br/politicafavo.html">Política de Privacidade</a></label>
+                                <label class="form-check-label" for="privacyPolicy" style="color:black">Li e aceito a <a href="https://sistema1.net/politica.html" target="_blank" rel="noopener">Política de Privacidade</a> e os <a href="https://sistema1.net/termos.html" target="_blank" rel="noopener">Termos de Uso</a></label>
                                 <div class="privacy-error-message" id="privacyError" style="color:black">Você precisa aceitar a política de privacidade</div>
                             </div>
                             <div class="d-grid">
@@ -279,13 +257,53 @@ function gtag_report_conversion(url) {
         </div>
     </section>
 
+    <!-- ============================================================
+         DIVULGAÇÃO OBRIGATÓRIA (Google Ads policy 15188216)
+         Taxa máx + CET + prazo mín/máx + exemplo representativo + tarifas.
+         ⚠️ SUBSTITUA os valores abaixo pelos números REAIS dos seus
+            parceiros credores. Valores incorretos = nova violação.
+         ============================================================ -->
+    <section class="py-4" style="background:#fff;border-top:3px solid var(--primary-color);border-bottom:3px solid var(--primary-color);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div style="border:1px solid #cfd8d3;border-radius:12px;padding:20px 22px;background:#fbfdfc;">
+                        <h2 style="font-size:1.25rem;color:var(--neutral-dark);margin-bottom:12px;">
+                            <i class="bi bi-info-circle-fill" style="color:var(--primary-color);"></i>
+                            Informações obrigatórias sobre o crédito
+                        </h2>
+                        <p style="margin-bottom:12px;color:#2F4F4F;">
+                            <strong>Não somos uma instituição financeira e não concedemos crédito.</strong>
+                            Atuamos como intermediadores e conectamos você a instituições financeiras parceiras
+                            autorizadas pelo Banco Central. As condições variam conforme a instituição, o produto
+                            escolhido e a análise do seu perfil de crédito. <strong>A aprovação não é garantida e
+                            está sujeita à análise.</strong> Não cobramos nenhum valor antecipado.
+                        </p>
+                        <ul style="margin-bottom:12px;color:#2F4F4F;padding-left:20px;">
+                            <li><strong>Taxas de juros:</strong> de 12,5% a 19,9% ao mês (de 310,99% a 819% ao ano).</li>
+                            <li><strong>Custo Efetivo Total (CET):</strong> a partir de 12,82% ao mês (325,31% ao ano).</li>
+                            <li><strong>Prazo de pagamento:</strong> mínimo de 1 e máximo de 14 meses.</li>
+                            <li><strong>Tarifas e tributos:</strong> tarifa de cadastro de R$ 19 a R$ 150, além de IOF conforme a legislação vigente.</li>
+                        </ul>
+                        <p style="margin-bottom:0;font-size:0.95rem;color:#2F4F4F;background:#f0f6f3;border-left:4px solid var(--primary-color);padding:10px 14px;border-radius:6px;">
+                            <strong>Exemplo representativo:</strong> empréstimo de R$ 1.000,00 em 12 parcelas
+                            de R$ 175,72. Taxa de juros de 12,5% ao mês (310,99% ao ano) | CET de 12,9% ao mês
+                            (325,31% ao ano). <strong>Valor total a pagar: R$ 2.108,64.</strong> As condições
+                            reais dependem da instituição parceira e da análise do seu perfil de crédito.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Benefits Section -->
     <section class="py-5">
         <div class="container">
             <div class="row text-center mb-5">
                 <div class="col">
                     <h2>Por que escolher nosso serviço de <span class="keyword-highlight">empréstimo pessoal</span>?</h2>
-                    <p class="lead">Conectamos você com as melhores opções de <span class="keyword-highlight">crédito consignado</span> e <span class="keyword-highlight">empréstimos pessoais</span></p>
+                    <p class="lead">Conectamos você a instituições financeiras parceiras para o seu <span class="keyword-highlight">empréstimo pessoal</span></p>
                 </div>
             </div>
             <div class="row">
@@ -307,7 +325,7 @@ function gtag_report_conversion(url) {
                                 <i class="bi bi-graph-up"></i>
                             </div>
                             <h5 class="card-title">Taxas Competitivas</h5>
-                            <p class="card-text">Compare múltiplas ofertas de <span class="keyword-highlight">empréstimo consignado</span> e <span class="keyword-highlight">empréstimos pessoais</span> e escolha a melhor.</p>
+                            <p class="card-text">Você visualiza a taxa, o IOF e o CET antes de aceitar, e decide com transparência sobre o seu <span class="keyword-highlight">empréstimo pessoal</span>.</p>
                         </div>
                     </div>
                 </div>
@@ -332,7 +350,7 @@ function gtag_report_conversion(url) {
             <div class="row text-center mb-5">
                 <div class="col">
                     <h2>Perguntas Frequentes sobre <span class="keyword-highlight">Empréstimos Pessoais</span></h2>
-                    <p class="lead">Tire todas as suas dúvidas sobre <span class="keyword-highlight">empréstimo consignado</span> e <span class="keyword-highlight">crédito para negativado</span></p>
+                    <p class="lead">Tire todas as suas dúvidas sobre <span class="keyword-highlight">empréstimo pessoal online</span> e <span class="keyword-highlight">crédito para negativado</span></p>
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -347,7 +365,7 @@ function gtag_report_conversion(url) {
                             </h2>
                             <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Mesmo com o nome negativado, é possível conseguir um <span class="keyword-highlight">empréstimo pessoal</span> através de modalidades específicas como <span class="keyword-highlight">empréstimo com garantia de veículo</span>, <span class="keyword-highlight">crédito consignado</span> privado ou usando o FGTS como garantia. Nossos parceiros avaliam seu perfil completo, não apenas a restrição no nome. Oferecemos <span class="keyword-highlight">empréstimo para negativado liberado na hora</span> em muitos casos.
+                                    Mesmo com o nome negativado, em muitos casos é possível conseguir um <span class="keyword-highlight">empréstimo pessoal</span>, pois a instituição parceira avalia o seu perfil completo, e não apenas a restrição no nome. A aprovação depende da análise de cada instituição e não é garantida.
                                 </div>
                             </div>
                         </div>
@@ -361,7 +379,7 @@ function gtag_report_conversion(url) {
                             </h2>
                             <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Geralmente são necessários: documento de identidade, CPF, comprovante de residência e comprovante de renda. Para <span class="keyword-highlight">empréstimo consignado CLT</span> podem ser solicitados contracheque e declaração de vínculo empregatício. Para <span class="keyword-highlight">empréstimo com garantia de veículo</span> são necessários documentos do veículo.
+                                    Geralmente são necessários: documento de identidade, CPF, comprovante de residência e dados básicos para a análise de crédito. O processo é 100% digital e a documentação exata pode variar conforme a instituição parceira.
                                 </div>
                             </div>
                         </div>
@@ -375,49 +393,35 @@ function gtag_report_conversion(url) {
                             </h2>
                             <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Após a aprovação do seu <span class="keyword-highlight">empréstimo pessoal online</span>, o dinheiro pode cair na conta em até 24 horas úteis, dependendo da instituição financeira. Para <span class="keyword-highlight">empréstimo para negativado liberado na hora</span> via PIX pode ser liberado em poucas horas. O <span class="keyword-highlight">crédito consignado</span> também tem liberação rápida.
+                                    Após a aprovação do seu <span class="keyword-highlight">empréstimo pessoal online</span>, o dinheiro pode cair na conta em até 24 horas úteis, dependendo da instituição financeira. Em muitos casos, o valor é liberado via PIX em poucas horas, sempre conforme a instituição parceira e a aprovação da proposta.
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- FAQ Item 4 -->
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                                    Como funciona o <span class="keyword-highlight">empréstimo consignado</span>?
+                                    O <span class="keyword-highlight">empréstimo pessoal online</span> tem custo? Como é cobrado?
                                 </button>
                             </h2>
                             <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    No <span class="keyword-highlight">empréstimo consignado</span>, as parcelas são descontadas diretamente da sua folha de pagamento ou benefício (como INSS). Por ter menos risco para a instituição financeira, as taxas costumam ser menores. Oferecemos <span class="keyword-highlight">empréstimo consignado para CLT</span>, aposentados e pensionistas do INSS. O <span class="keyword-highlight">crédito consignado</span> é uma das modalidades mais vantajosas.
+                                    Sim. Sobre o valor solicitado incidem juros, tarifa de cadastro e o IOF (imposto). Antes de aceitar qualquer proposta, você visualiza a taxa de juros, a tarifa, o IOF e o Custo Efetivo Total (CET), além do valor de cada parcela. Confira as faixas de juros, CET e o exemplo representativo na seção de informações obrigatórias desta página. Não cobramos nenhum valor antecipado.
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- FAQ Item 5 -->
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
-                                    O que é <span class="keyword-highlight">empréstimo com garantia de veículo</span>?
+                                    Vocês emprestam dinheiro diretamente?
                                 </button>
                             </h2>
                             <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Nesta modalidade de <span class="keyword-highlight">empréstimo pessoal</span>, você usa seu veículo (carro, moto ou caminhão) como garantia. O valor concedido varia conforme a avaliação do veículo. Durante o período do <span class="keyword-highlight">empréstimo com veículo de garantia</span>, você continua usando o veículo normalmente, apenas o documento fica em custódia até a quitação total. É uma excelente opção para <span class="keyword-highlight">crédito para negativado</span>.
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- FAQ Item 6 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
-                                    Como funciona o <span class="keyword-highlight">empréstimo para MEI</span>?
-                                </button>
-                            </h2>
-                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Para Microempreendedores Individuais oferecemos <span class="keyword-highlight">crédito para MEI</span> com condições especiais. Basta comprovar a atividade através do CNPJ e demonstrar renda através de extratos bancários ou notas fiscais. Temos opções de <span class="keyword-highlight">empréstimo pessoal online</span> específicas para MEI com taxas competitivas.
+                                    Não. Não somos uma instituição financeira e não concedemos crédito. Atuamos como intermediadores, conectando você a instituições financeiras parceiras autorizadas pelo Banco Central, que fazem a análise e, se aprovado, concedem o <span class="keyword-highlight">empréstimo pessoal</span>.
                                 </div>
                             </div>
                         </div>
@@ -432,17 +436,13 @@ function gtag_report_conversion(url) {
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
-                    <h2 class="text-center mb-4">Tudo sobre <span class="keyword-highlight">Empréstimo Pessoal Online</span> e <span class="keyword-highlight">Crédito Consignado</span></h2>
+                    <h2 class="text-center mb-4">Tudo sobre <span class="keyword-highlight">Empréstimo Pessoal Online</span></h2>
                     <div class="content-article">
-                        <p>Se você está buscando um <span class="keyword-highlight">empréstimo pessoal</span>, saiba que existem diversas opções disponíveis no mercado. Os <span class="keyword-highlight">empréstimos pessoais</span> são ideais para quem precisa de recursos rápidos para diversas finalidades. Para quem possui restrições no nome, o <span class="keyword-highlight">empréstimo para negativado</span> pode ser a solução, com aprovação em muitos casos liberada na hora.</p>
-                        
-                        <p>O <span class="keyword-highlight">empréstimo consignado</span> é uma das modalidades mais vantajosas, especialmente o <span class="keyword-highlight">empréstimo consignado para CLT</span>. No <span class="keyword-highlight">crédito consignado</span>, as parcelas são descontadas diretamente do salário ou benefício, oferecendo taxas reduzidas. Os <span class="keyword-highlight">empréstimos consignado</span> são perfeitos para quem busca condições mais favoráveis.</p>
-                        
-                        <p>Para quem possui um bem, o <span class="keyword-highlight">empréstimo com garantia de veículo</span> pode ser a melhor opção. Nesta modalidade de <span class="keyword-highlight">empréstimo com veículo de garantia</span>, você usa seu carro como garantia sem perder o uso do mesmo. Também temos <span class="keyword-highlight">crédito para MEI</span> com condições especiais para microempreendedores.</p>
-                        
-                        <p>Se você precisa de um <span class="keyword-highlight">empréstimo pessoal online</span> rápido, nossa plataforma conecta você com as melhores instituições. Oferecemos <span class="keyword-highlight">empréstimo para negativado liberado na hora</span> em muitos casos, além de <span class="keyword-highlight">empréstimo na conta de luz</span> para situações emergenciais. Não importa se você busca <span class="keyword-highlight">empréstimo para CLT</span>, aposentado ou autônomo, temos a solução ideal.</p>
-                        
-                        <p>Os <span class="keyword-highlight">empréstimos pessoais online</span> revolucionaram o acesso ao crédito. Com processamento digital, você consegue aprovação para seu <span class="keyword-highlight">empréstimo pessoal</span> em minutos. Para quem está com o nome restrito, o <span class="keyword-highlight">crédito para negativado</span> oferece uma segunda chance. E para os assalariados, o <span class="keyword-highlight">empréstimo consignado CLT</span> continua sendo a opção mais econômica.</p>
+                        <p>Se você está buscando um <span class="keyword-highlight">empréstimo pessoal</span>, o processo 100% online ajuda a resolver necessidades rápidas, como uma despesa inesperada ou uma emergência. A solicitação é feita pelo celular, sem filas e sem burocracia, e a proposta passa pela análise de crédito da instituição parceira.</p>
+
+                        <p>Para quem está com o nome negativado, o <span class="keyword-highlight">empréstimo para negativado</span> pode ser uma alternativa: a instituição parceira avalia o seu perfil como um todo, e não apenas a restrição. Ainda assim, a aprovação não é garantida e depende da análise de cada caso.</p>
+
+                        <p>Antes de aceitar qualquer proposta, é fundamental conferir o custo total: taxa de juros, tarifa de cadastro, IOF e o <strong>Custo Efetivo Total (CET)</strong>. Todos esses valores são apresentados a você antes da contratação. Consulte as faixas de juros, o CET e o exemplo representativo na seção de informações obrigatórias desta página e contrate com consciência.</p>
                     </div>
                 </div>
             </div>
@@ -454,8 +454,8 @@ function gtag_report_conversion(url) {
         <div class="container">
             <div class="row text-center mb-5">
                 <div class="col">
-                    <h2>Tipos de <span class="keyword-highlight">Empréstimo Pessoal</span> Disponíveis</h2>
-                    <p class="lead">Encontre a solução ideal de <span class="keyword-highlight">crédito consignado</span> ou <span class="keyword-highlight">empréstimo para negativado</span></p>
+                    <h2>O <span class="keyword-highlight">Empréstimo Pessoal Online</span> é para você</h2>
+                    <p class="lead">Crédito rápido e 100% digital, inclusive para quem está com <span class="keyword-highlight">empréstimo para negativado</span></p>
                 </div>
             </div>
             <div class="row">
@@ -465,35 +465,9 @@ function gtag_report_conversion(url) {
                             <h5 class="card-title"><span class="keyword-highlight">Empréstimo Pessoal Online</span></h5>
                             <p class="card-text">Crédito sem garantia específica, ideal para necessidades diversas como pagamento de dívidas, viagens ou reformas.</p>
                             <ul>
-                                <li>Valor: de R$ 1.000 a R$ 100.000</li>
-                                <li>Prazo: até 60 meses</li>
-                                <li>Taxas a partir de 2,5% ao mês</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4 clickable-section">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <h5 class="card-title"><span class="keyword-highlight">Empréstimo Consignado</span></h5>
-                            <p class="card-text">Parcelas descontadas diretamente do salário ou benefício, com taxas reduzidas. <span class="keyword-highlight">Empréstimo consignado para CLT</span> disponível.</p>
-                            <ul>
-                                <li>Para assalariados, aposentados e pensionistas</li>
-                                <li>Até 35% da renda para comprometimento</li>
-                                <li>Taxas a partir de 1,5% ao mês</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4 clickable-section">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <h5 class="card-title"><span class="keyword-highlight">Empréstimo com Garantia de Veículo</span></h5>
-                            <p class="card-text">Use seu carro, moto ou caminhão como garantia para conseguir taxas melhores no seu <span class="keyword-highlight">empréstimo pessoal</span>.</p>
-                            <ul>
-                                <li>Até 80% do valor do veículo</li>
-                                <li>Continue usando seu veículo normalmente</li>
-                                <li>Aceitamos mesmo veículos financiados</li>
+                                <li>Valor e limite conforme análise de crédito</li>
+                                <li>Prazo de 1 a 14 meses</li>
+                                <li>Taxas conforme a divulgação obrigatória acima</li>
                             </ul>
                         </div>
                     </div>
@@ -502,11 +476,11 @@ function gtag_report_conversion(url) {
                     <div class="card h-100 border-0 shadow-sm">
                         <div class="card-body p-4">
                             <h5 class="card-title"><span class="keyword-highlight">Crédito para Negativados</span></h5>
-                            <p class="card-text">Soluções de <span class="keyword-highlight">empréstimo para negativado</span> mesmo para quem está com o nome restrito. <span class="keyword-highlight">Empréstimo para negativado liberado na hora</span>.</p>
+                            <p class="card-text">Mesmo quem está com o nome restrito pode solicitar. A análise considera o seu perfil como um todo, não apenas o score. Aprovação sujeita a análise de crédito.</p>
                             <ul>
                                 <li>Análise além do score de crédito</li>
-                                <li>Opções com garantia ou consignado</li>
-                                <li>Reconstrução de crédito</li>
+                                <li>Processo 100% online, pelo celular</li>
+                                <li>Sem necessidade de garantia</li>
                             </ul>
                         </div>
                     </div>
@@ -521,7 +495,7 @@ function gtag_report_conversion(url) {
             <div class="row align-items-center">
                 <div class="col-lg-8 mb-4 mb-lg-0">
                     <h2 class="fw-bold">Pronto para solicitar seu <span class="text-warning">empréstimo pessoal</span>?</h2>
-                    <p class="lead mb-0">Preencha o formulário agora e receba uma proposta personalizada de <span class="text-warning">empréstimo consignado</span> ou <span class="text-warning">crédito para negativado</span> em minutos.</p>
+                    <p class="lead mb-0">Preencha o formulário agora e receba uma proposta personalizada de <span class="text-warning">empréstimo pessoal</span> em poucos minutos. Sujeito a análise de crédito.</p>
                 </div>
                 <div class="col-lg-4 text-lg-end">
                     <a href="#leadForm" class="btn btn-light btn-lg">Solicitar Agora</a>
@@ -541,8 +515,8 @@ function gtag_report_conversion(url) {
                 <div class="col-lg-4 mb-4 mb-lg-0">
                     <h5>Informações</h5>
                     <ul class="list-unstyled">
-                        <li><a href="https://colegiofavo.com.br/politicafavo.html" class="text-white text-decoration-none">Política de Privacidade</a></li>
-                        <li><a href="https://colegiofavo.com.br/termo.html" class="text-white text-decoration-none">Termos de Uso</a></li>
+                        <li><a href="https://sistema1.net/politica.html" class="text-white text-decoration-none">Política de Privacidade</a></li>
+                        <li><a href="https://sistema1.net/termos.html" class="text-white text-decoration-none">Termos de Uso</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">
@@ -556,7 +530,7 @@ function gtag_report_conversion(url) {
             <hr class="my-4 bg-light">
             <div class="row">
                 <div class="col text-center">
-                    <p class="mb-0">© 2023 Empréstimo Rápido. Todos os direitos reservados.</p>
+                    <p class="mb-0">© 2026 Empréstimo Rápido. Todos os direitos reservados. Conteúdo meramente informativo; não realizamos operações de crédito diretamente.</p>
                 </div>
             </div>
         </div>
@@ -610,8 +584,7 @@ function gtag_report_conversion(url) {
                 const email = document.getElementById('email').value;
                 const whatsapp = document.getElementById('whatsapp').value;
                 const renda = document.getElementById('renda').value;
-                const veiculoGarantia = document.querySelector('input[name="veiculoGarantia"]:checked').value;
-                
+
                 // Obter parâmetros UTM da URL
                 const urlParams = new URLSearchParams(window.location.search);
                 const utmSource = urlParams.get('utm_source') || 'organic';
@@ -625,7 +598,7 @@ function gtag_report_conversion(url) {
                 const creative = 'default_creative';
                 
                 // Criar nome da campanha com as respostas
-                const campanhaComRespostas = `Favo_Emprestimo_Pesquisa_${renda}_${veiculoGarantia}_${utmCampaign}_${creative}_${utmContent}_${utmMedium}`;
+                const campanhaComRespostas = `Favo_Emprestimo_Pesquisa_${renda}_${utmCampaign}_${creative}_${utmContent}_${utmMedium}`;
                 
                 // Construir URL de redirecionamento
                 const redirectUrl = "https://xegold.xyz/artigo/?slug=super-sim-emprestimo-como-funciona-confiavel-app-telefone-simulacao-2026";
@@ -642,7 +615,6 @@ function gtag_report_conversion(url) {
                     email: email,
                     phone: whatsapp,
                     renda: renda,
-                    veiculo_garantia: veiculoGarantia,
                     campanha: campanhaComRespostas,
                     utm: {
                         source: utmSource,
