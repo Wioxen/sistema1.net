@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16696952717"></script>
+<!-- Inicialização do Google tag (gtag.js) — obrigatório ANTES de qualquer gtag() -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-16696952717');
+</script>
+<!-- Event snippet for conversion — disparado SOMENTE no success do webhook,
+via gtag_report_conversion() chamado no .then() do fetch. NÃO disparar no load. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-16696952717/welKCJCdt9EZEI2P3Zk-',
+      'value': 1.0,
+      'currency': 'BRL',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão de Crédito sem Anuidade | Melhores Ofertas </title>
+    <meta name="description" content="Encontre o cartão de crédito perfeito para você. Compare as melhores opções sem anuidade e com benefícios exclusivos. Solicite agora mesmo!">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- jQuery (para facilitar a requisição AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/196/196578.png" type="image/png">
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #f8fafc;
+            --accent-color: #3b82f6;
+            --success-color: #10b981;
+            --dark-color: #1e293b;
+            --warning-color: #f59e0b;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #334155;
+            background-color: #f8fafc;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
+            color: white;
+            padding: 3rem 0;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+            opacity: 0.5;
+        }
+        
+        .security-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+        
+        .card-highlight {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            background: white;
+        }
+        
+        .card-highlight:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            background-color: rgba(37, 99, 235, 0.1);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+        
+        .form-section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 2rem;
+        }
+        
+        .form-control, .form-select {
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .bank-logo {
+            height: 30px;
+            margin: 10px 15px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+        
+        .guarantee-badge {
+            background-color: rgba(16, 185, 129, 0.1);
+            padding: 15px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-pills .nav-link.active {
+            background-color: var(--primary-color);
+        }
+        
+        /* Novos estilos para melhorias */
+        .floating-form-container {
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+        
+        .urgency-banner {
+            background: linear-gradient(to right, #f59e0b, #f97316);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(245, 158, 11, 0.2);
+        }
+        
+        .benefit-check {
+            color: var(--success-color);
+            margin-right: 10px;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(0,0,0,.125);
+        }
+        
+        .lead-capture-text {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        /* Estilo para o campo WhatsApp que inicialmente está oculto */
+        #whatsappField {
+            display: none;
+            transition: all 0.3s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 2rem 0;
+                text-align: center;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.8rem;
+            }
+            
+            .form-section {
+                padding: 1.5rem;
+            }
+            
+            .floating-form-container {
+                position: relative;
+                top: 0;
+            }
+            
+            .bank-logo {
+                height: 25px;
+                margin: 8px 10px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .btn-primary-custom {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .hero-section {
+                padding: 1.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="security-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Site seguro - Dados protegidos</span>
+                    </div>
+                    <h1 class="display-5 fw-bold mb-4">Encontre o cartão de crédito ideal para você</h1>
+                    <p class="lead mb-4">Compare as melhores opções do mercado sem sair de casa e solicite seu cartão com segurança.</p>
+                    
+                    <div class="guarantee-badge">
+                        <i class="fas fa-check-circle text-success"></i>
+                        <div class="ms-3">
+                            <h5 class="mb-1">Serviço 100% gratuito</h5>
+                            <p class="small mb-0">Não cobramos nenhuma taxa para ajudar você a encontrar o melhor cartão.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" id="divForm">
+                    <div class="form-section">
+                        <div class="urgency-banner">
+                            <i class="fas fa-bolt me-2"></i> PREENCHA AGORA E GANHE ANÁLISE PRIORITÁRIA
+                        </div>
+                        
+                        <div class="text-center mb-4">
+                            <h3 class="fw-bold" style="color:black">Solicite seu cartão agora</h3>
+                            <p class="lead-capture-text" style="color:black">Aprovação em minutos, limites liberados e chances reais mesmo para quem está negativado</p>
+                        </div>
+                        
+                        <form id="leadForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-bold" style="color:black">Nome completo</label>
+                                <input type="text" class="form-control border border-primary" id="name" required placeholder="Digite seu nome completo">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-bold" style="color:black">E-mail</label>
+                                <input type="email" class="form-control border border-primary" id="email" required placeholder="Digite seu melhor e-mail">
+                            </div>
+                            
+                            <!-- Campo WhatsApp que só aparece após preencher o email -->
+                            <div class="mb-3" id="whatsappField">
+                                <label for="whatsapp" class="form-label fw-bold" style="color:black">WhatsApp</label>
+                                <input type="tel" class="form-control border border-primary" id="whatsapp" required placeholder="(11) 99999-9999">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="terms" required>
+                                    <label class="form-check-label small" for="terms" style="color:black">
+                                        Li e aceito os <a href="https://sistema1.net/termo.html" data-bs-toggle="modal" data-bs-target="#termsModal">termos de uso</a> e <a href="https://sistema1.net/politicafavo.html" data-bs-toggle="modal" data-bs-target="#privacyModal">política de privacidade</a>.
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary-custom btn-lg py-3" id="submitBtn">
+                                    <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                    Encontrar meu cartão ideal
+                                </button>
+                            </div>
+                            
+                            <div class="text-center mt-3">
+                                <small class="text-muted">
+                                    <i class="fas fa-lock me-2"></i> Seus dados estão protegidos
+                                </small>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="container mb-5">
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-3 col-6 text-center">
+                <p class="stat-number">+500K</p>
+                <p class="stat-label">Clientes atendidos</p>
+            </div>
+            <div class="col-md-3 col-6 text-center">
+                <p class="stat-number">98%</p>
+                <p class="stat-label">Satisfação</p>
+            </div>
+            <div class="col-md-3 col-6 text-center">
+                <p class="stat-number">+15</p>
+                <p class="stat-label">Bancos parceiros</p>
+            </div>
+            <div class="col-md-3 col-6 text-center">
+                <p class="stat-number">24h</p>
+                <p class="stat-label">Atendimento</p>
+            </div>
+        </div>
+        
+        <div class="trust-badges">
+            <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="SSL Seguro" class="trust-badge" width="80">
+            <img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="Google Safe Browsing" class="trust-badge" width="80">
+            <img src="https://cdn-icons-png.flaticon.com/512/217/217853.png" alt="Reclame Aqui" class="trust-badge" width="80">
+        </div>
+    </section>
+
+    <!-- Bank Logos -->
+    <section class="container mb-5">
+        <div class="text-center mb-4">
+            <p class="text-muted">Parceiros que confiam em nosso serviço</p>
+        </div>
+        <div class="d-flex flex-wrap justify-content-center align-items-center">
+            <img src="https://logodownload.org/wp-content/uploads/2019/08/nubank-logo-1.png" alt="Nubank" class="bank-logo">
+            <img src="https://logodownload.org/wp-content/uploads/2014/02/itau-logo-1.png" alt="Itaú" class="bank-logo">
+            <img src="https://logodownload.org/wp-content/uploads/2014/02/bradesco-logo-1.png" alt="Bradesco" class="bank-logo">
+            <img src="https://logodownload.org/wp-content/uploads/2014/02/santander-logo-1.png" alt="Santander" class="bank-logo">
+            <img src="https://logodownload.org/wp-content/uploads/2019/07/c6-bank-logo.png" alt="C6 Bank" class="bank-logo">
+            <img src="https://logodownload.org/wp-content/uploads/2021/02/inter-logo.png" alt="Inter" class="bank-logo">
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="container mb-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Encontre o cartão perfeito para seu perfil</h2>
+            <p class="lead text-muted">Compare os benefícios e escolha a melhor opção</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card card-highlight h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://logodownload.org/wp-content/uploads/2019/08/nubank-logo-1.png" alt="Nubank" height="30" class="me-3">
+                            <h3 class="h5 mb-0">Nubank</h3>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check-circle benefit-check"></i> Sem anuidade</li>
+                            <li class="mb-2"><i class="fas fa-check-circle benefit-check"></i> Programa de pontos</li>
+                            <li class="mb-2"><i class="fas fa-check-circle benefit-check"></i> App com controle total</li>
+                            <li class="mb-2"><i class="fas fa-check-circle benefit-check"></i> Cartão internacional</li>
+                        </ul>
+                        <a href="#divForm" class="btn btn-primary-custom w-100 mt-3">Quero este cartão</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card card-highlight h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://logodownload.org/wp-content/uploads/2021/02/inter-logo.png" alt="Inter" height="30" class="me-3">
+                            <h3 class="h5 mb-0">Inter</h3>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check-circle benefit-check"></i> Sem anuidade</li>
+                            <li class="mb-2"><i class="fas fa-check-circle benefit-check"></i> Cashback em compras</li>
+                            <li class="mb-2"><i class="fas fa-check-circle benefit-check"></i> Saques sem taxa</li>
+                            <li class="mb-2"><i class="fas fa-check-circle benefit-check"></i> Investimentos integrados</li>
+                        </ul>
+                        <a href="#divForm" class="btn btn-primary-custom w-100 mt-3">Quero este cartão</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section com Accordion Expandido -->
+    <section class="container mb-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Perguntas frequentes sobre cartões</h2>
+            <p class="lead text-muted">Tire todas as suas dúvidas sobre cartões de crédito</p>
+        </div>
+        
+        <div class="accordion" id="faqAccordion">
+            <!-- Taxa Stone Crédito -->
+            <div class="accordion-item mb-3">
+                <h3 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#taxaStone" aria-expanded="true">
+                        Quais são as taxas do cartão Stone?
+                    </button>
+                </h3>
+                <div id="taxaStone" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <p>O cartão Stone é isento de anuidade, mas possui outras taxas como:</p>
+                        <ul>
+                            <li>Juros rotativos a partir de 6,5% ao mês</li>
+                            <li>Multa por atraso no pagamento</li>
+                            <li>Taxa para saques no crédito</li>
+                        </ul>
+                        <p>Recomendamos sempre verificar as condições atualizadas diretamente no site da Stone.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cartão Adicional Nubank -->
+            <div class="accordion-item mb-3">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#adicionalNubank">
+                        Como funciona o cartão adicional do Nubank?
+                    </button>
+                </h3>
+                <div id="adicionalNubank" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <p>O Nubank oferece cartões adicionais gratuitos com as seguintes características:</p>
+                        <ul>
+                            <li>Sem custo de anuidade para adicionais</li>
+                            <li>Limite compartilhado com o titular</li>
+                            <li>Possibilidade de definir limites individuais</li>
+                            <li>Controle total pelo app</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cartão Stone -->
+            <div class="accordion-item mb-3">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cartaoStone">
+                        Vale a pena ter o cartão Stone?
+                    </button>
+                </h3>
+                <div id="cartaoStone" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <p>O cartão Stone pode ser vantajoso para:</p>
+                        <ul>
+                            <li>Quem busca um cartão sem anuidade</li>
+                            <li>Clientes que fazem muitas compras no varejo</li>
+                            <li>Quem valoriza programas de cashback</li>
+                        </ul>
+                        <p>O Stone POS é voltado para empreendedores, enquanto o cartão de crédito é para pessoas físicas.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Adicione os outros itens do accordion seguindo o mesmo padrão -->
+            
+            <!-- Cartão Nubank é bom -->
+            <div class="accordion-item mb-3">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nubankBom">
+                        O cartão Nubank é bom?
+                    </button>
+                </h3>
+                <div id="nubankBom" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <p>O Nubank é considerado uma das melhores opções do mercado por oferecer:</p>
+                        <ul>
+                            <li>Isenção de anuidade permanente</li>
+                            <li>Aplicativo intuitivo e fácil de usar</li>
+                            <li>Atendimento via chat 24/7</li>
+                            <li>Programa de recompensas</li>
+                            <li>Cartão internacional Mastercard</li>
+                        </ul>
+                        <p>Com mais de 80 milhões de clientes, é uma das fintechs mais consolidadas do Brasil.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Nubank tem anuidade -->
+            <div class="accordion-item mb-3">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nubankAnuidade">
+                        O Nubank cobra anuidade?
+                    </button>
+                </h3>
+                <div id="nubankAnuidade" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <p>Não, o cartão de crédito tradicional do Nubank não cobra anuidade. No entanto:</p>
+                        <ul>
+                            <li>Algumas modalidades premium podem ter custos</li>
+                            <li>O Nubank Ultravioleta possui anuidade, mas com benefícios ampliados</li>
+                            <li>Serviços adicionais podem ter taxas específicas</li>
+                        </ul>
+                        <p>O cartão básico do Nubank continua sendo isento de anuidade.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Adicione os demais itens seguindo o mesmo padrão -->
+            
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="#divForm" class="btn btn-primary-custom btn-lg">Solicitar meu cartão agora</a>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="container mb-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Como funciona</h2>
+            <p class="lead text-muted">Solicitar seu cartão nunca foi tão fácil</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card card-highlight h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon mx-auto">
+                            <i class="fas fa-user-edit"></i>
+                        </div>
+                        <h3 class="h4">1. Preencha o formulário</h3>
+                        <p class="text-muted">Informe seus dados básicos para que possamos encontrar as melhores opções para você.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card card-highlight h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon mx-auto">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="h4">2. Analisamos seu perfil</h3>
+                        <p class="text-muted">Nossa equipe compara centenas de opções para encontrar o cartão ideal para suas necessidades.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card card-highlight h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon mx-auto">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h3 class="h4">3. Receba suas opções</h3>
+                        <p class="text-muted">Em até 24h você receberá as melhores ofertas de cartão diretamente no seu e-mail.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="container mb-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">O que dizem nossos clientes</h2>
+            <p class="lead text-muted">Veja a experiência de quem já solicitou conosco</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card card-highlight h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Ana" class="testimonial-img me-3">
+                            <div>
+                                <h5 class="mb-0">Ana Clara</h5>
+                                <small class="text-muted">São Paulo - SP</small>
+                                <div class="text-warning small">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Consegui meu primeiro cartão de crédito mesmo estando negativada. O atendimento foi excelente e me ajudou muito a reorganizar minhas finanças!"</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card card-highlight h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex mb-3">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Pedro" class="testimonial-img me-3">
+                            <div>
+                                <h5 class="mb-0">Pedro Henrique</h5>
+                                <small class="text-muted">Belo Horizonte - MG</small>
+                                <div class="text-warning small">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mb-0">"O cartão com cashback que me indicaram já me devolveu mais de R$ 500 em um ano. Melhor que milhas para quem não viaja muito."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card card-highlight h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Juliana" class="testimonial-img me-3">
+                            <div>
+                                <h5 class="mb-0">Juliana Santos</h5>
+                                <small class="text-muted">Rio de Janeiro - RJ</small>
+                                <div class="text-warning small">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Finalmente encontrei um cartão sem anuidade que atende todas minhas necessidades. O processo foi rápido e sem complicações."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="container mb-5">
+        <div class="card card-highlight bg-primary text-white">
+            <div class="card-body p-5 text-center">
+                <h2 class="card-title display-6 fw-bold mb-3">Pronto para encontrar seu cartão ideal?</h2>
+                <p class="card-text lead mb-4">Solicite agora e comece a aproveitar todos os benefícios</p>
+                <a href="#divForm" class="btn btn-light btn-lg px-5 py-3 fw-bold">Quero meu cartão</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="text-uppercase mb-4">Cartão de Crédito</h5>
+                    <p>Este site é independente e não possui qualquer vínculo com instituições financeiras, bancos ou empresas mencionadas nos conteúdos publicados.
+Não solicitamos depósitos, transferências ou qualquer tipo de pagamento em dinheiro.
+Nosso objetivo é exclusivamente informativo e educativo, oferecendo conteúdos de interesse geral para auxiliar os leitores a tomar decisões com mais clareza.</p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#form-section" class="text-white text-decoration-none">Solicitar</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Termos</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Tipos de cartão</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#divForm" class="text-white text-decoration-none">Sem anuidade</a></li>
+                        <li class="mb-2"><a href="#divForm" class="text-white text-decoration-none">Com cashback</a></li>
+                        <li class="mb-2"><a href="#divForm" class="text-white text-decoration-none">Para negativados</a></li>
+                        <li class="mb-2"><a href="#divForm" class="text-white text-decoration-none">Com milhas</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase mb-4">Contato</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="beddd1d0cadfcad1fecdd7cdcadbd3dfcaccdfd8dbd9d190ddd1d3">[email&#160;protected]</a></li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> (11) 4004-4004</li>
+                        <li class="mb-2"><i class="fas fa-clock me-2"></i> Seg-Sex: 9h-18h</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0 small">©  Melhores Cartões de Crédito. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Mostrar campo WhatsApp quando o email for preenchido
+        document.getElementById('email').addEventListener('input', function() {
+            const email = this.value.trim();
+            const whatsappField = document.getElementById('whatsappField');
+            
+            // Verificar se o email tem um formato válido
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (emailRegex.test(email)) {
+                whatsappField.style.display = 'block';
+            } else {
+                whatsappField.style.display = 'none';
+            }
+        });
+
+		
+		// Obter parâmetros UTM da URL
+		const urlParams = new URLSearchParams(window.location.search);
+		const utmSource = urlParams.get('utm_source') || 'direct';
+		const utmMedium = urlParams.get('utm_medium') || 'none';
+		const utmCampaign = urlParams.get('utm_campaign') || 'none';
+		const utmTerm = urlParams.get('utm_term') || 'none';
+		const utmContent = urlParams.get('utm_content') || 'none';
+		
+
+        // Check API and get redirect URL
+        function getRedirectUrl(callback) {
+            $.getJSON("https://api.gogleads.com.br/contador/1/2", function(data) {
+                if (data.converter === true) {
+                    callback("https://vafast.xyz/como-aumentar-o-limite-do-cartao-nubank/?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_CartaoDisplayVF_Favo_" + utmCampaign);
+                } else {
+                    callback("https://vafast.xyz/como-aumentar-o-limite-do-cartao-nubank/?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_CartaoDisplayVF_Favo_" + utmCampaign);
+                }
+            }).fail(function() {
+                // Se a API falhar, usar URL padrão
+                callback("https://vafast.xyz/como-aumentar-o-limite-do-cartao-nubank/?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_CartaoDisplayVF_Favo_" + utmCampaign);
+            });
+        }
+
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const spinner = submitBtn.querySelector('.spinner-border');
+            const originalText = submitBtn.innerHTML;
+            
+            // Mostrar spinner
+            spinner.classList.remove('d-none');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Enviando... <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>';
+            
+            // Coletar dados do formulário
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+
+            // Preparar dados para o webhook
+            const postData = {
+                nome: name,
+                email: email,
+                phone: whatsapp, // Agora usando o valor do WhatsApp no campo phone
+                campanha: `Favo_CartaoDeCredito_gilix_Display_${utmCampaign}_${utmContent}_${utmMedium}`
+            };
+
+            // Enviar dados para o webhook
+            fetch("https://n8n-1.digite.com.br/webhook/f5e44c10-12a6-4247-a6e8-2699d0d80a54", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(postData)
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Erro no servidor');
+                return response.json();
+            })
+            .then(data => {
+                // Mostrar mensagem de sucesso
+                alert('Solicitação enviada com sucesso! Em breve você receberá as melhores opções de cartão no seu e-mail.');
+                
+                // Ocultar spinner e restaurar botão
+                spinner.classList.add('d-none');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+
+                // Obter URL de redirecionamento da API
+                getRedirectUrl(function(redirectUrl) {
+                    // Redirecionar após sucesso
+                    gtag_report_conversion(redirectUrl);
+                });
+
+                // Resetar formulário
+                document.getElementById('leadForm').reset();
+                // Ocultar campo WhatsApp novamente após reset
+                document.getElementById('whatsappField').style.display = 'none';
+            })
+            .catch(error => {
+                console.error("Erro:", error);
+                // Ocultar spinner e restaurar botão
+                spinner.classList.add('d-none');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                alert('Ocorreu um erro. Verifique seus dados e tente novamente.');
+            });
+        });
+    </script>
+</body>
+</html>
