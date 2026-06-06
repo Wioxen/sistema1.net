@@ -1,0 +1,574 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16696952717"></script>
+<!-- Inicialização do Google tag (gtag.js) — obrigatório ANTES de qualquer gtag() -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-16696952717');
+</script>
+<!-- Event snippet for conversion — disparado SOMENTE no success do webhook,
+via gtag_report_conversion() chamado no .then() do fetch. NÃO disparar no load. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-16696952717/welKCJCdt9EZEI2P3Zk-',
+      'value': 1.0,
+      'currency': 'BRL',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta PIS/PASEP e Abono Salarial</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --blue-dark: #0066cc;
+            --blue-light: #e6f2ff;
+            --gray-light: #f5f5f5;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--gray-light);
+            color: #333;
+        }
+        
+        .header {
+            background-color: var(--blue-dark);
+            color: white;
+            padding: 15px 0;
+            border-bottom: 4px solid #ffcc00;
+        }
+        
+        .logo-gov {
+            height: 50px;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--blue-dark) 0%, #004b99 100%);
+            color: white;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: bottom;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .btn-gov {
+            background-color: #ffcc00;
+            color: #003366;
+            font-weight: bold;
+            padding: 12px 30px;
+            border-radius: 5px;
+            border: none;
+            transition: all 0.3s;
+        }
+        
+        .btn-gov:hover {
+            background-color: #ffd633;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 25px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--blue-dark);
+            transition: all 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-icon {
+            color: var(--blue-dark);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .form-container {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        
+        .form-control {
+            padding: 12px 15px;
+            border-radius: 5px;
+            border: 2px solid #ddd;
+        }
+        
+        .form-control:focus {
+            border-color: var(--blue-dark);
+            box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.15);
+        }
+        
+        .link-termos {
+            color: var(--blue-dark);
+            text-decoration: underline;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .footer {
+            background-color: var(--blue-dark);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .disclaimer {
+            background-color: var(--blue-light);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            font-size: 0.9rem;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        
+        .conversion-link {
+            color: var(--blue-dark);
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        
+        .whatsapp-field {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .whatsapp-field.show {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <span style="font-weight: bold; font-size: 1.1rem;">Consulta PIS/PASEP e Abono Salarial</span>
+					</div>
+                <div class="col-md-6 text-md-end">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 style="font-weight: 700; margin-bottom: 20px;">Consulte seu direito ao Abono Salarial PIS/PASEP</h1>
+                    <p style="font-size: 1.2rem; margin-bottom: 30px;">Verifique agora se você tem direito ao pagamento e receba orientações sobre como sacar</p>
+                    
+                    <button onclick="scrollToForm()" class="btn-gov pulse" style="font-size: 1.1rem;">
+                        <i class="fas fa-search me-2"></i> CONSULTAR AGORA
+                    </button>
+                </div>
+                <div class="col-lg-6">
+                    <a onclick="scrollToForm()"><img src="pis1.png" alt="PIS/PASEP" class="img-fluid d-none d-lg-block"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section style="padding: 60px 0; background-color: var(--white);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>PIS Nascidos em</h3>
+                        <p>Descubra se o seu mês de nascimento está no calendário de pagamentos atual do PIS.</p>
+                        <a onclick="scrollToForm()" class="conversion-link">Verificar meu direito →</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3>Abono Salarial</h3>
+                        <p>Entenda o que é o abono salarial e quem tem direito a receber este benefício.</p>
+                        <a onclick="scrollToForm()" class="conversion-link">Saber mais →</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Consulta pelo CPF</h3>
+                        <p>Faça a consulta do seu PIS/PASEP utilizando apenas seu número de CPF.</p>
+                        <a onclick="scrollToForm()" class="conversion-link">Consultar agora →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section style="padding: 60px 0; background-color: var(--gray-light);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="form-container" id="consultaForm">
+                        <h2 class="text-center mb-4" style="color: var(--blue-dark);">Informe seus dados para consulta</h2>
+                        
+                        <div class="error-message alert alert-danger" id="error-message" style="display: none;"></div>
+                        
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nome Completo</label>
+                            <input type="text" class="form-control" id="name" placeholder="Digite seu nome completo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="seuemail@exemplo.com" required>
+                        </div>
+                        <div class="mb-3 whatsapp-field" id="whatsapp-field">
+                            <label for="whatsapp" class="form-label">WhatsApp</label>
+                            <input type="tel" class="form-control" id="whatsapp" placeholder="(11) 99999-9999" required>
+                            <div class="form-text">Informe seu WhatsApp para receber atualizações sobre seu benefício</div>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="privacyPolicy">
+                            <label class="form-check-label" for="privacyPolicy">
+                                Li e aceito os <a href="https://sistema1.net/termo.html" target="_blank" class="link-termos">Termos de Uso</a> e a <a href="https://sistema1.net/politica.php" target="_blank" class="link-termos">Política de Privacidade</a>
+                            </label>
+                        </div>
+                        <button id="submit-btn" class="btn-gov w-100" onclick="submitForm()" style="padding: 12px;">
+                            <i class="fas fa-paper-plane me-2"></i> REALIZAR CONSULTA
+                        </button>
+                        <div class="text-center mt-3" id="loading" style="display: none;">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Carregando...</span>
+                            </div>
+                            <p class="mt-2">Processando sua consulta...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section style="padding: 60px 0;">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: var(--blue-dark);">Tire suas dúvidas sobre PIS/PASEP</h2>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="benefit-card">
+                        <h3>O que é PIS?</h3>
+                        <p>O Programa de Integração Social (PIS) é um benefício financeiro destinado a trabalhadores de empresas privadas.</p>
+                        <a onclick="scrollToForm()" class="conversion-link">Consultar meu PIS →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="benefit-card">
+                        <h3>Pagamento do PIS/PASEP</h3>
+                        <p>Entenda como funciona o calendário de pagamentos e quem tem direito a receber.</p>
+                        <a onclick="scrollToForm()" class="conversion-link">Verificar pagamento →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <h4 style="color: var(--blue-dark);">Aviso Importante:</h4>
+                <p>Esta página contém conteúdos atualizados sobre programas sociais do Governo Federal voltados às famílias brasileiras. Nosso objetivo é informar e orientar os leitores com base em dados públicos, de forma acessível e clara.</p>
+                <p class="mb-0">No entanto, é importante destacar que o site auxiliobeneficios.colegiomarcodes.com.br é um portal independente e não possui qualquer vínculo com o Governo Federal, órgãos públicos ou instituições oficiais. Somos um site de conteúdo confiável e não temos vínculo com o governo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section style="padding: 60px 0; background-color: var(--blue-light);">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: var(--blue-dark);">O que dizem quem já consultou</h2>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Depoimento" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                            <div class="ms-3">
+                                <h5 class="mb-0">Maria Silva</h5>
+                                <small>São Paulo/SP</small>
+                            </div>
+                        </div>
+                        <p>"Não sabia que tinha direito ao abono salarial. Fiz a consulta e descobri que poderia receber. O processo foi muito simples!"</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Depoimento" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                            <div class="ms-3">
+                                <h5 class="mb-0">José Santos</h5>
+                                <small>Belo Horizonte/MG</small>
+                            </div>
+                        </div>
+                        <p>"Consulta rápida e eficiente. Recebi todas as orientações para sacar meu PIS sem complicação."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section style="padding: 60px 0; background-color: var(--blue-dark); color: white;">
+        <div class="container text-center">
+            <h2 style="margin-bottom: 20px;">Não perca seu direito ao Abono Salarial</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">Faça agora sua consulta gratuita e descubra se você pode receber</p>
+            
+            <button onclick="scrollToForm()" class="btn-gov" style="font-size: 1.1rem;">
+                <i class="fas fa-search me-2"></i> CONSULTAR AGORA
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>Consulta PIS/PASEP</h5>
+                    <p>Informações atualizadas sobre o abono salarial e pagamentos.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Links Úteis</h5>
+                    <div class="footer-links">
+                        <a onclick="scrollToForm()">Consultar PIS</a>
+                        <a onclick="scrollToForm()">Abono Salarial</a>
+                        <a onclick="scrollToForm()">Pagamento PIS/PASEP</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Informações</h5>
+                    <div class="footer-links">
+                        <a href="https://sistema1.net/termo.html" target="_blank">Termos de Uso</a>
+                        <a href="https://sistema1.net/politica.php" target="_blank">Política de Privacidade</a>
+                        <a onclick="scrollToForm()">Contato</a>
+                    </div>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 20px 0;">
+            <div class="text-center">
+                <p class="mb-0">© 2024 Auxílio Benefícios. Todos os direitos reservados.</p>
+                <p class="mb-0" style="font-size: 0.8rem; opacity: 0.8;">Este site não é afiliado ao Governo Federal.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Função para rolar até o formulário
+        function scrollToForm() {
+            document.getElementById('consultaForm').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        // Máscara para WhatsApp
+        function applyWhatsAppMask(input) {
+            input.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                
+                if (value.length <= 11) {
+                    if (value.length <= 2) {
+                        value = value.replace(/^(\d{0,2})/, '($1');
+                    } else if (value.length <= 6) {
+                        value = value.replace(/^(\d{2})(\d{0,4})/, '($1) $2');
+                    } else if (value.length <= 10) {
+                        value = value.replace(/^(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+                    } else {
+                        value = value.replace(/^(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+                    }
+                    
+                    e.target.value = value;
+                }
+            });
+        }
+        
+        // Mostrar campo WhatsApp quando email for preenchido
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailInput = document.getElementById('email');
+            const whatsappField = document.getElementById('whatsapp-field');
+            const whatsappInput = document.getElementById('whatsapp');
+            
+            // Aplicar máscara ao campo WhatsApp
+            applyWhatsAppMask(whatsappInput);
+            
+            // Verificar quando email é preenchido
+            emailInput.addEventListener('blur', function() {
+                if (emailInput.value.trim() !== '' && emailInput.checkValidity()) {
+                    setTimeout(() => {
+                        whatsappField.classList.add('show');
+                        // Focar no campo WhatsApp após mostrar
+                        setTimeout(() => {
+                            whatsappInput.focus();
+                        }, 300);
+                    }, 300);
+                }
+            });
+            
+            // Tornar todos os links de conversão clicáveis
+            const conversionLinks = document.querySelectorAll('.conversion-link');
+            conversionLinks.forEach(link => {
+                link.style.cursor = 'pointer';
+            });
+        });
+        
+        // Função para enviar o formulário
+        function submitForm() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const whatsapp = document.getElementById('whatsapp').value.trim();
+            const privacyChecked = document.getElementById('privacyPolicy').checked;
+            const errorElement = document.getElementById('error-message');
+            const redirectUrl = "https://orclic.xyz/pis-pasep-2025-guia-completo-do-abono-salarial-calendario-e-valores-para-voce-sacar/?utm_source=GoogleAds&utm_medium=Pesquisa&utm_campaign=Auto_ENE_Display_PIS";
+
+            errorElement.style.display = 'none';
+            errorElement.innerHTML = '';
+
+            // Validações
+            if (!name) {
+                errorElement.innerHTML = 'Por favor, informe seu nome completo.';
+                errorElement.style.display = 'block';
+                return;
+            }
+
+            if (!email || !email.includes('@') || !email.includes('.')) {
+                errorElement.innerHTML = 'Por favor, insira um e-mail válido.';
+                errorElement.style.display = 'block';
+                return;
+            }
+
+            if (!privacyChecked) {
+                errorElement.innerHTML = 'Você deve aceitar os Termos de Uso e Política de Privacidade para continuar.';
+                document.getElementById('privacyPolicy').style.outline = '4px solid red';
+                errorElement.style.display = 'block';
+                return;
+            }
+
+            // Mostrar loading e esconder botão
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('submit-btn').style.display = 'none';
+
+            // Preparar dados para o webhook
+            const postData = {
+                id: 1,
+                nome: name,
+                email: email,
+                campanha: 'ENE_pispasep_Display_gilix',
+                phone: whatsapp, // Salva o WhatsApp no campo phone
+                respostas: {
+                    interesse: 'Consulta PIS/PASEP'
+                }
+            };
+
+            // Enviar dados via webhook
+            fetch("https://n8n-1.digite.com.br/webhook/f5e44c10-12a6-4247-a6e8-2699d0d80a54", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(postData)
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Erro no servidor');
+                return response.json();
+            })
+            .then(data => {
+                alert("Enviamos um email para você. Se não estiver na caixa de entrada veja em SPAM ou Promoções");
+                gtag_report_conversion(redirectUrl)
+                // Redirecionar após sucesso
+                //window.location.href = "https://auxiliobeneficios.colegiomarcodes.com.br/obrigado";
+
+            })
+            .catch(error => {
+                console.error("Erro:", error);
+                document.getElementById('submit-btn').style.display = 'block';
+                document.getElementById('loading').style.display = 'none';
+                errorElement.innerHTML = '<b>Ocorreu um erro. Verifique seus dados e tente novamente.</b>';
+                errorElement.style.display = 'block';
+            });
+        }
+    </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"dc4e7ac453704b72bfe88a5325cbd330","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
