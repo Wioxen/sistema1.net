@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -785,6 +786,7 @@ function gtag_report_conversion(url) {
           function toggleCpfPlacaFields() {
               const isCLT = rendaSelect.value === 'CLT';
               const isAposentado = rendaSelect.value === 'Aposentado';
+              const rendaSelecionada = rendaSelect.value !== '';
               const hasVeiculoGarantia = veiculoSim.checked;
               
               // Mostrar campo de tipo de aposentadoria se for aposentado
@@ -794,24 +796,28 @@ function gtag_report_conversion(url) {
                   aposentadoField.style.display = 'none';
               }
               
-              // Mostrar CPF, data de nascimento e gênero se for CLT, Aposentado OU tiver veículo de garantia
-              if (isCLT || isAposentado || hasVeiculoGarantia) {
+              // Mostrar CPF sempre que uma situação for selecionada OU tiver veículo de garantia
+              if (rendaSelecionada || hasVeiculoGarantia) {
                   cpfField.style.display = 'block';
                   cpfInput.required = true;
-                  datanascField.style.display = 'block';
-                  datanascInput.required = true;
-                  generoField.style.display = 'block';
               } else {
                   cpfField.style.display = 'none';
                   cpfInput.required = false;
                   cpfInput.classList.remove('is-invalid');
                   cpfError.style.display = 'none';
-                  
+              }
+
+              // Mostrar data de nascimento e gênero apenas para CLT, Aposentado OU veículo de garantia
+              if (isCLT || isAposentado || hasVeiculoGarantia) {
+                  datanascField.style.display = 'block';
+                  datanascInput.required = true;
+                  generoField.style.display = 'block';
+              } else {
                   datanascField.style.display = 'none';
                   datanascInput.required = false;
                   datanascInput.classList.remove('is-invalid');
                   datanascError.style.display = 'none';
-                  
+
                   generoField.style.display = 'none';
                   generoError.style.display = 'none';
               }
@@ -891,9 +897,10 @@ function gtag_report_conversion(url) {
               let cpfValido = true;
               const isCLT = rendaSelect.value === 'CLT';
               const isAposentado = rendaSelect.value === 'Aposentado';
+              const rendaSelecionada = rendaSelect.value !== '';
               const hasVeiculoGarantia = veiculoSim.checked;
-              
-              if (isCLT || isAposentado || hasVeiculoGarantia) {
+
+              if (rendaSelecionada || hasVeiculoGarantia) {
                   const cpfValue = cpfInput.value;
                   if (!validarCPF(cpfValue)) {
                       cpfInput.classList.add('is-invalid');
@@ -967,7 +974,7 @@ function gtag_report_conversion(url) {
               
               // Obter CPF se disponível
               let cpf = '';
-              if (isCLT || isAposentado || hasVeiculoGarantia) {
+              if (rendaSelecionada || hasVeiculoGarantia) {
                   cpf = cpfInput.value.replace(/[^\d]+/g, ''); // Remove formatação
               }
               
