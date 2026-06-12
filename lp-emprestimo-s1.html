@@ -268,11 +268,11 @@ function gtag_report_conversion(url) {
       <div id="transResult" style="display:none">
         <div class="trans-check"><i class="bi bi-check-circle-fill"></i></div>
         <h3 class="trans-title" id="transHi">Tudo certo!</h3>
-        <p class="trans-sub">Você está a <strong>1 passo</strong> de liberar o seu empréstimo.</p>
-        <div class="trans-offer"><span style="color:#9aa6a0">Pode ser</span> <b>disponibilizado um valor</b> de empréstimo para o seu perfil. Para liberar, é só confirmar os seus dados na próxima tela.</div>
+        <p class="trans-sub">Você está a <strong>1 passo</strong> do seu empréstimo.</p>
+        <div class="trans-offer"><span style="color:#9aa6a0">Pode ser</span> <b>disponibilizado um valor</b> de empréstimo para o seu perfil. Veja agora as melhores condições para o seu caso.</div>
         <p class="trans-doc" id="transDoc"></p>
-        <div class="trans-next"><i class="bi bi-camera-fill"></i><span>Na próxima tela você <strong>confirma a sua identidade</strong> (foto do documento + selfie) para <strong>liberar o valor</strong>. Leva cerca de <strong>2 minutos</strong>.</span></div>
-        <a href="#" id="transCta" class="trans-cta">Confirmar e liberar meu valor <i class="bi bi-arrow-right"></i></a>
+        <div class="trans-next"><i class="bi bi-list-check"></i><span>Na próxima página, veja as <strong>opções e condições</strong> de empréstimo selecionadas para o seu perfil e escolha a ideal.</span></div>
+        <a href="#" id="transCta" class="trans-cta">Ver as minhas opções <i class="bi bi-arrow-right"></i></a>
         <div class="trans-badges">
           <span><i class="bi bi-lock-fill"></i> Ambiente seguro</span>
           <span><i class="bi bi-shield-check"></i> Dados protegidos</span>
@@ -422,8 +422,8 @@ function gtag_report_conversion(url) {
                               <div class="privacy-error-message" id="privacyError" style="color:black">Você precisa aceitar a política de privacidade</div>
                           </div>
                           <div class="mb-3 p-2 rounded d-flex align-items-center" style="background:#f0f7f2;border:1px solid #cfe8d8;gap:10px">
-                              <i class="bi bi-person-badge" style="color:var(--primary-color);font-size:1.4rem;flex-shrink:0"></i>
-                              <span style="font-size:0.82rem;color:#2F4F4F;line-height:1.4">Na última etapa, para sua <strong>segurança</strong>, você fará uma <strong>selfie</strong> e uma <strong>foto do documento</strong>. Leva cerca de <strong>2 minutos</strong> e <strong>não tem nenhum custo</strong>.</span>
+                              <i class="bi bi-shield-check" style="color:var(--primary-color);font-size:1.4rem;flex-shrink:0"></i>
+                              <span style="font-size:0.82rem;color:#2F4F4F;line-height:1.4">Consulta <strong>gratuita</strong> e sem compromisso. Na próxima página você verá as <strong>opções de empréstimo</strong> para o seu perfil.</span>
                           </div>
                           <div class="d-grid">
                               <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
@@ -1138,8 +1138,9 @@ function gtag_report_conversion(url) {
               //const redirectUrl = "https://vafast.xyz/emprestimo-lp/?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_FAVO_D_Emprestimo_"+utmCampaign+"";
               //const redirectUrl = "https://xegold.xyz/lp/emprestimo-lp/?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_FAVO_D_Emprestimo_"+utmCampaign+"";
               //const redirectUrl = "https://app.juvocredito.com.br/emprestimo/dados?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_FAVO_D_Emprestimo_"+utmCampaign+"";
-              // Redireciona para o link de afiliado (Foregon). aff_sub leva a campanha p/ atribuição.
-              const redirectUrl = "https://tracking.foregon.com/aff_c?offer_id=246&aff_id=2133&aff_sub="+encodeURIComponent(utmCampaign);
+              //const redirectUrl = "https://tracking.foregon.com/aff_c?offer_id=246&aff_id=2133&aff_sub="+encodeURIComponent(utmCampaign);
+              // s1-3: redireciona para a página de pouso do vafast (dwell + ads); o 1º CTA de lá vai para a Juvo
+              const redirectUrl = "https://vafast.xyz/emprestimo-lp-2/?utm_source=GoogleAds&utm_medium=Display&utm_campaign=EmprestimoD";
 
               // Mostrar spinner e desabilitar botão
               submitBtn.disabled = true;
