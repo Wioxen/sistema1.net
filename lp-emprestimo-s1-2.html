@@ -1,0 +1,1180 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16696952717"></script>
+<!-- Inicialização do Google tag (gtag.js) — obrigatório ANTES de qualquer gtag() -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-16696952717');
+</script>
+<!-- Event snippet for conversion — disparado SOMENTE no success do webhook,
+via gtag_report_conversion() chamado no .then() do fetch. NÃO disparar no load. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-16696952717/welKCJCdt9EZEI2P3Zk-',
+      'value': 1.0,
+      'currency': 'BRL',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Empréstimo pessoal, consignado e para negativados. Aprovação rápida mesmo para negativados. Empréstimo com garantia de veículo e crédito consignado CLT.">
+  <title>Empréstimo Pessoal Online | Crédito Consignado e Para Negativados</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <style>
+      :root {
+          --primary-color: #2E8B57;
+          --secondary-color: #228B22;
+          --accent-color: #32CD32;
+          --neutral-light: #F5F5F5;
+          --neutral-dark: #2F4F4F;
+          --text-highlight: #FF6B35;
+      }
+      
+      body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          color: var(--neutral-dark);
+          background-color: var(--neutral-light);
+      }
+      
+      .hero-section {
+          background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+          color: white;
+          padding: 3rem 0;
+          border-radius: 0 0 20px 20px;
+      }
+      
+      .form-container {
+          background-color: white;
+          border-radius: 15px;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+          padding: 2rem;
+          margin-top: -50px;
+          position: relative;
+          z-index: 10;
+      }
+      
+      .btn-primary {
+          background-color: var(--accent-color);
+          border: none;
+          padding: 12px 24px;
+          font-weight: 600;
+          transition: all 0.3s;
+      }
+      
+      .btn-primary:hover {
+          background-color: #28a428;
+          transform: translateY(-2px);
+      }
+      
+      .benefit-item {
+          display: flex;
+          align-items: center;
+          margin-bottom: 1rem;
+      }
+      
+      .benefit-icon {
+          background-color: white;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 15px;
+          color: var(--primary-color);
+          font-size: 1.5rem;
+      }
+      
+      .accordion-button:not(.collapsed) {
+          background-color: rgba(46, 139, 87, 0.1);
+          color: var(--primary-color);
+          font-weight: 600;
+      }
+      
+      .clickable-section {
+          cursor: pointer;
+          transition: all 0.3s;
+      }
+      
+      .clickable-section:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      
+      .footer {
+          background-color: var(--secondary-color);
+          color: white;
+          padding: 3rem 0;
+      }
+      
+      .form-control:focus {
+          border-color: var(--primary-color);
+          box-shadow: 0 0 0 0.25rem rgba(46, 139, 87, 0.25);
+      }
+      
+      .highlight {
+          color: var(--text-highlight);
+          font-weight: 700;
+      }
+      
+      .privacy-error {
+          border: 1px solid #dc3545 !important;
+          box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25) !important;
+      }
+      
+      .privacy-error-message {
+          color: #dc3545;
+          font-size: 0.875rem;
+          margin-top: 0.25rem;
+          display: none;
+      }
+      
+      .spinner-border {
+          width: 1rem;
+          height: 1rem;
+      }
+      
+      .clickable-area {
+          cursor: pointer;
+          transition: all 0.2s;
+      }
+      
+      .clickable-area:hover {
+          background-color: rgba(46, 139, 87, 0.05);
+      }
+      
+      .keyword-highlight {
+          font-weight: 600;
+          color: var(--text-highlight);
+      }
+      
+      .hero-title {
+          color: #FFD700;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      
+      .hero-subtitle {
+          color: #FFFFFF;
+          font-weight: 500;
+      }
+      
+      .benefit-text {
+          color: #FFFFFF;
+          font-weight: 400;
+      }
+      
+      .cpf-field, .placa-field, .aposentado-field, .datanasc-field, .genero-field {
+          display: none;
+      }
+      
+      .cpf-error, .placa-error, .datanasc-error, .genero-error, .telefone-error {
+          color: #dc3545;
+          font-size: 0.875rem;
+          margin-top: 0.25rem;
+          display: none;
+      }
+      
+      #placa {
+          text-transform: uppercase;
+      }
+      
+      .is-invalid {
+          border-color: #dc3545;
+          box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+      }
+
+      /* ===== Tela de transição pós-cadastro (leva o usuário a concluir na parceira) ===== */
+      #transOverlay{position:fixed;inset:0;z-index:99999;background:linear-gradient(135deg,#2E8B57 0%,#228B22 100%);display:none;align-items:center;justify-content:center;padding:18px}
+      #transOverlay.show{display:flex;animation:transFade .35s ease}
+      @keyframes transFade{from{opacity:0}to{opacity:1}}
+      .trans-card{background:#fff;border-radius:20px;max-width:430px;width:100%;padding:34px 26px;text-align:center;box-shadow:0 24px 70px rgba(0,0,0,.35);font-family:'Segoe UI',Tahoma,sans-serif}
+      .trans-lock{width:64px;height:64px;border-radius:50%;background:rgba(46,139,87,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:#2E8B57;font-size:1.8rem}
+      .trans-spin{width:46px;height:46px;border:4px solid #e6f2ea;border-top-color:#2E8B57;border-radius:50%;margin:6px auto 18px;animation:transSpin .8s linear infinite}
+      @keyframes transSpin{to{transform:rotate(360deg)}}
+      .trans-title{font-size:1.32rem;font-weight:700;color:#2F4F4F;margin:0 0 6px;line-height:1.25}
+      .trans-sub{font-size:.94rem;color:#5b6b61;margin:0 0 18px;line-height:1.5}
+      .trans-steps{list-style:none;padding:0;margin:0;text-align:left;display:inline-block}
+      .trans-step{font-size:.9rem;color:#9aa6a0;margin:10px 0;display:flex;align-items:center;gap:9px;transition:all .3s ease}
+      .trans-step i{font-size:1.1rem}
+      .trans-step.done{color:#228B22;font-weight:600}
+      .trans-check{width:76px;height:76px;border-radius:50%;background:rgba(34,139,34,.12);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:#228B22;font-size:2.5rem;animation:transPop .45s cubic-bezier(.2,1.2,.4,1)}
+      @keyframes transPop{0%{transform:scale(.4);opacity:0}100%{transform:scale(1);opacity:1}}
+      .trans-offer{background:#f0f7f2;border:1px solid #cfe8d8;border-radius:12px;padding:12px 15px;margin:4px 0 12px;font-size:.92rem;color:#2F4F4F;line-height:1.5}
+      .trans-offer b{color:#228B22}
+      .trans-doc{font-size:.8rem;color:#7a8a80;margin:0 0 14px}
+      .trans-next{font-size:.86rem;color:#5b6b61;background:#fafafa;border:1px solid #eee;border-radius:10px;padding:11px 13px;margin:0 0 16px;display:flex;align-items:center;gap:9px;text-align:left}
+      .trans-next i{color:#2E8B57;font-size:1.3rem;flex-shrink:0}
+      .trans-cta{display:block;background:#32CD32;color:#fff;text-decoration:none;font-weight:700;font-size:1.06rem;padding:15px;border-radius:50px;box-shadow:0 8px 22px rgba(50,205,50,.4);transition:all .2s ease}
+      .trans-cta:hover{background:#28a428;transform:translateY(-2px);color:#fff;text-decoration:none}
+      .trans-badges{display:flex;justify-content:center;flex-wrap:wrap;gap:13px;margin:16px 0 6px;font-size:.72rem;color:#5b6b61}
+      .trans-badges span{display:flex;align-items:center;gap:4px}
+      .trans-badges i{color:#2E8B57}
+      .trans-redirect{font-size:.78rem;color:#9aa6a0;margin-top:8px}
+  </style>
+</head>
+<body>
+  <!-- ===== Tela de transição pós-cadastro ===== -->
+  <div id="transOverlay">
+    <div class="trans-card">
+      <div id="transLoading">
+        <div class="trans-lock"><i class="bi bi-shield-lock-fill"></i></div>
+        <div class="trans-spin"></div>
+        <h3 class="trans-title">Analisando o seu perfil&hellip;</h3>
+        <p class="trans-sub">Aguarde alguns segundos enquanto preparamos a sua solicitação com segurança.</p>
+        <ul class="trans-steps">
+          <li class="trans-step" id="ts1"><i class="bi bi-circle"></i> Recebendo os seus dados</li>
+          <li class="trans-step" id="ts2"><i class="bi bi-circle"></i> Encaminhando à instituição parceira</li>
+          <li class="trans-step" id="ts3"><i class="bi bi-circle"></i> Preparando a sua proposta</li>
+        </ul>
+      </div>
+      <div id="transResult" style="display:none">
+        <div class="trans-check"><i class="bi bi-check-circle-fill"></i></div>
+        <h3 class="trans-title" id="transHi">Tudo certo!</h3>
+        <p class="trans-sub">Você está a <strong>1 passo</strong> do seu empréstimo.</p>
+        <div class="trans-offer">Você pode solicitar <b>até R$ 4.500</b> usando o seu celular como garantia, sem burocracia. Conclua o cadastro para ver o valor disponível para você.</div>
+        <p class="trans-doc" id="transDoc"></p>
+        <div class="trans-next"><i class="bi bi-camera-fill"></i><span>Falta só 1 passo na próxima tela: <strong>foto do documento + selfie</strong>. Leva cerca de <strong>2 minutos</strong>.</span></div>
+        <a href="#" id="transCta" class="trans-cta">Concluir meu cadastro agora <i class="bi bi-arrow-right"></i></a>
+        <div class="trans-badges">
+          <span><i class="bi bi-lock-fill"></i> Ambiente seguro</span>
+          <span><i class="bi bi-shield-check"></i> Dados protegidos</span>
+          <span><i class="bi bi-cash-stack"></i> Sem taxa antecipada</span>
+        </div>
+        <div class="trans-redirect">Redirecionando em <span id="transCount">4</span>s&hellip;</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-6">
+                  <h1 class="display-4 fw-bold mb-3 hero-title">Empréstimo Pessoal Online e Crédito Consignado</h1>
+                  <p class="lead mb-4 hero-subtitle">Solicite seu empréstimo pessoal com as melhores taxas. Empréstimo para negativado liberado na hora. Crédito para negativado e empréstimo consignado CLT.</p>
+                  <ul class="list-unstyled">
+                      <li class="benefit-item">
+                          <div class="benefit-icon">
+                              <i class="bi bi-check-circle-fill"></i>
+                          </div>
+                          <span class="benefit-text">Empréstimo pessoal online com taxas a partir de 0,99% ao mês</span>
+                      </li>
+                      <li class="benefit-item">
+                          <div class="benefit-icon">
+                              <i class="bi bi-check-circle-fill"></i>
+                          </div>
+                          <span class="benefit-text">Dinheiro na conta em até 24h - empréstimo para negativado liberado na hora</span>
+                      </li>
+                      <li class="benefit-item">
+                          <div class="benefit-icon">
+                              <i class="bi bi-check-circle-fill"></i>
+                          </div>
+                          <span class="benefit-text">Empréstimo consignado, empréstimo com garantia de veículo e crédito para MEI</span>
+                      </li>
+                  </ul>
+              </div>
+              <div class="col-lg-6">
+                  <!-- Form Container -->
+                  <div class="form-container" id="leadForm">
+                      <h3 class="text-center mb-4" style="color:black">Solicite seu <span class="keyword-highlight">empréstimo pessoal</span> agora!</h3>
+                      <form id="loanForm">
+                          <div class="mb-3">
+                              <label for="nome" class="form-label" style="color:black">Nome Completo</label>
+                              <input type="text" class="form-control" id="nome" required>
+                          </div>
+                          <div class="mb-3">
+                              <label for="email" class="form-label" style="color:black">E-mail</label>
+                              <input type="email" class="form-control" id="email" required>
+                          </div>
+                          <div class="mb-3">
+                              <label for="whatsapp" class="form-label" style="color:black">WhatsApp <span class="text-danger">*</span></label>
+                              <input type="tel" class="form-control" id="whatsapp" required>
+                              <div class="telefone-error" id="telefoneError">Por favor, insira um número de WhatsApp válido com DDD + 9 dígitos (11 números no total)</div>
+                          </div>
+                          <div class="mb-3">
+                              <label for="renda" class="form-label" style="color:black">Situação de Renda</label>
+                              <select class="form-select" id="renda" required>
+                                  <option value="" selected disabled>Selecione sua situação</option>
+                                  <option value="CLT">CLT</option>
+                                  <option value="Autonomo">Autônomo</option>
+                                  <option value="Aposentado">Aposentado</option>
+                                  <option value="Pensionista">Pensionista</option>
+                                  <option value="MEI">MEI</option>
+                                  <option value="Outros">Outros</option>
+                              </select>
+                          </div>
+                          
+                          <!-- Campo para Aposentado -->
+                          <div class="mb-3 aposentado-field" id="aposentadoField">
+                              <label class="form-label" style="color:black">Tipo de Aposentadoria</label>
+                              <div>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="tipoAposentadoria" id="inss" value="INSS">
+                                      <label class="form-check-label" for="inss" style="color:black">INSS</label>
+                                  </div>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="tipoAposentadoria" id="governo" value="Governo">
+                                      <label class="form-check-label" for="governo" style="color:black">Governo</label>
+                                  </div>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="tipoAposentadoria" id="prefeitura" value="Prefeitura">
+                                      <label class="form-check-label" for="prefeitura" style="color:black">Prefeitura</label>
+                                  </div>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="tipoAposentadoria" id="federal" value="Federal">
+                                      <label class="form-check-label" for="federal" style="color:black">Federal</label>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="mb-3">
+                              <label class="form-label" style="color:black;font-weight:bold">Veículo de garantia?</label>
+                              <div>
+                                  <div class="form-check form-check-inline">
+                                      <input class="form-check-input" type="radio" name="veiculoGarantia" id="veiculoSim" value="Sim">
+                                      <label class="form-check-label" for="veiculoSim" style="color:black">Sim</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                      <input class="form-check-input" type="radio" name="veiculoGarantia" id="veiculoNao" value="Não" checked>
+                                      <label class="form-check-label" for="veiculoNao" style="color:black">Não</label>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <!-- Campo Placa que aparece apenas quando "Sim" for selecionado -->
+                          <div class="mb-3 placa-field" id="placaField">
+                              <label for="placa" class="form-label" style="color:black">Placa do Veículo <span class="text-danger">*</span></label>
+                              <input type="text" class="form-control" id="placa" placeholder="ABC-1234" maxlength="8">
+                              <div class="placa-error" id="placaError">Por favor, insira uma placa válida</div>
+                          </div>
+                          
+                          <!-- Campo CPF único que aparece para CLT, garantia de veículo ou Aposentado -->
+                          <div class="mb-3 cpf-field" id="cpfField">
+                              <label for="cpf" class="form-label" style="color:black">CPF <span class="text-danger">*</span></label>
+                              <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00">
+                              <div class="cpf-error" id="cpfError">Por favor, insira um CPF válido</div>
+                          </div>
+                          
+                          <!-- Campo Data de Nascimento que aparece para CLT, garantia de veículo ou Aposentado -->
+                          <div class="mb-3 datanasc-field" id="datanascField">
+                              <label for="datanasc" class="form-label" style="color:black">Data de Nascimento <span class="text-danger">*</span></label>
+                              <input type="date" class="form-control" id="datanasc">
+                              <div class="datanasc-error" id="datanascError">Por favor, insira uma data de nascimento válida</div>
+                          </div>
+                          
+                          <!-- Campo Gênero que aparece para CLT, garantia de veículo ou Aposentado -->
+                          <div class="mb-3 genero-field" id="generoField">
+                              <label class="form-label" style="color:black">Gênero <span class="text-danger">*</span></label>
+                              <div>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="genero" id="masculino" value="Masculino">
+                                      <label class="form-check-label" for="masculino" style="color:black">Masculino</label>
+                                  </div>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="genero" id="feminino" value="Feminino">
+                                      <label class="form-check-label" for="feminino" style="color:black">Feminino</label>
+                                  </div>
+                              </div>
+                              <div class="genero-error" id="generoError">Por favor, selecione uma opção</div>
+                          </div>
+                          
+                          <div class="mb-3 form-check">
+                              <input type="checkbox" class="form-check-input" id="privacyPolicy">
+                              <label class="form-check-label" for="privacyPolicy" style="color:black">Li e aceito a <a href="https://colegiofavo.com.br/politicafavo.html">Política de Privacidade</a></label>
+                              <div class="privacy-error-message" id="privacyError" style="color:black">Você precisa aceitar a política de privacidade</div>
+                          </div>
+                          <div class="mb-3 p-2 rounded d-flex align-items-center" style="background:#f0f7f2;border:1px solid #cfe8d8;gap:10px">
+                              <i class="bi bi-person-badge" style="color:var(--primary-color);font-size:1.4rem;flex-shrink:0"></i>
+                              <span style="font-size:0.82rem;color:#2F4F4F;line-height:1.4">Na última etapa, para sua <strong>segurança</strong>, você fará uma <strong>selfie</strong> e uma <strong>foto do documento</strong>. Leva cerca de <strong>2 minutos</strong> e <strong>não tem nenhum custo</strong>.</span>
+                          </div>
+                          <div class="d-grid">
+                              <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+                                  <span id="submitText">Solicitar Proposta Agora</span>
+                                  <div class="spinner-border spinner-border-sm d-none" id="spinner" role="status">
+                                      <span class="visually-hidden">Carregando...</span>
+                                  </div>
+                              </button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="py-5">
+      <div class="container">
+          <div class="row text-center mb-5">
+              <div class="col">
+                  <h2>Por que escolher nosso serviço de <span class="keyword-highlight">empréstimo pessoal</span>?</h2>
+                  <p class="lead">Conectamos você com as melhores opções de <span class="keyword-highlight">crédito consignado</span> e <span class="keyword-highlight">empréstimos pessoais</span></p>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-4 mb-4 clickable-section">
+                  <div class="card h-100 border-0 shadow-sm">
+                      <div class="card-body text-center p-4">
+                          <div class="benefit-icon mx-auto mb-3">
+                              <i class="bi bi-shield-check"></i>
+                          </div>
+                          <h5 class="card-title">Segurança e Confiança</h5>
+                          <p class="card-text">Trabalhamos apenas com instituições financeiras autorizadas pelo Banco Central para seu <span class="keyword-highlight">empréstimo pessoal online</span>.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4 mb-4 clickable-section">
+                  <div class="card h-100 border-0 shadow-sm">
+                      <div class="card-body text-center p-4">
+                          <div class="benefit-icon mx-auto mb-3">
+                              <i class="bi bi-graph-up"></i>
+                          </div>
+                          <h5 class="card-title">Taxas Competitivas</h5>
+                          <p class="card-text">Compare múltiplas opções de <span class="keyword-highlight">empréstimo consignado</span> e <span class="keyword-highlight">empréstimos pessoais</span> e escolha a melhor.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4 mb-4 clickable-section">
+                  <div class="card h-100 border-0 shadow-sm">
+                      <div class="card-body text-center p-4">
+                          <div class="benefit-icon mx-auto mb-3">
+                              <i class="bi bi-clock-history"></i>
+                          </div>
+                          <h5 class="card-title">Processo Rápido</h5>
+                          <p class="card-text">Resposta em minutos e dinheiro na conta em até 24 horas para seu <span class="keyword-highlight">empréstimo para negativado</span>.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-5 bg-light">
+      <div class="container">
+          <div class="row text-center mb-5">
+              <div class="col">
+                  <h2>Perguntas Frequentes sobre <span class="keyword-highlight">Empréstimos Pessoais</span></h2>
+                  <p class="lead">Tire todas as suas dúvidas sobre <span class="keyword-highlight">empréstimo consignado</span> e <span class="keyword-highlight">crédito para negativado</span></p>
+              </div>
+          </div>
+          <div class="row justify-content-center">
+              <div class="col-lg-10">
+                  <div class="accordion" id="faqAccordion">
+                      <!-- FAQ Item 1 -->
+                      <div class="accordion-item">
+                          <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                  Como funciona o <span class="keyword-highlight">empréstimo para negativado</span>?
+                              </button>
+                          </h2>
+                          <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                              <div class="accordion-body">
+                                  Mesmo com o nome negativado, é possível conseguir um <span class="keyword-highlight">empréstimo pessoal</span> através de modalidades específicas como <span class="keyword-highlight">empréstimo com garantia de veículo</span>, <span class="keyword-highlight">crédito consignado</span> privado ou usando o FGTS como garantia. Nossos parceiros avaliam seu perfil completo, não apenas a restrição no nome. Oferecemos <span class="keyword-highlight">empréstimo para negativado liberado na hora</span> em muitos casos.
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <!-- FAQ Item 2 -->
+                      <div class="accordion-item">
+                          <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                  Quais são os documentos necessários para <span class="keyword-highlight">empréstimo pessoal online</span>?
+                              </button>
+                          </h2>
+                          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                              <div class="accordion-body">
+                                  Geralmente são necessários: documento de identidade, CPF, comprovante de residência e comprovante de renda. Para <span class="keyword-highlight">empréstimo consignado CLT</span> podem ser solicitados contracheque e declaração de vínculo empregatício. Para <span class="keyword-highlight">empréstimo com garantia de veículo</span> são necessários documentos do veículo.
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <!-- FAQ Item 3 -->
+                      <div class="accordion-item">
+                          <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                  Quanto tempo leva para o dinheiro cair na conta no <span class="keyword-highlight">empréstimo pessoal</span>?
+                              </button>
+                          </h2>
+                          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                              <div class="accordion-body">
+                                  Após a aprovação do seu <span class="keyword-highlight">empréstimo pessoal online</span>, o dinheiro pode cair na conta em até 24 horas úteis, dependendo da instituição financeira. Para <span class="keyword-highlight">empréstimo para negativado liberado na hora</span> via PIX pode ser liberado em poucas horas. O <span class="keyword-highlight">crédito consignado</span> também tem liberação rápida.
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <!-- FAQ Item 4 -->
+                      <div class="accordion-item">
+                          <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                  Como funciona o <span class="keyword-highlight">empréstimo consignado</span>?
+                              </button>
+                          </h2>
+                          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                              <div class="accordion-body">
+                                  No <span class="keyword-highlight">empréstimo consignado</span>, as parcelas são descontadas diretamente da sua folha de pagamento ou benefício (como INSS). Por ter menos risco para a instituição financeira, as taxas costumam ser menores. Oferecemos <span class="keyword-highlight">empréstimo consignado para CLT</span>, aposentados e pensionistas do INSS. O <span class="keyword-highlight">crédito consignado</span> é uma das modalidades mais vantajosas.
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <!-- FAQ Item 5 -->
+                      <div class="accordion-item">
+                          <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                  O que é <span class="keyword-highlight">empréstimo com garantia de veículo</span>?
+                              </button>
+                          </h2>
+                          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                              <div class="accordion-body">
+                                  Nesta modalidade de <span class="keyword-highlight">empréstimo pessoal</span>, você usa seu veículo (carro, moto ou caminhão) como garantia. O valor concedido varia conforme a avaliação do veículo. Durante o período do <span class="keyword-highlight">empréstimo com veículo de garantia</span>, você continua usando o veículo normalmente, apenas o documento fica em custódia até a quitação total. É uma excelente opção para <span class="keyword-highlight">crédito para negativado</span>.
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <!-- FAQ Item 6 -->
+                      <div class="accordion-item">
+                          <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                  Como funciona o <span class="keyword-highlight">empréstimo para MEI</span>?
+                              </button>
+                          </h2>
+                          <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                              <div class="accordion-body">
+                                  Para Microempreendedores Individuais oferecemos <span class="keyword-highlight">crédito para MEI</span> com condições especiais. Basta comprovar a atividade através do CNPJ e demonstrar renda através de extratos bancários ou notas fiscais. Temos opções de <span class="keyword-highlight">empréstimo pessoal online</span> específicas para MEI com taxas competitivas.
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Article Section -->
+  <section class="py-5">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-10 mx-auto">
+                  <h2 class="text-center mb-4">Tudo sobre <span class="keyword-highlight">Empréstimo Pessoal Online</span> e <span class="keyword-highlight">Crédito Consignado</span></h2>
+                  <div class="content-article">
+                      <p>Se você está buscando um <span class="keyword-highlight">empréstimo pessoal</span>, saiba que existem diversas opções disponíveis no mercado. Os <span class="keyword-highlight">empréstimos pessoais</span> são ideais para quem precisa de recursos rápidos para diversas finalidades. Para quem possui restrições no nome, o <span class="keyword-highlight">empréstimo para negativado</span> pode ser a solução, com aprovação em muitos casos liberada na hora.</p>
+                      
+                      <p>O <span class="keyword-highlight">empréstimo consignado</span> é uma das modalidades mais vantajosas, especialmente o <span class="keyword-highlight">empréstimo consignado para CLT</span>. No <span class="keyword-highlight">crédito consignado</span>, as parcelas são descontadas diretamente do salário ou benefício, oferecendo taxas reduzidas. Os <span class="keyword-highlight">empréstimos consignado</span> são perfeitos para quem busca condições mais favoráveis.</p>
+                      
+                      <p>Para quem possui um bem, o <span class="keyword-highlight">empréstimo com garantia de veículo</span> pode ser a melhor opção. Nesta modalidade de <span class="keyword-highlight">empréstimo com veículo de garantia</span>, você usa seu carro como garantia sem perder o uso do mesmo. Também temos <span class="keyword-highlight">crédito para MEI</span> com condições especiais para microempreendedores.</p>
+                      
+                      <p>Se você precisa de um <span class="keyword-highlight">empréstimo pessoal online</span> rápido, nossa plataforma conecta você com as melhores instituições. Oferecemos <span class="keyword-highlight">empréstimo para negativado liberado na hora</span> em muitos casos, além de <span class="keyword-highlight">empréstimo na conta de luz</span> para situações emergenciais. Não importa se você busca <span class="keyword-highlight">empréstimo para CLT</span>, aposentado ou autônomo, temos a solução ideal.</p>
+                      
+                      <p>Os <span class="keyword-highlight">empréstimos pessoais online</span> revolucionaram o acesso ao crédito. Com processamento digital, você consegue aprovação para seu <span class="keyword-highlight">empréstimo pessoal</span> em minutos. Para quem está com o nome restrito, o <span class="keyword-highlight">crédito para negativado</span> oferece uma segunda chance. E para os assalariados, o <span class="keyword-highlight">empréstimo consignado CLT</span> continua sendo a opção mais econômica.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Types of Loans Section -->
+  <section class="py-5 bg-light">
+      <div class="container">
+          <div class="row text-center mb-5">
+              <div class="col">
+                  <h2>Tipos de <span class="keyword-highlight">Empréstimo Pessoal</span> Disponíveis</h2>
+                  <p class="lead">Encontre a solução ideal de <span class="keyword-highlight">crédito consignado</span> ou <span class="keyword-highlight">empréstimo para negativado</span></p>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6 mb-4 clickable-section">
+                  <div class="card h-100 border-0 shadow-sm">
+                      <div class="card-body p-4">
+                          <h5 class="card-title"><span class="keyword-highlight">Empréstimo Pessoal Online</span></h5>
+                          <p class="card-text">Crédito sem garantia específica, ideal para necessidades diversas como pagamento de dívidas, viagens ou reformas.</p>
+                          <ul>
+                              <li>Valor: de R$ 1.000 a R$ 100.000</li>
+                              <li>Prazo: até 60 meses</li>
+                              <li>Taxas a partir de 2,5% ao mês</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6 mb-4 clickable-section">
+                  <div class="card h-100 border-0 shadow-sm">
+                      <div class="card-body p-4">
+                          <h5 class="card-title"><span class="keyword-highlight">Empréstimo Consignado</span></h5>
+                          <p class="card-text">Parcelas descontadas diretamente do salário ou benefício, com taxas reduzidas. <span class="keyword-highlight">Empréstimo consignado para CLT</span> disponível.</p>
+                          <ul>
+                              <li>Para assalariados, aposentados e pensionistas</li>
+                              <li>Até 35% da renda para comprometimento</li>
+                              <li>Taxas a partir de 1,5% ao mês</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6 mb-4 clickable-section">
+                  <div class="card h-100 border-0 shadow-sm">
+                      <div class="card-body p-4">
+                          <h5 class="card-title"><span class="keyword-highlight">Empréstimo com Garantia de Veículo</span></h5>
+                          <p class="card-text">Use seu carro, moto ou caminhão como garantia para conseguir taxas melhores no seu <span class="keyword-highlight">empréstimo pessoal</span>.</p>
+                          <ul>
+                              <li>Até 80% do valor do veículo</li>
+                              <li>Continue usando seu veículo normalmente</li>
+                              <li>Aceitamos mesmo veículos financiados</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6 mb-4 clickable-section">
+                  <div class="card h-100 border-0 shadow-sm">
+                      <div class="card-body p-4">
+                          <h5 class="card-title"><span class="keyword-highlight">Crédito para Negativados</span></h5>
+                          <p class="card-text">Soluções de <span class="keyword-highlight">empréstimo para negativado</span> mesmo para quem está com o nome restrito. <span class="keyword-highlight">Empréstimo para negativado liberado na hora</span>.</p>
+                          <ul>
+                              <li>Análise além do score de crédito</li>
+                              <li>Opções com garantia ou consignado</li>
+                              <li>Reconstrução de crédito</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-5 text-white" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-8 mb-4 mb-lg-0">
+                  <h2 class="fw-bold">Pronto para solicitar seu <span class="text-warning">empréstimo pessoal</span>?</h2>
+                  <p class="lead mb-0">Preencha o formulário agora e receba uma proposta personalizada de <span class="text-warning">empréstimo consignado</span> ou <span class="text-warning">crédito para negativado</span> em minutos.</p>
+              </div>
+              <div class="col-lg-4 text-lg-end">
+                  <a href="#leadForm" class="btn btn-light btn-lg">Solicitar Agora</a>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-4 mb-4 mb-lg-0">
+                  <h5>Empréstimo Rápido</h5>
+                  <p><strong>Disclaimer:</strong> Este site não tem vínculo com instituições financeiras, não solicitamos qualquer valor antecipado e todo o conteúdo apresentado é meramente informativo. Não realizamos operações de crédito diretamente, mas conectamos potenciais clientes com nossos parceiros.</p>
+              </div>
+              <div class="col-lg-4 mb-4 mb-lg-0">
+                  <h5>Informações</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="https://colegiofavo.com.br/politicafavo.html" class="text-white text-decoration-none">Política de Privacidade</a></li>
+                      <li><a href="https://colegiofavo.com.br/termo.html" class="text-white text-decoration-none">Termos de Uso</a></li>
+                  </ul>
+              </div>
+              <div class="col-lg-4">
+                  <h5>Contato</h5>
+                  <ul class="list-unstyled">
+                      <li><i class="bi bi-envelope me-2"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c7b4aeb4b3a2aaa6b3b5a6a1a2a0a887a0aaa6aeabe9a4a8aa">[email&#160;protected]</a></li>
+                      <li><i class="bi bi-whatsapp me-2"></i> (11) 99301-6885</li>
+                  </ul>
+              </div>
+          </div>
+          <hr class="my-4 bg-light">
+          <div class="row">
+              <div class="col text-center">
+                  <p class="mb-0">© 2023 Empréstimo Rápido. Todos os direitos reservados.</p>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+  <!-- Vanilla Masker -->
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-masker@1.1.1/lib/vanilla-masker.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script>
+      // Função para validar CPF
+      function validarCPF(cpf) {
+          cpf = cpf.replace(/[^\d]+/g, '');
+          if (cpf === '') return false;
+          
+          // Elimina CPFs invalidos conhecidos
+          if (cpf.length !== 11 ||
+              cpf === "00000000000" ||
+              cpf === "11111111111" ||
+              cpf === "22222222222" ||
+              cpf === "33333333333" ||
+              cpf === "44444444444" ||
+              cpf === "55555555555" ||
+              cpf === "66666666666" ||
+              cpf === "77777777777" ||
+              cpf === "88888888888" ||
+              cpf === "99999999999")
+              return false;
+              
+          // Valida 1o digito
+          let add = 0;
+          for (let i = 0; i < 9; i++)
+              add += parseInt(cpf.charAt(i)) * (10 - i);
+          let rev = 11 - (add % 11);
+          if (rev === 10 || rev === 11)
+              rev = 0;
+          if (rev !== parseInt(cpf.charAt(9)))
+              return false;
+              
+          // Valida 2o digito
+          add = 0;
+          for (let i = 0; i < 10; i++)
+              add += parseInt(cpf.charAt(i)) * (11 - i);
+          rev = 11 - (add % 11);
+          if (rev === 10 || rev === 11)
+              rev = 0;
+          if (rev !== parseInt(cpf.charAt(10)))
+              return false;
+              
+          return true;
+      }
+
+      // Função para validar placa
+      function validarPlaca(placa) {
+          // Remove espaços e hífens
+          placa = placa.replace(/[-\s]/g, '');
+          
+          // Verifica se tem 7 caracteres
+          if (placa.length !== 7) return false;
+          
+          // Verifica formato antigo (LLLNNNN) ou novo (LLLNLNN)
+          const formatoAntigo = /^[A-Z]{3}[0-9]{4}$/;
+          const formatoNovo = /^[A-Z]{3}[0-9][A-Z][0-9]{2}$/;
+          
+          return formatoAntigo.test(placa.toUpperCase()) || formatoNovo.test(placa.toUpperCase());
+      }
+
+      // Função para formatar placa
+      function formatarPlaca(placa) {
+          placa = placa.replace(/[^a-zA-Z0-9]/g, '');
+          if (placa.length <= 3) {
+              return placa;
+          } else if (placa.length <= 7) {
+              return placa.substring(0, 3) + '-' + placa.substring(3);
+          } else {
+              return placa.substring(0, 3) + '-' + placa.substring(3, 7);
+          }
+      }
+
+      // Função para validar data de nascimento
+      function validarDataNascimento(data) {
+          if (!data) return false;
+          
+          const dataNasc = new Date(data);
+          const hoje = new Date();
+          const idade = hoje.getFullYear() - dataNasc.getFullYear();
+          
+          // Verifica se a data é válida
+          if (isNaN(dataNasc.getTime())) return false;
+          
+          // Verifica se é uma data futura
+          if (dataNasc > hoje) return false;
+          
+          // Verifica se a idade é razoável (entre 18 e 120 anos)
+          if (idade < 18 || idade > 120) return false;
+          
+          return true;
+      }
+
+      // Função para validar telefone (11 dígitos numéricos)
+      function validarTelefone(telefone) {
+          // Remove todos os caracteres não numéricos
+          const apenasNumeros = telefone.replace(/\D/g, '');
+          
+          // Verifica se tem exatamente 11 dígitos
+          return apenasNumeros.length === 11;
+      }
+
+      // Função para obter apenas números do telefone
+      function obterNumerosTelefone(telefone) {
+          return telefone.replace(/\D/g, '');
+      }
+
+      // Tela de transição pós-cadastro: mantém o usuário no fluxo e o conduz a concluir na parceira (Juvo)
+      function showTransition(name, cpf, redirectUrl) {
+          var ov = document.getElementById('transOverlay');
+          if (!ov) { window.location.href = redirectUrl; return; } // fallback de segurança
+          ov.classList.add('show');
+          document.body.style.overflow = 'hidden';
+          function mark(i) {
+              var el = document.getElementById('ts' + i);
+              if (el) { el.classList.add('done'); var ic = el.querySelector('i'); if (ic) ic.className = 'bi bi-check-circle-fill'; }
+          }
+          setTimeout(function () { mark(1); }, 800);
+          setTimeout(function () { mark(2); }, 1700);
+          setTimeout(function () { mark(3); }, 2600);
+          setTimeout(function () {
+              var first = (name || '').trim().split(' ')[0] || '';
+              var hi = document.getElementById('transHi');
+              if (hi) hi.textContent = first ? ('Tudo certo, ' + first + '!') : 'Tudo certo!';
+              if (cpf && cpf.length >= 2) {
+                  var doc = document.getElementById('transDoc');
+                  if (doc) doc.innerHTML = 'Documento informado: <strong>***.***.***-' + cpf.slice(-2) + '</strong> recebido com sucesso.';
+              }
+              document.getElementById('transLoading').style.display = 'none';
+              document.getElementById('transResult').style.display = 'block';
+              var n = 4, cnt = document.getElementById('transCount');
+              var timer = setInterval(function () {
+                  n--; if (cnt) cnt.textContent = n;
+                  if (n <= 0) { clearInterval(timer); window.location.href = redirectUrl; }
+              }, 1000);
+              var cta = document.getElementById('transCta');
+              if (cta) cta.addEventListener('click', function (e) { e.preventDefault(); clearInterval(timer); window.location.href = redirectUrl; });
+          }, 3200);
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+          // Initialize phone mask
+          if (document.getElementById('whatsapp')) {
+              VMasker(document.getElementById('whatsapp')).maskPattern('(99) 99999-9999');
+          }
+
+          // Initialize CPF mask
+          if (document.getElementById('cpf')) {
+              VMasker(document.getElementById('cpf')).maskPattern('999.999.999-99');
+          }
+
+          // Adiciona evento de clique a todas as seções clicáveis
+          const clickableSections = document.querySelectorAll('.clickable-section');
+          clickableSections.forEach(section => {
+              section.addEventListener('click', function() {
+                  document.getElementById('leadForm').scrollIntoView({behavior: 'smooth'});
+              });
+          });
+          
+          // Elementos do formulário
+          const rendaSelect = document.getElementById('renda');
+          const aposentadoField = document.getElementById('aposentadoField');
+          const cpfField = document.getElementById('cpfField');
+          const cpfInput = document.getElementById('cpf');
+          const cpfError = document.getElementById('cpfError');
+          const datanascField = document.getElementById('datanascField');
+          const datanascInput = document.getElementById('datanasc');
+          const datanascError = document.getElementById('datanascError');
+          const generoField = document.getElementById('generoField');
+          const generoError = document.getElementById('generoError');
+          const veiculoSim = document.getElementById('veiculoSim');
+          const veiculoNao = document.getElementById('veiculoNao');
+          const placaField = document.getElementById('placaField');
+          const placaInput = document.getElementById('placa');
+          const placaError = document.getElementById('placaError');
+          
+          // Função para mostrar/ocultar campos baseado nas seleções
+          function toggleCpfPlacaFields() {
+              const isCLT = rendaSelect.value === 'CLT';
+              const isAposentado = rendaSelect.value === 'Aposentado';
+              const rendaSelecionada = rendaSelect.value !== '';
+              const hasVeiculoGarantia = veiculoSim.checked;
+              
+              // Mostrar campo de tipo de aposentadoria se for aposentado
+              if (isAposentado) {
+                  aposentadoField.style.display = 'block';
+              } else {
+                  aposentadoField.style.display = 'none';
+              }
+              
+              // Mostrar CPF sempre que uma situação for selecionada OU tiver veículo de garantia
+              if (rendaSelecionada || hasVeiculoGarantia) {
+                  cpfField.style.display = 'block';
+                  cpfInput.required = true;
+              } else {
+                  cpfField.style.display = 'none';
+                  cpfInput.required = false;
+                  cpfInput.classList.remove('is-invalid');
+                  cpfError.style.display = 'none';
+              }
+
+              // Mostrar data de nascimento e gênero apenas para CLT, Aposentado OU veículo de garantia
+              if (isCLT || isAposentado || hasVeiculoGarantia) {
+                  datanascField.style.display = 'block';
+                  datanascInput.required = true;
+                  generoField.style.display = 'block';
+              } else {
+                  datanascField.style.display = 'none';
+                  datanascInput.required = false;
+                  datanascInput.classList.remove('is-invalid');
+                  datanascError.style.display = 'none';
+
+                  generoField.style.display = 'none';
+                  generoError.style.display = 'none';
+              }
+              
+              // Mostrar placa apenas se tiver veículo de garantia
+              if (hasVeiculoGarantia) {
+                  placaField.style.display = 'block';
+                  placaInput.required = true;
+              } else {
+                  placaField.style.display = 'none';
+                  placaInput.required = false;
+                  placaInput.classList.remove('is-invalid');
+                  placaError.style.display = 'none';
+              }
+          }
+          
+          // Adicionar event listeners
+          rendaSelect.addEventListener('change', toggleCpfPlacaFields);
+          veiculoSim.addEventListener('change', toggleCpfPlacaFields);
+          veiculoNao.addEventListener('change', toggleCpfPlacaFields);
+          
+          // Formatar placa enquanto digita
+          placaInput.addEventListener('input', function() {
+              this.value = formatarPlaca(this.value);
+          });
+          
+          // Adiciona evento de submit ao formulário
+          const form = document.getElementById('loanForm');
+          const privacyCheckbox = document.getElementById('privacyPolicy');
+          const privacyError = document.getElementById('privacyError');
+          const submitBtn = document.getElementById('submitBtn');
+          const submitText = document.getElementById('submitText');
+          const spinner = document.getElementById('spinner');
+          
+          form.addEventListener('submit', function(e) {
+              e.preventDefault();
+              
+              // Validar checkbox de política de privacidade
+              if (!privacyCheckbox.checked) {
+                  privacyCheckbox.classList.add('privacy-error');
+                  privacyError.style.display = 'block';
+                  return;
+              } else {
+                  privacyCheckbox.classList.remove('privacy-error');
+                  privacyError.style.display = 'none';
+              }
+              
+              // VALIDAÇÃO DO TELEFONE
+              const telefoneValue = document.getElementById('whatsapp').value;
+              if (!validarTelefone(telefoneValue)) {
+                  const whatsappInput = document.getElementById('whatsapp');
+                  whatsappInput.classList.add('is-invalid');
+                  
+                  let telefoneError = document.getElementById('telefoneError');
+                  if (!telefoneError) {
+                      telefoneError = document.createElement('div');
+                      telefoneError.id = 'telefoneError';
+                      telefoneError.className = 'text-danger mt-1';
+                      telefoneError.style.fontSize = '0.875rem';
+                      whatsappInput.parentNode.appendChild(telefoneError);
+                  }
+                  telefoneError.textContent = 'Por favor, insira um número de WhatsApp válido com DDD + 9 dígitos (11 números no total)';
+                  telefoneError.style.display = 'block';
+                  
+                  return;
+              } else {
+                  const whatsappInput = document.getElementById('whatsapp');
+                  whatsappInput.classList.remove('is-invalid');
+                  const telefoneError = document.getElementById('telefoneError');
+                  if (telefoneError) {
+                      telefoneError.style.display = 'none';
+                  }
+              }
+              // FIM DA VALIDAÇÃO DO TELEFONE
+              
+              // Validar CPF se necessário
+              let cpfValido = true;
+              const isCLT = rendaSelect.value === 'CLT';
+              const isAposentado = rendaSelect.value === 'Aposentado';
+              const rendaSelecionada = rendaSelect.value !== '';
+              const hasVeiculoGarantia = veiculoSim.checked;
+
+              if (rendaSelecionada || hasVeiculoGarantia) {
+                  const cpfValue = cpfInput.value;
+                  if (!validarCPF(cpfValue)) {
+                      cpfInput.classList.add('is-invalid');
+                      cpfError.style.display = 'block';
+                      cpfValido = false;
+                  } else {
+                      cpfInput.classList.remove('is-invalid');
+                      cpfError.style.display = 'none';
+                  }
+              }
+              
+              // Validar data de nascimento se necessário
+              let datanascValida = true;
+              if (isCLT || isAposentado || hasVeiculoGarantia) {
+                  const datanascValue = datanascInput.value;
+                  if (!validarDataNascimento(datanascValue)) {
+                      datanascInput.classList.add('is-invalid');
+                      datanascError.style.display = 'block';
+                      datanascValida = false;
+                  } else {
+                      datanascInput.classList.remove('is-invalid');
+                      datanascError.style.display = 'none';
+                  }
+              }
+              
+              // Validar gênero se necessário
+              let generoValido = true;
+              if (isCLT || isAposentado || hasVeiculoGarantia) {
+                  const generoSelecionado = document.querySelector('input[name="genero"]:checked');
+                  if (!generoSelecionado) {
+                      generoError.style.display = 'block';
+                      generoValido = false;
+                  } else {
+                      generoError.style.display = 'none';
+                  }
+              }
+              
+              // Validar placa se necessário
+              let placaValida = true;
+              if (hasVeiculoGarantia) {
+                  const placaValue = placaInput.value;
+                  if (!validarPlaca(placaValue)) {
+                      placaInput.classList.add('is-invalid');
+                      placaError.style.display = 'block';
+                      placaValida = false;
+                  } else {
+                      placaInput.classList.remove('is-invalid');
+                      placaError.style.display = 'none';
+                  }
+              }
+              
+              if (!cpfValido || !datanascValida || !generoValido || !placaValida) {
+                  return;
+              }
+              
+              // Obter valores do formulário
+              const name = document.getElementById('nome').value;
+              const email = document.getElementById('email').value;
+              const whatsapp = obterNumerosTelefone(document.getElementById('whatsapp').value);
+              const renda = document.getElementById('renda').value;
+              const veiculoGarantia = document.querySelector('input[name="veiculoGarantia"]:checked').value;
+              
+              // Obter tipo de aposentadoria se for aposentado
+              let tipoAposentadoria = '';
+              if (renda === 'Aposentado') {
+                  const tipoAposentadoriaElement = document.querySelector('input[name="tipoAposentadoria"]:checked');
+                  if (tipoAposentadoriaElement) {
+                      tipoAposentadoria = tipoAposentadoriaElement.value;
+                  }
+              }
+              
+              // Obter CPF se disponível
+              let cpf = '';
+              if (rendaSelecionada || hasVeiculoGarantia) {
+                  cpf = cpfInput.value.replace(/[^\d]+/g, ''); // Remove formatação
+              }
+              
+              // Obter data de nascimento se disponível
+              let datanasc = '';
+              if (isCLT || isAposentado || hasVeiculoGarantia) {
+                  datanasc = datanascInput.value;
+              }
+              
+              // Obter gênero se disponível
+              let genero = '';
+              if (isCLT || isAposentado || hasVeiculoGarantia) {
+                  const generoElement = document.querySelector('input[name="genero"]:checked');
+                  if (generoElement) {
+                      genero = generoElement.value;
+                  }
+              }
+              
+              // Obter placa se disponível
+              let placa = '';
+              if (hasVeiculoGarantia) {
+                  placa = placaInput.value.replace(/[-\s]/g, ''); // Remove formatação
+              }
+              
+              // Obter parâmetros UTM da URL
+              const urlParams = new URLSearchParams(window.location.search);
+              const utmSource = urlParams.get('utm_source') || 'organic';
+              const utmMedium = urlParams.get('utm_medium') || 'none';
+              const utmCampaign = urlParams.get('utm_campaign') || 'default';
+              const utmTerm = urlParams.get('utm_term') || '';
+              const utmContent = urlParams.get('utm_content') || '';
+              
+              // Definir valores padrão para outras variáveis
+              const idCampanha = 'emprestimo_rapido';
+              const creative = 'default_creative';
+              
+              // Criar nome da campanha com as respostas (incluindo CPF, data de nascimento e gênero)
+              const campanhaComRespostas = `Favo_Emprestimo_socredito_Display_${renda}_${tipoAposentadoria ? tipoAposentadoria + '_' : ''}${veiculoGarantia}_${cpf ? cpf + '_' : ''}${datanasc ? datanasc.replace(/-/g, '') + '_' : ''}${genero ? genero : 'SemGenero'}__${utmCampaign}_${utmContent}_${utmMedium}`;
+              
+              // Construir URL de redirecionamento
+              //const redirectUrl = "https://vafast.xyz/emprestimo-lp/?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_FAVO_D_Emprestimo_"+utmCampaign+"";
+              //const redirectUrl = "https://xegold.xyz/lp/emprestimo-lp/?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_FAVO_D_Emprestimo_"+utmCampaign+"";
+              // Redireciona direto para o formulário da Juvo Crédito (usuário conclui com os 3 campos + selfie)
+              const redirectUrl = "https://app.juvocredito.com.br/emprestimo/dados?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_FAVO_D_Emprestimo_"+utmCampaign+"";
+
+              // Mostrar spinner e desabilitar botão
+              submitBtn.disabled = true;
+              submitText.textContent = "Enviando...";
+              spinner.classList.remove('d-none');
+              
+              // Prepare data for webhook
+              const postData = {
+                  id: idCampanha,
+                  nome: name,
+                  email: email,
+                  phone: whatsapp,
+                  campanha: campanhaComRespostas,
+                  utm: {
+                      source: utmSource,
+                      medium: utmMedium,
+                      campaign: utmCampaign,
+                      term: utmTerm,
+                      content: utmContent
+                  }
+              };
+
+              // Enviar dados para o webhook
+              fetch("https://n8n-1.digite.com.br/webhook/f5e44c10-12a6-4247-a6e8-2699d0d80a54", {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify(postData)
+              })
+              .then(response => {
+                  if (!response.ok) throw new Error('Erro no servidor');
+                  return response.json();
+              })
+              .then(data => {
+                  // Registra a conversão (lead) imediatamente — independe de o usuário concluir a etapa seguinte
+                  if (typeof gtag === 'function') {
+                      gtag('event', 'conversion', { 'send_to': 'AW-16696952717/welKCJCdt9EZEI2P3Zk-', 'value': 1.0, 'currency': 'BRL' });
+                  }
+                  // Tela de transição estilizada que conduz o usuário a concluir o cadastro na parceira
+                  showTransition(name, cpf, redirectUrl);
+              })
+              .catch(error => {
+                  console.error("Erro:", error);
+                  spinner.classList.add('d-none');
+                  submitText.textContent = "Solicitar Proposta Agora";
+                  submitBtn.disabled = false;
+                  alert('Ocorreu um erro. Verifique seus dados e tente novamente.');
+              });
+          });
+          
+          // Validar checkbox em tempo real
+          privacyCheckbox.addEventListener('change', function() {
+              if (this.checked) {
+                  this.classList.remove('privacy-error');
+                  privacyError.style.display = 'none';
+              }
+          });
+      });
+  </script>
+</body>
+</html>
