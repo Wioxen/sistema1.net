@@ -197,14 +197,97 @@ function gtag_report_conversion(url) {
           border-color: #dc3545;
           box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
       }
+
+      /* ===== Tela de transição pós-cadastro (leva o usuário a concluir na parceira) ===== */
+      #transOverlay{position:fixed;inset:0;z-index:99999;background:linear-gradient(135deg,#2E8B57 0%,#228B22 100%);display:none;align-items:center;justify-content:center;padding:18px}
+      #transOverlay.show{display:flex;animation:transFade .35s ease}
+      @keyframes transFade{from{opacity:0}to{opacity:1}}
+      .trans-card{background:#fff;border-radius:20px;max-width:430px;width:100%;padding:34px 26px;text-align:center;box-shadow:0 24px 70px rgba(0,0,0,.35);font-family:'Segoe UI',Tahoma,sans-serif}
+      .trans-lock{width:64px;height:64px;border-radius:50%;background:rgba(46,139,87,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:#2E8B57;font-size:1.8rem}
+      .trans-spin{width:46px;height:46px;border:4px solid #e6f2ea;border-top-color:#2E8B57;border-radius:50%;margin:6px auto 18px;animation:transSpin .8s linear infinite}
+      @keyframes transSpin{to{transform:rotate(360deg)}}
+      .trans-title{font-size:1.32rem;font-weight:700;color:#2F4F4F;margin:0 0 6px;line-height:1.25}
+      .trans-sub{font-size:.94rem;color:#5b6b61;margin:0 0 18px;line-height:1.5}
+      .trans-steps{list-style:none;padding:0;margin:0;text-align:left;display:inline-block}
+      .trans-step{font-size:.9rem;color:#9aa6a0;margin:10px 0;display:flex;align-items:center;gap:9px;transition:all .3s ease}
+      .trans-step i{font-size:1.1rem}
+      .trans-step.done{color:#228B22;font-weight:600}
+      .trans-check{width:76px;height:76px;border-radius:50%;background:rgba(34,139,34,.12);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:#228B22;font-size:2.5rem;animation:transPop .45s cubic-bezier(.2,1.2,.4,1)}
+      @keyframes transPop{0%{transform:scale(.4);opacity:0}100%{transform:scale(1);opacity:1}}
+      .trans-offer{background:#f0f7f2;border:1px solid #cfe8d8;border-radius:12px;padding:12px 15px;margin:4px 0 12px;font-size:.92rem;color:#2F4F4F;line-height:1.5}
+      .trans-offer b{color:#228B22}
+      .trans-doc{font-size:.8rem;color:#7a8a80;margin:0 0 14px}
+      .trans-next{font-size:.86rem;color:#5b6b61;background:#fafafa;border:1px solid #eee;border-radius:10px;padding:11px 13px;margin:0 0 16px;display:flex;align-items:center;gap:9px;text-align:left}
+      .trans-next i{color:#2E8B57;font-size:1.3rem;flex-shrink:0}
+      .trans-cta{display:block;background:#32CD32;color:#fff;text-decoration:none;font-weight:700;font-size:1.06rem;padding:15px;border-radius:50px;box-shadow:0 8px 22px rgba(50,205,50,.4);transition:all .2s ease}
+      .trans-cta:hover{background:#28a428;transform:translateY(-2px);color:#fff;text-decoration:none}
+      .trans-badges{display:flex;justify-content:center;flex-wrap:wrap;gap:13px;margin:16px 0 6px;font-size:.72rem;color:#5b6b61}
+      .trans-badges span{display:flex;align-items:center;gap:4px}
+      .trans-badges i{color:#2E8B57}
+      .trans-redirect{font-size:.78rem;color:#9aa6a0;margin-top:8px}
+
+      /* ===== Ajuste mobile: formulário primeiro e bem ajustado na tela ===== */
+      @media (max-width: 991.98px){
+          .hero-section{ padding: 1.1rem 0 1.6rem; border-radius: 0 0 18px 18px; }
+          .form-container{ margin-top: 0; padding: 1.4rem 1.25rem; }
+          .form-container h3{ font-size: 1.18rem; margin-bottom: 1rem !important; }
+          .hero-title{ font-size: 1.55rem; margin-top: 1.6rem; }
+          .hero-subtitle{ font-size: .95rem; margin-bottom: 1rem; }
+          /* inputs confortáveis ao toque (16px evita o zoom automático do iOS) */
+          .form-control, .form-select{ font-size: 16px; padding: .72rem .9rem; }
+          .form-label{ margin-bottom: .3rem; font-size: .95rem; }
+          .form-container .mb-3{ margin-bottom: .8rem !important; }
+          .btn-primary.btn-lg{ padding: 14px; font-size: 1.06rem; }
+          /* benefícios compactos (abaixo do formulário) */
+          .benefit-item{ margin-bottom: .5rem; }
+          .benefit-icon{ width: 40px; height: 40px; font-size: 1.1rem; margin-right: 12px; }
+          .benefit-text{ font-size: .88rem; }
+      }
+      @media (max-width: 400px){
+          .hero-section{ padding: .9rem 0 1.3rem; }
+          .form-container{ padding: 1.2rem 1rem; }
+          .hero-title{ font-size: 1.4rem; }
+      }
   </style>
 </head>
 <body>
+  <!-- ===== Tela de transição pós-cadastro ===== -->
+  <div id="transOverlay">
+    <div class="trans-card">
+      <div id="transLoading">
+        <div class="trans-lock"><i class="bi bi-shield-lock-fill"></i></div>
+        <div class="trans-spin"></div>
+        <h3 class="trans-title">Analisando o seu perfil&hellip;</h3>
+        <p class="trans-sub">Aguarde alguns segundos enquanto preparamos a sua solicitação com segurança.</p>
+        <ul class="trans-steps">
+          <li class="trans-step" id="ts1"><i class="bi bi-circle"></i> Recebendo os seus dados</li>
+          <li class="trans-step" id="ts2"><i class="bi bi-circle"></i> Encaminhando à instituição parceira</li>
+          <li class="trans-step" id="ts3"><i class="bi bi-circle"></i> Preparando a sua proposta</li>
+        </ul>
+      </div>
+      <div id="transResult" style="display:none">
+        <div class="trans-check"><i class="bi bi-check-circle-fill"></i></div>
+        <h3 class="trans-title" id="transHi">Tudo certo!</h3>
+        <p class="trans-sub">Você está a <strong>1 passo</strong> de liberar o seu empréstimo.</p>
+        <div class="trans-offer"><span style="color:#9aa6a0">Pode ser</span> <b>disponibilizado um valor</b> de empréstimo para o seu perfil. Para liberar, é só confirmar os seus dados na próxima tela.</div>
+        <p class="trans-doc" id="transDoc"></p>
+        <div class="trans-next"><i class="bi bi-camera-fill"></i><span>Na próxima tela você <strong>confirma a sua identidade</strong> (foto do documento + selfie) para <strong>liberar o valor</strong>. Leva cerca de <strong>2 minutos</strong>.</span></div>
+        <a href="#" id="transCta" class="trans-cta">Confirmar e liberar meu valor <i class="bi bi-arrow-right"></i></a>
+        <div class="trans-badges">
+          <span><i class="bi bi-lock-fill"></i> Ambiente seguro</span>
+          <span><i class="bi bi-shield-check"></i> Dados protegidos</span>
+          <span><i class="bi bi-cash-stack"></i> Sem taxa antecipada</span>
+        </div>
+        <div class="trans-redirect">Redirecionando em <span id="transCount">4</span>s&hellip;</div>
+      </div>
+    </div>
+  </div>
+
   <!-- Hero Section -->
   <section class="hero-section">
       <div class="container">
           <div class="row align-items-center">
-              <div class="col-lg-6">
+              <div class="col-lg-6 order-last order-lg-first">
                   <h1 class="display-4 fw-bold mb-3 hero-title">Empréstimo Pessoal Online e Crédito Consignado</h1>
                   <p class="lead mb-4 hero-subtitle">Solicite seu empréstimo pessoal com as melhores taxas. Empréstimo para negativado liberado na hora. Crédito para negativado e empréstimo consignado CLT.</p>
                   <ul class="list-unstyled">
@@ -228,7 +311,7 @@ function gtag_report_conversion(url) {
                       </li>
                   </ul>
               </div>
-              <div class="col-lg-6">
+              <div class="col-lg-6 order-first order-lg-last">
                   <!-- Form Container -->
                   <div class="form-container" id="leadForm">
                       <h3 class="text-center mb-4" style="color:black">Solicite seu <span class="keyword-highlight">empréstimo pessoal</span> agora!</h3>
@@ -337,6 +420,10 @@ function gtag_report_conversion(url) {
                               <input type="checkbox" class="form-check-input" id="privacyPolicy">
                               <label class="form-check-label" for="privacyPolicy" style="color:black">Li e aceito a <a href="https://colegiofavo.com.br/politicafavo.html">Política de Privacidade</a></label>
                               <div class="privacy-error-message" id="privacyError" style="color:black">Você precisa aceitar a política de privacidade</div>
+                          </div>
+                          <div class="mb-3 p-2 rounded d-flex align-items-center" style="background:#f0f7f2;border:1px solid #cfe8d8;gap:10px">
+                              <i class="bi bi-person-badge" style="color:var(--primary-color);font-size:1.4rem;flex-shrink:0"></i>
+                              <span style="font-size:0.82rem;color:#2F4F4F;line-height:1.4">Na última etapa, para sua <strong>segurança</strong>, você fará uma <strong>selfie</strong> e uma <strong>foto do documento</strong>. Leva cerca de <strong>2 minutos</strong> e <strong>não tem nenhum custo</strong>.</span>
                           </div>
                           <div class="d-grid">
                               <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
@@ -746,6 +833,39 @@ function gtag_report_conversion(url) {
           return telefone.replace(/\D/g, '');
       }
 
+      // Tela de transição pós-cadastro: mantém o usuário no fluxo e o conduz a concluir na parceira (Juvo)
+      function showTransition(name, cpf, redirectUrl) {
+          var ov = document.getElementById('transOverlay');
+          if (!ov) { window.location.href = redirectUrl; return; } // fallback de segurança
+          ov.classList.add('show');
+          document.body.style.overflow = 'hidden';
+          function mark(i) {
+              var el = document.getElementById('ts' + i);
+              if (el) { el.classList.add('done'); var ic = el.querySelector('i'); if (ic) ic.className = 'bi bi-check-circle-fill'; }
+          }
+          setTimeout(function () { mark(1); }, 800);
+          setTimeout(function () { mark(2); }, 1700);
+          setTimeout(function () { mark(3); }, 2600);
+          setTimeout(function () {
+              var first = (name || '').trim().split(' ')[0] || '';
+              var hi = document.getElementById('transHi');
+              if (hi) hi.textContent = first ? ('Tudo certo, ' + first + '!') : 'Tudo certo!';
+              if (cpf && cpf.length >= 2) {
+                  var doc = document.getElementById('transDoc');
+                  if (doc) doc.innerHTML = 'Documento informado: <strong>***.***.***-' + cpf.slice(-2) + '</strong> recebido com sucesso.';
+              }
+              document.getElementById('transLoading').style.display = 'none';
+              document.getElementById('transResult').style.display = 'block';
+              var n = 4, cnt = document.getElementById('transCount');
+              var timer = setInterval(function () {
+                  n--; if (cnt) cnt.textContent = n;
+                  if (n <= 0) { clearInterval(timer); window.location.href = redirectUrl; }
+              }, 1000);
+              var cta = document.getElementById('transCta');
+              if (cta) cta.addEventListener('click', function (e) { e.preventDefault(); clearInterval(timer); window.location.href = redirectUrl; });
+          }, 3200);
+      }
+
       document.addEventListener('DOMContentLoaded', function() {
           // Initialize phone mask
           if (document.getElementById('whatsapp')) {
@@ -1016,7 +1136,10 @@ function gtag_report_conversion(url) {
               
               // Construir URL de redirecionamento
               //const redirectUrl = "https://vafast.xyz/emprestimo-lp/?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_FAVO_D_Emprestimo_"+utmCampaign+"";
-              const redirectUrl = "https://xegold.xyz/lp/emprestimo-lp/?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_FAVO_D_Emprestimo_"+utmCampaign+"";
+              //const redirectUrl = "https://xegold.xyz/lp/emprestimo-lp/?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_FAVO_D_Emprestimo_"+utmCampaign+"";
+              //const redirectUrl = "https://app.juvocredito.com.br/emprestimo/dados?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_FAVO_D_Emprestimo_"+utmCampaign+"";
+              // Redireciona para o link de afiliado (Foregon). aff_sub leva a campanha p/ atribuição.
+              const redirectUrl = "https://tracking.foregon.com/aff_c?offer_id=246&aff_id=2133&aff_sub="+encodeURIComponent(utmCampaign);
 
               // Mostrar spinner e desabilitar botão
               submitBtn.disabled = true;
@@ -1052,16 +1175,12 @@ function gtag_report_conversion(url) {
                   return response.json();
               })
               .then(data => {
-                  // Redirecionar
-                  gtag_report_conversion(redirectUrl);
-                  
-                  // Mostrar mensagem de sucesso
-                  alert('Solicitação enviada com sucesso! Em breve você receberá as melhores opções de empréstimo.');
-                  
-                  // Hide spinner
-                  spinner.classList.add('d-none');
-                  submitText.textContent = "Solicitar Proposta Agora";
-                  submitBtn.disabled = false;
+                  // Registra a conversão (lead) imediatamente — independe de o usuário concluir a etapa seguinte
+                  if (typeof gtag === 'function') {
+                      gtag('event', 'conversion', { 'send_to': 'AW-16696952717/welKCJCdt9EZEI2P3Zk-', 'value': 1.0, 'currency': 'BRL' });
+                  }
+                  // Tela de transição estilizada que conduz o usuário a concluir o cadastro na parceira
+                  showTransition(name, cpf, redirectUrl);
               })
               .catch(error => {
                   console.error("Erro:", error);
