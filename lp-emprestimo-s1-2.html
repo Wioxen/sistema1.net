@@ -225,6 +225,29 @@ function gtag_report_conversion(url) {
       .trans-badges span{display:flex;align-items:center;gap:4px}
       .trans-badges i{color:#2E8B57}
       .trans-redirect{font-size:.78rem;color:#9aa6a0;margin-top:8px}
+
+      /* ===== Ajuste mobile: formulário primeiro e bem ajustado na tela ===== */
+      @media (max-width: 991.98px){
+          .hero-section{ padding: 1.1rem 0 1.6rem; border-radius: 0 0 18px 18px; }
+          .form-container{ margin-top: 0; padding: 1.4rem 1.25rem; }
+          .form-container h3{ font-size: 1.18rem; margin-bottom: 1rem !important; }
+          .hero-title{ font-size: 1.55rem; margin-top: 1.6rem; }
+          .hero-subtitle{ font-size: .95rem; margin-bottom: 1rem; }
+          /* inputs confortáveis ao toque (16px evita o zoom automático do iOS) */
+          .form-control, .form-select{ font-size: 16px; padding: .72rem .9rem; }
+          .form-label{ margin-bottom: .3rem; font-size: .95rem; }
+          .form-container .mb-3{ margin-bottom: .8rem !important; }
+          .btn-primary.btn-lg{ padding: 14px; font-size: 1.06rem; }
+          /* benefícios compactos (abaixo do formulário) */
+          .benefit-item{ margin-bottom: .5rem; }
+          .benefit-icon{ width: 40px; height: 40px; font-size: 1.1rem; margin-right: 12px; }
+          .benefit-text{ font-size: .88rem; }
+      }
+      @media (max-width: 400px){
+          .hero-section{ padding: .9rem 0 1.3rem; }
+          .form-container{ padding: 1.2rem 1rem; }
+          .hero-title{ font-size: 1.4rem; }
+      }
   </style>
 </head>
 <body>
@@ -245,11 +268,11 @@ function gtag_report_conversion(url) {
       <div id="transResult" style="display:none">
         <div class="trans-check"><i class="bi bi-check-circle-fill"></i></div>
         <h3 class="trans-title" id="transHi">Tudo certo!</h3>
-        <p class="trans-sub">Você está a <strong>1 passo</strong> do seu empréstimo.</p>
-        <div class="trans-offer">Você pode solicitar <b>até R$ 4.500</b> usando o seu celular como garantia, sem burocracia. Conclua o cadastro para ver o valor disponível para você.</div>
+        <p class="trans-sub">Você está a <strong>1 passo</strong> de liberar o seu empréstimo.</p>
+        <div class="trans-offer"><span style="color:#9aa6a0">Pode ser</span> <b>disponibilizado um valor</b> de empréstimo para o seu perfil. Para liberar, é só confirmar os seus dados na próxima tela.</div>
         <p class="trans-doc" id="transDoc"></p>
-        <div class="trans-next"><i class="bi bi-camera-fill"></i><span>Falta só 1 passo na próxima tela: <strong>foto do documento + selfie</strong>. Leva cerca de <strong>2 minutos</strong>.</span></div>
-        <a href="#" id="transCta" class="trans-cta">Concluir meu cadastro agora <i class="bi bi-arrow-right"></i></a>
+        <div class="trans-next"><i class="bi bi-camera-fill"></i><span>Na próxima tela você <strong>confirma a sua identidade</strong> (foto do documento + selfie) para <strong>liberar o valor</strong>. Leva cerca de <strong>2 minutos</strong>.</span></div>
+        <a href="#" id="transCta" class="trans-cta">Confirmar e liberar meu valor <i class="bi bi-arrow-right"></i></a>
         <div class="trans-badges">
           <span><i class="bi bi-lock-fill"></i> Ambiente seguro</span>
           <span><i class="bi bi-shield-check"></i> Dados protegidos</span>
@@ -264,7 +287,7 @@ function gtag_report_conversion(url) {
   <section class="hero-section">
       <div class="container">
           <div class="row align-items-center">
-              <div class="col-lg-6">
+              <div class="col-lg-6 order-last order-lg-first">
                   <h1 class="display-4 fw-bold mb-3 hero-title">Empréstimo Pessoal Online e Crédito Consignado</h1>
                   <p class="lead mb-4 hero-subtitle">Solicite seu empréstimo pessoal com as melhores taxas. Empréstimo para negativado liberado na hora. Crédito para negativado e empréstimo consignado CLT.</p>
                   <ul class="list-unstyled">
@@ -288,7 +311,7 @@ function gtag_report_conversion(url) {
                       </li>
                   </ul>
               </div>
-              <div class="col-lg-6">
+              <div class="col-lg-6 order-first order-lg-last">
                   <!-- Form Container -->
                   <div class="form-container" id="leadForm">
                       <h3 class="text-center mb-4" style="color:black">Solicite seu <span class="keyword-highlight">empréstimo pessoal</span> agora!</h3>
@@ -1114,8 +1137,9 @@ function gtag_report_conversion(url) {
               // Construir URL de redirecionamento
               //const redirectUrl = "https://vafast.xyz/emprestimo-lp/?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_FAVO_D_Emprestimo_"+utmCampaign+"";
               //const redirectUrl = "https://xegold.xyz/lp/emprestimo-lp/?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_FAVO_D_Emprestimo_"+utmCampaign+"";
-              // Redireciona direto para o formulário da Juvo Crédito (usuário conclui com os 3 campos + selfie)
-              const redirectUrl = "https://app.juvocredito.com.br/emprestimo/dados?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_FAVO_D_Emprestimo_"+utmCampaign+"";
+              //const redirectUrl = "https://app.juvocredito.com.br/emprestimo/dados?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_FAVO_D_Emprestimo_"+utmCampaign+"";
+              // Redireciona para o link de afiliado (Foregon). aff_sub leva a campanha p/ atribuição.
+              const redirectUrl = "https://tracking.foregon.com/aff_c?offer_id=246&aff_id=2133&aff_sub="+encodeURIComponent(utmCampaign);
 
               // Mostrar spinner e desabilitar botão
               submitBtn.disabled = true;
