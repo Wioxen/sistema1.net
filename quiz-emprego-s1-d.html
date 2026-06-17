@@ -1,0 +1,1310 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16696952717"></script>
+<!-- Inicialização do Google tag (gtag.js) — obrigatório ANTES de qualquer gtag() -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-16696952717');
+</script>
+<!-- Event snippet for conversion — disparado SOMENTE no success do webhook,
+via gtag_report_conversion() chamado no .then() do fetch. NÃO disparar no load. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-16696952717/welKCJCdt9EZEI2P3Zk-',
+      'value': 1.0,
+      'currency': 'BRL',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#1E3F73">
+    <meta name="description" content="Encontre a vaga perfeita para seu perfil em menos de 1 minuto. Vagas home office, presenciais e híbridas em todo Brasil.">
+    <title>Vagas de Emprego - Encontre a Oportunidade Perfeita</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #2C5AA0;
+            --primary-dark: #1E3F73;
+            --secondary: #4CAF50;
+            --secondary-dark: #3D8B40;
+            --accent: #FF9800;
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 6px 20px rgba(0,0,0,0.10);
+            --shadow-lg: 0 12px 35px rgba(0,0,0,0.16);
+        }
+
+        * { -webkit-tap-highlight-color: transparent; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+            /* safe-area p/ celulares com notch */
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            padding: 10px 0;
+            padding-top: calc(10px + env(safe-area-inset-top));
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary) !important;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 1.75rem 0 2.25rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (min-width: 992px) {
+            .hero {
+                padding: 4rem 0;
+                border-radius: 0 0 2rem 2rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            pointer-events: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 0.8rem 1.5rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .btn-success {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            padding: 1rem 2rem;
+            font-weight: 700;
+            border-radius: 0.6rem;
+            font-size: 1.1rem;
+            min-height: 56px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-success:hover, .btn-success:focus {
+            background-color: var(--secondary-dark);
+            border-color: var(--secondary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(76,175,80,0.4);
+        }
+
+        .card {
+            border: none;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        /* o card do quiz NÃO deve "pular" no hover (é foco da página) */
+        .form-container:hover { transform: none; }
+
+        .card-header {
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+            border-bottom: none;
+            padding: 1.1rem 1.25rem;
+        }
+
+        .form-control {
+            padding: 0.85rem 1rem;
+            font-size: 1rem; /* >=16px evita zoom automático no iOS */
+            border-radius: 0.5rem;
+            border: 1px solid #d1d5db;
+            transition: all 0.2s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.25rem rgba(44, 90, 160, 0.2);
+        }
+
+        .form-control.is-valid {
+            border-color: var(--secondary);
+            background-image: none;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+
+        .quiz-option {
+            display: flex;
+            align-items: center;
+            padding: 0.95rem 1rem;
+            min-height: 58px;
+            background-color: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.65rem;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            margin: 0;
+            user-select: none;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--primary);
+            background-color: #eef4fd;
+        }
+
+        .quiz-option:active { transform: scale(0.99); }
+
+        .quiz-option.selected {
+            border-color: var(--primary);
+            background-color: #d8e8ff;
+            font-weight: 600;
+            box-shadow: 0 0 0 3px rgba(44,90,160,0.12);
+        }
+
+        .option-content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .option-icon {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-right: 0.85rem;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .option-text {
+            flex-grow: 1;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .progress-container {
+            padding: 0.9rem 1rem;
+            background-color: #fff;
+            border: 1px solid #eef0f3;
+            border-radius: 0.75rem;
+            margin-bottom: 1.1rem;
+        }
+
+        .progress {
+            height: 9px;
+            border-radius: 5px;
+            background-color: #e9ecef;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: linear-gradient(to right, var(--secondary), var(--secondary-dark));
+            transition: width 0.45s ease;
+        }
+
+        .quiz-step { display: none; }
+
+        .quiz-step.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2.5rem 0 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .spinner-border { width: 1.2rem; height: 1.2rem; }
+
+        /* ===== Confiança / segurança ===== */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin: 4px 0 14px;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            font-size: 0.78rem;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        .trust-badge i {
+            color: var(--secondary-dark);
+            margin-right: 6px;
+            font-size: 0.95rem;
+        }
+
+        .privacy-assurance {
+            text-align: center;
+            font-size: 0.78rem;
+            color: #5b6470;
+            margin: 12px 0 0;
+            line-height: 1.4;
+        }
+
+        /* faixa de segurança logo acima/abaixo do botão de envio */
+        .secure-submit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #eef7ef;
+            border: 1px solid #cfe8d2;
+            color: #2f6b34;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 0.55rem;
+            padding: 0.6rem 0.75rem;
+            margin-bottom: 0.9rem;
+        }
+        .secure-submit i { color: var(--secondary-dark); }
+
+        .results-promise {
+            background-color: #e8f5e9;
+            border-left: 4px solid var(--secondary);
+            padding: 11px 12px;
+            margin: 0 0 14px;
+            border-radius: 6px;
+            font-size: 0.88rem;
+        }
+
+        .guarantee-badge {
+            position: absolute;
+            top: -10px;
+            right: 14px;
+            background: var(--accent);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.72rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+            animation: pulse 2.4s infinite;
+            z-index: 10;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.06); }
+            100% { transform: scale(1); }
+        }
+
+        .form-container { position: relative; }
+
+        .input-hint {
+            font-size: 0.74rem;
+            color: #6b7280;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .field-error {
+            display: none;
+            font-size: 0.76rem;
+            color: #dc2626;
+            margin-top: 4px;
+            font-weight: 600;
+        }
+        .form-control.is-invalid ~ .field-error { display: block; }
+
+        .active-users-counter { margin-top: 14px; }
+
+        .animated-dot {
+            height: 8px; width: 8px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse-dot 1.5s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .social-proof {
+            background-color: #f3f4f6;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-highlight { text-align: center; padding: 12px; }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .stat-label { font-size: 0.85rem; color: var(--gray); }
+
+        /* contador de pergunta + botão voltar */
+        .step-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.4rem;
+            min-height: 28px;
+        }
+        .step-counter { font-size: 0.78rem; font-weight: 700; color: var(--primary); }
+        .quiz-back {
+            background: none; border: none; color: var(--gray);
+            font-size: 0.82rem; font-weight: 600; padding: 4px 6px;
+            display: none;
+        }
+        .quiz-back:hover { color: var(--primary); }
+
+        /* alerta de erro inline (substitui alert()) */
+        .form-alert {
+            display: none;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #b91c1c;
+            border-radius: 0.55rem;
+            padding: 0.7rem 0.85rem;
+            font-size: 0.85rem;
+            margin-bottom: 0.9rem;
+        }
+
+        /* tela de sucesso */
+        .success-state { display: none; text-align: center; padding: 1.5rem 0.5rem; }
+        .success-state .check-circle {
+            width: 76px; height: 76px; border-radius: 50%;
+            background: #e8f5e9; color: var(--secondary-dark);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2.2rem; margin: 0 auto 1rem;
+            animation: pop 0.4s ease;
+        }
+        @keyframes pop {
+            0% { transform: scale(0.6); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* ===== Responsivo ===== */
+        @media (max-width: 991.98px) {
+            .hero h1 { font-size: 1.7rem; line-height: 1.25; }
+            .hero .lead { font-size: 1rem; }
+        }
+
+        @media (max-width: 768px) {
+            .trust-badges { gap: 10px 16px; }
+            .guarantee-badge { top: -10px; right: 10px; }
+            .card-header h4 { font-size: 1.15rem; }
+            .stat-number { font-size: 1.75rem; }
+        }
+
+        @media (max-width: 576px) {
+            .quiz-option { padding: 0.85rem; }
+            .option-icon { font-size: 1.2rem; min-width: 26px; margin-right: 0.7rem; }
+            .progress-container { padding: 0.8rem; }
+            .hero { margin-bottom: 1rem; }
+        }
+
+        /* Barra de transição automática */
+        .auto-progress-indicator {
+            height: 3px; width: 100%;
+            background-color: #e9ecef;
+            margin-top: 12px;
+            border-radius: 3px;
+            overflow: hidden;
+            display: none;
+        }
+
+        .auto-progress-bar {
+            height: 100%; width: 0%;
+            background-color: var(--secondary);
+            transition: width 1.5s linear;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.001ms !important;
+                transition-duration: 0.001ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <h3 class="mb-0">VagasMatch</h3>
+            </a>
+            <span class="d-lg-none small fw-semibold text-secondary">
+                <i class="fas fa-lock text-success me-1"></i>Site seguro
+            </span>
+            <button class="navbar-toggler d-none d-lg-inline-flex" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#como-funciona">Como Funciona</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#beneficios">Benefícios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">Perguntas Frequentes</a>
+                    </li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a class="btn btn-primary rounded-pill" href="#quiz-form">Encontrar Vagas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <!-- No mobile o QUIZ vem primeiro (order-1); no desktop fica à direita -->
+                <div class="col-lg-5 offset-lg-1 order-1 order-lg-2">
+                    <div class="card shadow-lg form-container" id="quiz-form">
+                        <div class="guarantee-badge">100% Gratuito</div>
+                        <div class="card-header text-center">
+                            <h4 class="mb-1">Encontre sua vaga ideal</h4>
+                            <p class="mb-0 small">Apenas 3 perguntas rápidas — leva 1 minuto</p>
+                        </div>
+                        <div class="card-body p-3 p-md-4">
+                            <!-- Selos de confiança -->
+                            <div class="trust-badges">
+                                <div class="trust-badge">
+                                    <i class="fas fa-lock"></i>
+                                    <span>Conexão segura</span>
+                                </div>
+                                <div class="trust-badge">
+                                    <i class="fas fa-user-shield"></i>
+                                    <span>Conforme a LGPD</span>
+                                </div>
+                                <div class="trust-badge">
+                                    <i class="fas fa-ban"></i>
+                                    <span>Sem spam</span>
+                                </div>
+                            </div>
+
+                            <div class="results-promise">
+                                <p class="mb-0"><strong>O que você recebe:</strong> até 5 vagas personalizadas pro seu perfil. Sem custo e sem compromisso.</p>
+                            </div>
+
+                            <div class="progress-container" id="progress-wrap">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="small fw-semibold">Seu progresso</span>
+                                    <span id="progress-text" class="small fw-semibold">0%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" id="quiz-progress" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <!-- Alerta de validação inline (substitui alert()) -->
+                            <div class="form-alert" id="form-alert" role="alert"></div>
+
+                            <form id="jobQuizForm" novalidate>
+                                <!-- Step 1 -->
+                                <div class="quiz-step active" id="step1">
+                                    <div class="step-head">
+                                        <button type="button" class="quiz-back" data-back="1"><i class="fas fa-arrow-left me-1"></i>Voltar</button>
+                                        <span class="step-counter">Pergunta 1 de 3</span>
+                                    </div>
+                                    <h5 class="mb-3 text-center">Qual tipo de vaga você procura?</h5>
+                                    <div class="quiz-options">
+                                        <label class="quiz-option">
+                                            <input type="radio" name="jobType" value="home_office" class="d-none">
+                                            <div class="option-content">
+                                                <i class="fas fa-laptop-house option-icon"></i>
+                                                <span class="option-text">Home Office</span>
+                                                <i class="fas fa-check-circle selected-icon ms-2 text-success d-none"></i>
+                                            </div>
+                                        </label>
+                                        <label class="quiz-option">
+                                            <input type="radio" name="jobType" value="presencial" class="d-none">
+                                            <div class="option-content">
+                                                <i class="fas fa-building option-icon"></i>
+                                                <span class="option-text">Presencial</span>
+                                                <i class="fas fa-check-circle selected-icon ms-2 text-success d-none"></i>
+                                            </div>
+                                        </label>
+                                        <label class="quiz-option">
+                                            <input type="radio" name="jobType" value="hibrido" class="d-none">
+                                            <div class="option-content">
+                                                <i class="fas fa-balance-scale option-icon"></i>
+                                                <span class="option-text">Híbrido</span>
+                                                <i class="fas fa-check-circle selected-icon ms-2 text-success d-none"></i>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="auto-progress-indicator">
+                                        <div class="auto-progress-bar"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="quiz-step" id="step2">
+                                    <div class="step-head">
+                                        <button type="button" class="quiz-back" data-back="1"><i class="fas fa-arrow-left me-1"></i>Voltar</button>
+                                        <span class="step-counter">Pergunta 2 de 3</span>
+                                    </div>
+                                    <h5 class="mb-3 text-center">Qual sua experiência profissional?</h5>
+                                    <div class="quiz-options">
+                                        <label class="quiz-option">
+                                            <input type="radio" name="experience" value="com_experiencia" class="d-none">
+                                            <div class="option-content">
+                                                <i class="fas fa-briefcase option-icon"></i>
+                                                <span class="option-text">Tenho experiência com carteira</span>
+                                                <i class="fas fa-check-circle selected-icon ms-2 text-success d-none"></i>
+                                            </div>
+                                        </label>
+                                        <label class="quiz-option">
+                                            <input type="radio" name="experience" value="informal" class="d-none">
+                                            <div class="option-content">
+                                                <i class="fas fa-handshake option-icon"></i>
+                                                <span class="option-text">Experiência informal apenas</span>
+                                                <i class="fas fa-check-circle selected-icon ms-2 text-success d-none"></i>
+                                            </div>
+                                        </label>
+                                        <label class="quiz-option">
+                                            <input type="radio" name="experience" value="primeiro_emprego" class="d-none">
+                                            <div class="option-content">
+                                                <i class="fas fa-graduation-cap option-icon"></i>
+                                                <span class="option-text">Primeiro emprego</span>
+                                                <i class="fas fa-check-circle selected-icon ms-2 text-success d-none"></i>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="auto-progress-indicator">
+                                        <div class="auto-progress-bar"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div class="quiz-step" id="step3">
+                                    <div class="step-head">
+                                        <button type="button" class="quiz-back" data-back="2"><i class="fas fa-arrow-left me-1"></i>Voltar</button>
+                                        <span class="step-counter">Pergunta 3 de 3</span>
+                                    </div>
+                                    <h5 class="mb-3 text-center">Qual área mais combina com você?</h5>
+                                    <div class="quiz-options">
+                                        <label class="quiz-option">
+                                            <input type="radio" name="area" value="atendimento" class="d-none">
+                                            <div class="option-content">
+                                                <i class="fas fa-headset option-icon"></i>
+                                                <span class="option-text">Atendimento ao cliente</span>
+                                                <i class="fas fa-check-circle selected-icon ms-2 text-success d-none"></i>
+                                            </div>
+                                        </label>
+                                        <label class="quiz-option">
+                                            <input type="radio" name="area" value="administrativo" class="d-none">
+                                            <div class="option-content">
+                                                <i class="fas fa-file-invoice option-icon"></i>
+                                                <span class="option-text">Administrativo</span>
+                                                <i class="fas fa-check-circle selected-icon ms-2 text-success d-none"></i>
+                                            </div>
+                                        </label>
+                                        <label class="quiz-option">
+                                            <input type="radio" name="area" value="todas" class="d-none">
+                                            <div class="option-content">
+                                                <i class="fas fa-search option-icon"></i>
+                                                <span class="option-text">Quero ver todas as opções</span>
+                                                <i class="fas fa-check-circle selected-icon ms-2 text-success d-none"></i>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="auto-progress-indicator">
+                                        <div class="auto-progress-bar"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 4 - Formulário de captura -->
+                                <div class="quiz-step" id="step4">
+                                    <div class="step-head">
+                                        <button type="button" class="quiz-back" data-back="3"><i class="fas fa-arrow-left me-1"></i>Voltar</button>
+                                        <span class="step-counter"><i class="fas fa-check-circle text-success me-1"></i>Quase lá!</span>
+                                    </div>
+                                    <h5 class="mb-3 text-center">Pronto! Para onde enviamos suas vagas?</h5>
+
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Nome completo *</label>
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Como gostaria de ser chamado" autocomplete="name" required>
+                                        <span class="input-hint">Para personalizar suas recomendações</span>
+                                        <span class="field-error" id="err-name">Informe seu nome.</span>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">E-mail *</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="seu@email.com" autocomplete="email" inputmode="email" required>
+                                        <span class="input-hint">Enviaremos as vagas aqui</span>
+                                        <span class="field-error" id="err-email">Digite um e-mail válido.</span>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="whatsapp" class="form-label">WhatsApp *</label>
+                                        <input type="tel" class="form-control" id="whatsapp" name="whatsapp" placeholder="(11) 99999-9999" autocomplete="tel" inputmode="numeric" maxlength="16" required>
+                                        <span class="input-hint">Para alertas de vagas urgentes — não enviamos spam</span>
+                                        <span class="field-error" id="err-whatsapp">Digite um WhatsApp válido com DDD.</span>
+                                    </div>
+
+                                    <div class="form-check mb-3">
+                                        <input type="checkbox" class="form-check-input" id="terms" name="terms" required>
+                                        <label class="form-check-label small" for="terms">
+                                            Concordo com os <a href="https://colegiofavo.com.br/termo.html" target="_blank" rel="noopener">Termos de Uso</a> e a <a href="https://colegiofavo.com.br/politicafavo.html" target="_blank" rel="noopener">Política de Privacidade</a> *
+                                        </label>
+                                    </div>
+
+                                    <div class="secure-submit">
+                                        <i class="fas fa-lock"></i>
+                                        <span>Seus dados trafegam com segurança e são tratados conforme a LGPD</span>
+                                    </div>
+
+                                    <div class="d-grid gap-2">
+                                        <button type="submit" class="btn btn-success btn-lg">
+                                            <span class="submit-text">Ver minhas vagas recomendadas</span>
+                                            <span class="spinner-border spinner-border-sm d-none" role="status"></span>
+                                        </button>
+                                    </div>
+                                    <p class="text-center text-muted small mt-2 mb-0">
+                                        <i class="fas fa-shield-alt me-1"></i>Nunca compartilhamos seus dados sem autorização
+                                    </p>
+                                </div>
+                            </form>
+
+                            <!-- Tela de sucesso (substitui o alert de sucesso) -->
+                            <div class="success-state" id="success-state">
+                                <div class="check-circle"><i class="fas fa-check"></i></div>
+                                <h5 class="mb-2">Cadastro confirmado!</h5>
+                                <p class="text-muted mb-0">Estamos preparando suas vagas. Você será redirecionado em instantes...</p>
+                                <div class="spinner-border text-success mt-3" role="status"></div>
+                            </div>
+
+                            <div class="privacy-assurance" id="privacy-assurance">
+                                <i class="fas fa-lock me-1"></i>Seus dados estão protegidos e nunca são compartilhados sem autorização.
+                            </div>
+
+                            <div class="active-users-counter"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Texto de marketing: abaixo do quiz no mobile, à esquerda no desktop -->
+                <div class="col-lg-6 order-2 order-lg-1 text-center text-lg-start">
+                    <h1 class="display-5 fw-bold mb-3">Encontre a vaga perfeita para seu perfil</h1>
+                    <p class="lead mb-4">Nossa tecnologia analisa milhares de vagas para recomendar as melhores oportunidades em menos de 1 minuto.</p>
+                    <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start">
+                        <span class="badge bg-light text-dark p-2"><i class="fas fa-check-circle text-success me-1"></i> Sem cadastro complexo</span>
+                        <span class="badge bg-light text-dark p-2"><i class="fas fa-check-circle text-success me-1"></i> 100% Gratuito</span>
+                        <span class="badge bg-light text-dark p-2"><i class="fas fa-check-circle text-success me-1"></i> Vagas para todos os perfis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-4 stat-highlight">
+                    <div class="stat-number" id="users-helped">15,237+</div>
+                    <div class="stat-label">Pessoas empregadas</div>
+                </div>
+                <div class="col-4 stat-highlight">
+                    <div class="stat-number">2,500+</div>
+                    <div class="stat-label">Vagas disponíveis</div>
+                </div>
+                <div class="col-4 stat-highlight">
+                    <div class="stat-number">96%</div>
+                    <div class="stat-label">Satisfação dos usuários</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="como-funciona" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Como funciona</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 text-center">
+                        <div class="card-body p-4">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle mx-auto mb-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-clipboard-list fa-2x"></i>
+                            </div>
+                            <h5 class="card-title">1. Responda o quiz</h5>
+                            <p class="card-text">Conte-nos sobre suas preferências e experiência profissional.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 text-center">
+                        <div class="card-body p-4">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle mx-auto mb-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-brain fa-2x"></i>
+                            </div>
+                            <h5 class="card-title">2. Nossa IA analisa</h5>
+                            <p class="card-text">Buscamos nas melhores plataformas as vagas ideais para você.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 text-center">
+                        <div class="card-body p-4">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle mx-auto mb-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-briefcase fa-2x"></i>
+                            </div>
+                            <h5 class="card-title">3. Receba as vagas</h5>
+                            <p class="card-text">Enviamos as melhores oportunidades diretamente para você.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="beneficios" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Por que usar nossa plataforma</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex">
+                        <div class="me-4">
+                            <i class="fas fa-bolt fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h5>Rápido e eficiente</h5>
+                            <p>Encontre vagas relevantes em menos de 1 minuto, sem precisar procurar em múltiplos sites.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex">
+                        <div class="me-4">
+                            <i class="fas fa-filter fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h5>Recomendações personalizadas</h5>
+                            <p>Receba apenas vagas que combinam com seu perfil, experiência e preferências.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex">
+                        <div class="me-4">
+                            <i class="fas fa-bell fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h5>Alertas de novas vagas</h5>
+                            <p>Seja notificado quando surgirem oportunidades que combinam com seu perfil.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex">
+                        <div class="me-4">
+                            <i class="fas fa-shield-alt fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h5>Privacidade garantida</h5>
+                            <p>Seus dados estão seguros e não compartilhamos suas informações sem permissão.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Perguntas Frequentes</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            É realmente gratuito?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Sim, nosso serviço é 100% gratuito. Não cobramos nenhum valor para conectar você às melhores oportunidades de emprego.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Preciso ter experiência?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Não! Temos oportunidades para todos os níveis de experiência, incluindo primeiro emprego e vagas de jovem aprendiz.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Como receberei as vagas?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            As vagas são enviadas por e-mail. Para alertas urgentes, também podemos enviar por WhatsApp se você optar por fornecer seu número.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            Meus dados estão seguros?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Sim, utilizamos criptografia e seguimos rigorosos protocolos de segurança, em conformidade com a LGPD, para proteger suas informações.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-3">Pronto para encontrar sua vaga ideal?</h2>
+            <p class="lead mb-4">Comece agora e receba recomendações personalizadas em menos de 1 minuto.</p>
+            <a href="#quiz-form" class="btn btn-light btn-lg">Encontrar Minha Vaga</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h3 class="mb-3">VagasMatch</h3>
+                    <p>Conectando talentos às melhores oportunidades de emprego em todo o Brasil.</p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="mb-3">Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#como-funciona" class="text-white text-decoration-none">Como Funciona</a></li>
+                        <li class="mb-2"><a href="#beneficios" class="text-white text-decoration-none">Benefícios</a></li>
+                        <li class="mb-2"><a href="#faq" class="text-white text-decoration-none">Perguntas Frequentes</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                    <h5 class="mb-3">Legal</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="https://colegiofavo.com.br/politicafavo.html" class="text-white text-decoration-none">Política de Privacidade</a></li>
+                        <li class="mb-2"><a href="https://colegiofavo.com.br/termo.html" class="text-white text-decoration-none">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-3">Contato</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b5c6dcc6c1d0d8d4c1c7d4d3d0d2daf5d2d8d4dcd99bd6dad8">[email&#160;protected]</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2023 VagasMatch. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & jQuery -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+    <!-- Custom Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configuração inicial
+            const totalSteps = 4;
+            let currentStep = 1;
+            let autoProgressTimer = null;
+            updateProgress();
+            showActiveUsers();
+
+            // Obter parâmetros UTM da URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const utmSource = urlParams.get('utm_source') || 'organic';
+            const utmMedium = urlParams.get('utm_medium') || 'web';
+            const utmCampaign = urlParams.get('utm_campaign') || 'general';
+            const utmTerm = urlParams.get('utm_term') || '';
+            const utmContent = urlParams.get('utm_content') || '';
+            const idCampanha = urlParams.get('id') || 'vagas_match_01';
+
+            const formAlert = document.getElementById('form-alert');
+
+            function showFormAlert(msg) {
+                formAlert.textContent = msg;
+                formAlert.style.display = 'block';
+            }
+            function hideFormAlert() {
+                formAlert.style.display = 'none';
+            }
+
+            // Configurar navegação âncora
+            document.querySelectorAll('a[href="#quiz-form"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector('#quiz-form').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            });
+
+            // Configurar opções do quiz com navegação automática
+            document.querySelectorAll('.quiz-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const radio = this.querySelector('input[type="radio"]');
+                    if (radio) {
+                        radio.checked = true;
+
+                        // Remover seleção de outras opções no mesmo grupo
+                        const groupName = radio.getAttribute('name');
+                        document.querySelectorAll(`input[name="${groupName}"]`).forEach(otherRadio => {
+                            otherRadio.closest('.quiz-option').classList.remove('selected');
+                            otherRadio.closest('.quiz-option').querySelector('.selected-icon').classList.add('d-none');
+                        });
+
+                        // Adicionar seleção à opção atual
+                        this.classList.add('selected');
+                        this.querySelector('.selected-icon').classList.remove('d-none');
+
+                        // Iniciar contagem regressiva para navegação automática
+                        startAutoProgress();
+                    }
+                });
+            });
+
+            // Botões "Voltar"
+            document.querySelectorAll('.quiz-back').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const target = parseInt(this.getAttribute('data-back'), 10);
+                    goToStep(target);
+                });
+            });
+
+            // Função para iniciar a barra de progresso automático
+            function startAutoProgress() {
+                if (autoProgressTimer) {
+                    clearTimeout(autoProgressTimer);
+                }
+
+                const progressIndicator = document.querySelector(`#step${currentStep} .auto-progress-indicator`);
+                const progressBar = document.querySelector(`#step${currentStep} .auto-progress-bar`);
+
+                if (progressIndicator && progressBar) {
+                    progressIndicator.style.display = 'block';
+                    progressBar.style.width = '0%';
+
+                    // Forçar reflow para reiniciar a animação
+                    void progressBar.offsetWidth;
+                    progressBar.style.width = '100%';
+
+                    // Navegar para o próximo passo após 1.5 segundos
+                    autoProgressTimer = setTimeout(() => {
+                        if (currentStep < totalSteps - 1) {
+                            goToStep(currentStep + 1);
+                        } else if (currentStep === totalSteps - 1) {
+                            goToStep(totalSteps);
+                        }
+                    }, 1500);
+                }
+            }
+
+            // Função para navegar entre os passos
+            function goToStep(stepNumber) {
+                if (autoProgressTimer) {
+                    clearTimeout(autoProgressTimer);
+                    autoProgressTimer = null;
+                }
+
+                document.querySelectorAll('.auto-progress-indicator').forEach(indicator => {
+                    indicator.style.display = 'none';
+                });
+
+                document.querySelectorAll('.quiz-step').forEach(step => {
+                    step.classList.remove('active');
+                });
+
+                document.getElementById(`step${stepNumber}`).classList.add('active');
+                currentStep = stepNumber;
+                updateProgress();
+
+                // Mostrar/ocultar botão Voltar (a partir do passo 2)
+                document.querySelectorAll('.quiz-back').forEach(b => {
+                    b.style.display = (currentStep > 1) ? 'inline-block' : 'none';
+                });
+
+                // Mantém o quiz visível ao avançar no mobile
+                const card = document.getElementById('quiz-form');
+                if (card && window.innerWidth < 992) {
+                    const top = card.getBoundingClientRect().top + window.pageYOffset - 70;
+                    window.scrollTo({ top: top, behavior: 'smooth' });
+                }
+            }
+
+            // Função para atualizar a barra de progresso
+            function updateProgress() {
+                const progressPercent = ((currentStep - 1) / (totalSteps - 1)) * 100;
+                document.getElementById('quiz-progress').style.width = `${progressPercent}%`;
+                document.getElementById('progress-text').textContent = `${Math.round(progressPercent)}%`;
+            }
+
+            // Função para mostrar usuários ativos
+            function showActiveUsers() {
+                const activeUsers = Math.floor(Math.random() * 14) + 12; // Entre 12 e 25
+                const counterEl = document.querySelector('.active-users-counter');
+                if (counterEl) {
+                    counterEl.innerHTML = `
+                        <div class="d-flex align-items-center justify-content-center p-2 bg-light rounded">
+                            <span class="animated-dot me-2"></span>
+                            <span class="small">${activeUsers} pessoas procurando emprego agora</span>
+                        </div>
+                    `;
+                }
+            }
+
+            // ===== Máscara de telefone (BR) =====
+            const whatsappInput = document.getElementById('whatsapp');
+            function maskPhone(value) {
+                let v = value.replace(/\D/g, '').slice(0, 11);
+                if (v.length === 0) return '';
+                if (v.length <= 2) return '(' + v;
+                if (v.length <= 6) return '(' + v.slice(0, 2) + ') ' + v.slice(2);
+                if (v.length <= 10) return '(' + v.slice(0, 2) + ') ' + v.slice(2, 6) + '-' + v.slice(6);
+                return '(' + v.slice(0, 2) + ') ' + v.slice(2, 7) + '-' + v.slice(7);
+            }
+            if (whatsappInput) {
+                whatsappInput.addEventListener('input', function() {
+                    this.value = maskPhone(this.value);
+                });
+            }
+
+            // ===== Validação inline por campo =====
+            function setInvalid(input, invalid) {
+                if (invalid) {
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+                } else {
+                    input.classList.remove('is-invalid');
+                    input.classList.add('is-valid');
+                }
+            }
+            function validEmail(v) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+            }
+            function validPhone(v) {
+                return v.replace(/\D/g, '').length >= 10;
+            }
+
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            [nameInput, emailInput, whatsappInput].forEach(inp => {
+                inp.addEventListener('blur', function() {
+                    if (this.value.trim() === '') return;
+                    validateField(this);
+                });
+            });
+            function validateField(input) {
+                let ok = true;
+                if (input === nameInput) ok = input.value.trim().length >= 2;
+                else if (input === emailInput) ok = validEmail(input.value);
+                else if (input === whatsappInput) ok = validPhone(input.value);
+                setInvalid(input, !ok);
+                return ok;
+            }
+
+            // Envio do formulário com webhook
+            document.getElementById('jobQuizForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                hideFormAlert();
+
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const submitText = submitBtn.querySelector('.submit-text');
+                const spinner = submitBtn.querySelector('.spinner-border');
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const terms = document.getElementById('terms').checked;
+
+                // Validação por campo, com foco no primeiro inválido
+                const okName = validateField(nameInput);
+                const okEmail = validateField(emailInput);
+                const okPhone = validateField(whatsappInput);
+
+                if (!okName || !okEmail || !okPhone) {
+                    const firstInvalid = !okName ? nameInput : (!okEmail ? emailInput : whatsappInput);
+                    firstInvalid.focus();
+                    showFormAlert('Confira os campos destacados antes de continuar.');
+                    return;
+                }
+                if (!terms) {
+                    showFormAlert('Você precisa aceitar os Termos de Uso e a Política de Privacidade.');
+                    document.getElementById('terms').focus();
+                    return;
+                }
+
+                // Construir URL de redirecionamento
+                const redirectUrl = "https://vafast.xyz/central-de-vagas-lp/?utm_source=GoogleAds&utm_medium=Display&utm_campaign=EmpregoD-s1";
+
+                // Mostrar spinner e desabilitar botão
+                submitBtn.disabled = true;
+                submitText.textContent = "Enviando...";
+                spinner.classList.remove('d-none');
+
+                // Preparar dados para o webhook
+                const postData = {
+                    id: idCampanha,
+                    nome: name,
+                    email: email,
+                    phone: document.getElementById('whatsapp').value || '',
+                    campanha: `emprego_s1_auraburs_Display`,
+                    utm: {
+                        source: utmSource,
+                        medium: utmMedium,
+                        campaign: utmCampaign,
+                        term: utmTerm,
+                        content: utmContent
+                    },
+                    respostas: {
+                        tipo_vaga: document.querySelector('input[name="jobType"]:checked')?.value,
+                        experiencia: document.querySelector('input[name="experience"]:checked')?.value,
+                        area_interesse: document.querySelector('input[name="area"]:checked')?.value
+                    }
+                };
+
+                // Enviar dados para o webhook
+                fetch("https://n8n-1.digite.com.br/webhook/f5e44c10-12a6-4247-a6e8-2699d0d80a54", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(postData)
+                })
+                .then(response => {
+                    if (!response.ok) throw new Error('Erro no servidor');
+                    return response.json();
+                })
+                .then(data => {
+                    // Tela de sucesso (substitui alert) antes do redirecionamento
+                    document.getElementById('jobQuizForm').style.display = 'none';
+                    document.getElementById('progress-wrap').style.display = 'none';
+                    document.getElementById('privacy-assurance').style.display = 'none';
+                    document.getElementById('success-state').style.display = 'block';
+
+                    // Redirecionar (dispara a conversão e segue para a URL)
+                    gtag_report_conversion(redirectUrl);
+                })
+                .catch(error => {
+                    console.error("Erro:", error);
+                    spinner.classList.add('d-none');
+                    submitText.textContent = "Ver minhas vagas recomendadas";
+                    submitBtn.disabled = false;
+                    showFormAlert('Ocorreu um erro ao enviar. Verifique sua conexão e tente novamente.');
+                });
+            });
+
+            // Smooth scrolling para links âncora
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') !== '#quiz-form') {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
