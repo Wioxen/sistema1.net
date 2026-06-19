@@ -1123,7 +1123,7 @@ function gtag_report_conversion(url) {
               const urlParams = new URLSearchParams(window.location.search);
               const utmSource = urlParams.get('utm_source') || 'organic';
               const utmMedium = urlParams.get('utm_medium') || 'none';
-              const utmCampaign = urlParams.get('utm_campaign') || 'default';
+              const utmCampaign = urlParams.get('cid') || 'default';
               const utmTerm = urlParams.get('utm_term') || '';
               const utmContent = urlParams.get('utm_content') || '';
               
@@ -1136,7 +1136,7 @@ function gtag_report_conversion(url) {
               
               // Construir URL de redirecionamento
               //const redirectUrl = "https://vafast.xyz/emprestimo-lp/?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_FAVO_D_Emprestimo_"+utmCampaign+"";
-              const redirectUrl = "https://xegold.xyz/lp/emprestimo-lp/?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_EmprestimoD";
+              const redirectUrl = "https://xegold.xyz/lp/emprestimo-lp/?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_EmprestimoD_"+utmCampaign+"";
               //const redirectUrl = "https://app.juvocredito.com.br/emprestimo/dados?utm_source=GoogleAds&utm_medium=Display&utm_campaign=Auto_FAVO_D_Emprestimo_"+utmCampaign+"";
               //const redirectUrl = "https://tracking.foregon.com/aff_c?offer_id=246&aff_id=2133&aff_sub="+encodeURIComponent(utmCampaign);
               // s1-3: redireciona para a página de pouso do xegold (dwell + ads); o 1º CTA de lá vai para a Juvo
